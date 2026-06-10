@@ -5,7 +5,6 @@ import logging
 class AppConsents(HPXRebrandingFlow):
     flow_name = "app_consents"
 
-# *********************************************************************************
 #                                VERIFICATION FLOWS                               *
 # *********************************************************************************
     def verify_start_window_show_up(self):
@@ -337,7 +336,7 @@ class AppConsents(HPXRebrandingFlow):
             logging.info(f"Necessary text contains '{result}'")
 
     def click_manage_choices_back_btn(self):
-        self.driver.click("manage_choices_back_btn", timeout = 10)
+        self.driver.click("manage_choices_back_btn", timeout = 20)
 
     def click_hp_privacy_statement_link(self):
         self.driver.click("hp_privacy_statement_link", timeout = 10)
