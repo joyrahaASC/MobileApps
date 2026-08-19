@@ -31,7 +31,7 @@ class Test_Suite_05_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_01_verify_notification_tile_ellipsis_clickable_C60339095(self):
+    def test_01_verify_notification_tile_ellipsis_clickable_C76(self):
         logged_in = self.profile.verify_top_profile_icon_signed_in()
         if not logged_in:
             self.css.click_sign_in_button()
@@ -50,7 +50,7 @@ class Test_Suite_05_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_02_verify_mark_as_read_option_enabled_for_all_notification_types_C60339094(self):
+    def test_02_verify_mark_as_read_option_enabled_for_all_notification_types_C77(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         self.profile.verify_top_profile_icon_signed_in()
         assert self.device_card.verify_bell_icon_present(), "bell icon invisible"
@@ -101,7 +101,7 @@ class Test_Suite_05_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_03_verify_unread_read_notifications_C53303701(self):
+    def test_03_verify_unread_read_notifications_C78(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         assert self.profile.verify_top_profile_icon_signed_in(), "Profile icon isn't showing initials after sign-in"
         assert self.device_card.verify_bell_icon_present(), "bell icon invisible"
@@ -129,7 +129,7 @@ class Test_Suite_05_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_04_verify_elements_in_notifs_title_C60339091(self):
+    def test_04_verify_elements_in_notifs_title_C79(self):
         logged_in = self.profile.verify_top_profile_icon_signed_in()
         if not logged_in:
             self.css.click_sign_in_button()
