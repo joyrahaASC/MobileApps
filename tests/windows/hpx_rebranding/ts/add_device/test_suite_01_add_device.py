@@ -19,14 +19,14 @@ class Test_Suite_01_Add_Device(object):
         cls.add_device= request.cls.fc.fd["add_device"]
 
     @pytest.mark.regression
-    def test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C55687256(self):
+    def test_01_verify_add_device_button_clickable_and_opens_sidebar_page_C46(self):
         assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), "PC name on homepage not loaded/visible"
         assert self.profile.verify_add_device_button(), "add device button is not found"
         self.profile.click_add_device_button()
         assert self.add_device.verify_add_device_page(), "add device page is not found"
 
     @pytest.mark.regression
-    def test_02_verify_navigation_of_need_help_finding_serial_number_link_C61716550(self):
+    def test_02_verify_navigation_of_need_help_finding_serial_number_link_C47(self):
         self.devices_details_pc_mfe.verify_pc_device_name_show_up()
         self.profile.verify_add_device_button()
         self.profile.click_add_device_button()
@@ -39,7 +39,7 @@ class Test_Suite_01_Add_Device(object):
         self.devicesMFE.verify_browser_webview_pane()
 
     @pytest.mark.regression
-    def test_03_verify_the_back_button_for_the_add_device_C61716558(self):
+    def test_03_verify_the_back_button_for_the_add_device_C48(self):
         self.devices_details_pc_mfe.verify_pc_device_name_show_up()
         self.profile.verify_add_device_button()
         self.profile.click_add_device_button()
@@ -52,7 +52,7 @@ class Test_Suite_01_Add_Device(object):
         assert self.add_device.verify_add_device_page(), "add device page is not found"
 
     @pytest.mark.regression
-    def test_04_verify_the_close_button_for_the_add_device_C61716559(self):
+    def test_04_verify_the_close_button_for_the_add_device_C49(self):
         self.devices_details_pc_mfe.verify_pc_device_name_show_up()
         self.profile.verify_add_device_button()
         self.profile.click_add_device_button()
@@ -62,7 +62,7 @@ class Test_Suite_01_Add_Device(object):
         assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), "PC name on homepage not loaded/visible"
 
     @pytest.mark.regression
-    def test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C63813594(self):
+    def test_05_verify_entered_serial_number_is_accepted_and_displayed_correctly_C50(self):
         self.devices_details_pc_mfe.verify_pc_device_name_show_up()
         self.profile.verify_add_device_button()
         self.profile.click_add_device_button()
@@ -75,7 +75,7 @@ class Test_Suite_01_Add_Device(object):
         assert entered_value == "8CC5281Y49", f"Serial number not displayed correctly, found: {entered_value}"
 
     @pytest.mark.regression
-    def test_06_verify_the_content_in_add_a_printer_C63813978(self):
+    def test_06_verify_the_content_in_add_a_printer_C51(self):
         self.devices_details_pc_mfe.verify_pc_device_name_show_up()
         self.profile.verify_add_device_button()
         self.profile.click_add_device_button()
@@ -83,7 +83,7 @@ class Test_Suite_01_Add_Device(object):
         assert self.add_device.verify_add_printer_content(), "content in add a printer is not matching"
 
     @pytest.mark.regression
-    def test_07_verify_the_content_in_missing_a_device_C63815104(self):
+    def test_07_verify_the_content_in_missing_a_device_C52(self):
         self.devices_details_pc_mfe.verify_pc_device_name_show_up()
         self.profile.verify_add_device_button()
         self.profile.click_add_device_button()
