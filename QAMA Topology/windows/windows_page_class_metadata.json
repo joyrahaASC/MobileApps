@@ -1,0 +1,23 @@
+[
+  {
+    "file_path": "libs/flows/windows/hh/bell_icon.py",
+    "component": "bell_icon",
+    "dependencies": [],
+    "locator_keys": [],
+    "exposed_functions": []
+  },
+  {
+    "file_path": "libs/flows/windows/hh/add_device.py",
+    "component": "add_device",
+    "dependencies": [],
+    "locator_keys": [],
+    "exposed_functions": []
+  },
+  {
+    "file_path": "libs/flows/windows/hh/flow_container.py",
+    "component": "flow_container",
+    "dependencies": [],
+    "locator_keys": [],
+    "exposed_functions": []
+  }
+]
