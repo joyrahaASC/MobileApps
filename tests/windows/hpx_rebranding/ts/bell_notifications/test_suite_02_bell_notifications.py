@@ -26,7 +26,7 @@ class Test_Suite_02_Bell_Notifications(object):
         cls.profile.minimize_chrome()
 
     @pytest.mark.regression
-    def test_01_verify_back_button_visible_on_navigation_side_panel_C42631068(self):
+    def test_01_verify_back_button_visible_on_navigation_side_panel_C60(self):
         assert self.devicesMFE.verify_sign_in_button_show_up(), "sign-in button invisible"
         assert self.device_card.verify_bell_icon_present(), "bell icon invisible"
         self.device_card.click_bell_icon()
@@ -35,7 +35,7 @@ class Test_Suite_02_Bell_Notifications(object):
         assert self.profile.verify_avatar_close_btn(), "avatar close button invisible"
 
     @pytest.mark.regression
-    def test_02_verify_back_button_named_as_close_can_be_clicked_C42631069(self):
+    def test_02_verify_back_button_named_as_close_can_be_clicked_C61(self):
         assert self.device_card.verify_bell_icon_present(), "bell icon invisible"
         self.device_card.click_bell_icon()
         assert self.bell_icon.verify_notifications_title(), "notification title invisible"
