@@ -1,0 +1,25 @@
+{
+  "shadow_branch_name": "shadow_qama_topology_1787104446",
+  "platforms": {
+    "web": {
+      "page_class_metadata_path": "",
+      "locators_metadata_path": ""
+    },
+    "windows": {
+      "page_class_metadata_path": "",
+      "locators_metadata_path": ""
+    },
+    "android": {
+      "page_class_metadata_path": "",
+      "locators_metadata_path": ""
+    },
+    "ios": {
+      "page_class_metadata_path": "",
+      "locators_metadata_path": ""
+    },
+    "mac": {
+      "page_class_metadata_path": "",
+      "locators_metadata_path": ""
+    }
+  }
+}
