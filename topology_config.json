@@ -1,12 +1,12 @@
 {
-  "shadow_branch_name": "shadow_qama_topology_1787102627",
+  "shadow_branch_name": "shadow_qama_topology_1787103454",
   "platforms": {
     "web": {
       "page_class_metadata_path": "",
       "locators_metadata_path": ""
     },
     "windows": {
-      "page_class_metadata_path": "QAMA Topology/windows/windows_page_class_metadata.json",
+      "page_class_metadata_path": "",
       "locators_metadata_path": ""
     },
     "android": {
