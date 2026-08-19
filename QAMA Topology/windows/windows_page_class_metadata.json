@@ -1,0 +1,2763 @@
+[
+  {
+    "file_path": "libs/flows/windows/hh/add_device.py",
+    "component": "add_device",
+    "dependencies": [
+      "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow"
+    ],
+    "locator_keys": [
+      "newly_added_device_card_name",
+      "close_microsoft_store",
+      "microsoft_store",
+      "add_printer_content",
+      "hp_smart_open_btn",
+      "add_printer_section",
+      "hp_smart_text",
+      "add_device_hyperlink",
+      "serial_number_textbox",
+      "close_button_on_add_device_page",
+      "search_by_serial_number_btn",
+      "missing_device_content",
+      "product_number_textbox",
+      "add_device_title",
+      "missing_device_section",
+      "add_device_page_side_bar",
+      "need_help_finding_your_serial_number_link",
+      "open_hp_smart_link",
+      "add_a_device_back_btn"
+    ],
+    "exposed_functions": [
+      {
+        "signature": "verify_add_device_page",
+        "purpose": "Verifies that the add device page is displayed with all required elements including sidebar, title, printer section, and missing device section.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_open_hp_smart_link",
+        "purpose": "Verifies the presence of the link to open HP Smart application.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_microsoft_store_opened",
+        "purpose": "Verifies that the Microsoft Store application has been opened successfully.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_search_by_serial_number_btn",
+        "purpose": "Verifies the presence of the search by serial number button.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_serial_number_textbox",
+        "purpose": "Verifies the presence of the serial number input textbox.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_need_help_finding_your_serial_number_link",
+        "purpose": "Verifies the presence of the help link for finding serial numbers.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_add_a_device_back_btn",
+        "purpose": "Verifies the presence of the back button on the add device page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_close_button_on_add_device_page",
+        "purpose": "Verifies the presence of the close button on the add device page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_add_printer_content",
+        "purpose": "Verifies the presence of add printer content section.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_missing_device_content",
+        "purpose": "Verifies the presence of missing device content section with configurable timeout.",
+        "input_parameters": [
+          "timeout"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_hp_smart_text",
+        "purpose": "Verifies the presence of HP Smart text element.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_hp_smart_open_btn",
+        "purpose": "Verifies the presence of the HP Smart open button.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_newly_added_devicename",
+        "purpose": "Verifies that a newly added device name appears on the device card.",
+        "input_parameters": [
+          "raise_e"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "input_enter_product_number",
+        "purpose": "Enters a product number into the product number textbox.",
+        "input_parameters": [
+          "product_number"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_product_number_textbox",
+        "purpose": "Verifies the presence of the product number input textbox.",
+        "input_parameters": [
+          "raise_e"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_open_hp_smart_link",
+        "purpose": "Clicks the link to open HP Smart application.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_search_by_serial_number_btn",
+        "purpose": "Clicks the search by serial number button to initiate serial number search.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_need_help_finding_your_serial_number_link",
+        "purpose": "Clicks the help link to get assistance finding the device serial number.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_add_a_device_back_btn",
+        "purpose": "Clicks the back button to navigate away from the add device page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_close_button_on_add_device_page",
+        "purpose": "Clicks the close button to exit the add device page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_close_microsoft_store",
+        "purpose": "Clicks the close button to exit the Microsoft Store application.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "input_enter_serial_number",
+        "purpose": "Enters a serial number into the serial number textbox.",
+        "input_parameters": [
+          "serial_number"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_entered_serial_number",
+        "purpose": "Retrieves the currently entered serial number value from the textbox.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_add_device_hyperlink",
+        "purpose": "Clicks the add device hyperlink to navigate to the add device page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      }
+    ]
+  },
+  {
+    "file_path": "libs/flows/windows/hh/bell_icon.py",
+    "component": "bell_icon",
+    "dependencies": [
+      "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow"
+    ],
+    "locator_keys": [
+      "shortcuts_title",
+      "informative_unread_notifs",
+      "read_text",
+      "urgent_unread_notification",
+      "notification_tile_ellipsis",
+      "notifications_side_panel",
+      "unread_text",
+      "warning_unread_notifs_ellipsis",
+      "info_icon",
+      "notification_account",
+      "urgent_unread_notification_ellipsis",
+      "notif_description",
+      "delete_warning_unread_notifs",
+      "detailed_notification_back_btn",
+      "delete_informative_unread_notifs",
+      "warning_read_notifs",
+      "notification_timestamp",
+      "urgent_notifications",
+      "notifications_back_btn",
+      "notification_dropdown_menu",
+      "warning_notifications",
+      "informative_read_notifs",
+      "warning_unread_notification_ellipsis",
+      "warning_icon",
+      "urgent_icon",
+      "delete_disabled_urgent_unread_notifs",
+      "background_blur",
+      "notification_dropdown_delete_option",
+      "informative_notifications",
+      "informative_unread_notifs_ellipsis",
+      "urgent_read_notifs",
+      "notification_dropdown_mark_read_option",
+      "notifications_panel_close_btn",
+      "notifications_title",
+      "informative_unread_notification_ellipsis",
+      "warning_unread_notifs",
+      "urgent_unread_notifs_name",
+      "account_title",
+      "detailed_notification_title",
+      "notifications_panel_sign_in_btn",
+      "warning_unread_notifs_name",
+      "informative_unread_notifs_name",
+      "sign_in_to_view_msgs"
+    ],
+    "exposed_functions": [
+      {
+        "signature": "click_notifications_back_btn",
+        "purpose": "Navigates back from the notifications view to the previous screen.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_informative_unread_notifs_ellipsis",
+        "purpose": "Opens the options menu (ellipsis) for informative unread notifications to access additional actions.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_delete_informative_unread_notifs",
+        "purpose": "Deletes informative unread notifications from the notification center.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_informative_unread_notification_ellipsis",
+        "purpose": "Opens the options menu (ellipsis) for a single informative unread notification.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_warning_unread_notification_ellipsis",
+        "purpose": "Opens the options menu (ellipsis) for a warning unread notification.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_notification_tile_ellipsis",
+        "purpose": "Opens the options menu (ellipsis) for a general notification tile.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_informative_unread_notifs",
+        "purpose": "Selects and opens informative unread notifications to view their details.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_urgent_unread_notifs",
+        "purpose": "Selects and opens urgent unread notifications to view their details.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_warning_unread_notifs",
+        "purpose": "Selects and opens warning unread notifications to view their details.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_informative_read_notifs",
+        "purpose": "Selects and opens informative read notifications to review previously viewed messages.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_urgent_read_notifs",
+        "purpose": "Selects and opens urgent read notifications to review previously viewed urgent messages.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_warning_read_notifs",
+        "purpose": "Selects and opens warning read notifications to review previously viewed warnings.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_detailed_notification_back_btn",
+        "purpose": "Navigates back from the detailed notification view to the notification list.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_dropdown_mark_as_read",
+        "purpose": "Marks a notification as read using the dropdown menu option.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_shortcuts_category",
+        "purpose": "Verifies the presence of the shortcuts category section and retrieves its display name.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_notifications_title",
+        "purpose": "Retrieves the text title of the notifications panel header.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notifications_title",
+        "purpose": "Verifies that the notifications panel title element is visible and present.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notifications_panel_text",
+        "purpose": "Verifies the presence of the sign-in prompt message displayed to unauthenticated users.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notifications_panel_sign_in_btn",
+        "purpose": "Verifies that the sign-in button is visible in the notifications panel for unauthenticated users.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notifications_sidebar_ui",
+        "purpose": "Validates the complete unauthenticated notifications sidebar UI including panel, sign-in message, button, and title, returning the title text.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notifications_panel_close_btn",
+        "purpose": "Verifies the close button is present and retrieves its accessible name attribute.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_read_text",
+        "purpose": "Verifies that the 'Read' section label is visible in the notifications panel.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_unread_text",
+        "purpose": "Verifies that the 'Unread' section label is visible in the notifications panel.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_informative_notifications",
+        "purpose": "Verifies that informative-level notifications are present and visible.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_informative_notifications_name",
+        "purpose": "Retrieves the name attribute of read informative notifications.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_urgent_notifications_name",
+        "purpose": "Retrieves the name attribute of read urgent notifications.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_warning_notifications_name",
+        "purpose": "Retrieves the name attribute of read warning notifications.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_urgent_notifications",
+        "purpose": "Verifies that urgent-level notifications are present and visible.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_warning_notifications",
+        "purpose": "Verifies that warning-level notifications are present and visible.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_urgent_unread_notifs",
+        "purpose": "Verifies the presence of unread urgent notifications and retrieves their name attribute.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_delete_disabled_urgent_unread_notifs",
+        "purpose": "Verifies that the delete button is disabled for urgent unread notifications.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_warning_unread_notifs",
+        "purpose": "Verifies the presence of unread warning notifications and retrieves their name attribute.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_informative_unread_notifs",
+        "purpose": "Verifies the presence of unread informative notifications and retrieves their name attribute.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notification_side_panel",
+        "purpose": "Validates the complete authenticated notification side panel UI including back button, account title, and read/unread sections.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notification_dropdown_revealed",
+        "purpose": "Verifies that the notification action dropdown menu is visible and expanded.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_dropdown_mark_as_read_option_present",
+        "purpose": "Verifies that the 'Mark as Read' option is present in the notification dropdown menu.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_dropdown_delete_option_present",
+        "purpose": "Verifies that the 'Delete' option is present in the notification dropdown menu.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_urgent_unread_notification_ellipsis",
+        "purpose": "Verifies that the ellipsis menu button is visible on urgent unread notification tiles.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_informative_unread_notification_ellipsis",
+        "purpose": "Verifies that the ellipsis menu button is visible on informative unread notification tiles.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_warning_unread_notification_ellipsis",
+        "purpose": "Verifies that the ellipsis menu button is visible on warning unread notification tiles.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_time_stamp",
+        "purpose": "Verifies that the timestamp element is visible on notification tiles.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_time_stamp",
+        "purpose": "Retrieves the timestamp text displayed on a notification tile.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notification_tile_ellipsis",
+        "purpose": "Verifies that the ellipsis menu button is present on notification tiles.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_account_category",
+        "purpose": "Verifies the account category title is visible and retrieves its text value.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_notif_description",
+        "purpose": "Retrieves the description text content of a notification.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_urgent_msg_icon",
+        "purpose": "Verifies that the urgent severity icon is displayed on urgent notifications.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_warning_msg_icon",
+        "purpose": "Verifies that the warning severity icon is displayed on warning notifications.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_info_msg_icon",
+        "purpose": "Verifies that the informative severity icon is displayed on informative notifications.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_sign_in_to_view_msgs",
+        "purpose": "Verifies the sign-in prompt message is displayed for unauthenticated users.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_unread_urgent_notifs_name",
+        "purpose": "Verifies unread urgent notification name element is present and retrieves its text.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_unread_informative_notifs_name",
+        "purpose": "Verifies unread informative notification name element is present and retrieves its text.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_unread_warning_notifs_name",
+        "purpose": "Verifies unread warning notification name element is present and retrieves its text.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notification_back_btn",
+        "purpose": "Verifies that the back button is present in the notification panel for navigation.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_detailed_notification_back_btn",
+        "purpose": "Verifies the back button in the detailed notification view and retrieves its accessible name.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "swipe_to_top_notifs_section",
+        "purpose": "Performs a swipe gesture to scroll to the top of the notifications section.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "swipe_till_read_notifs",
+        "purpose": "Performs a swipe gesture to scroll until the read notifications section is visible.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_notifs_and_mark_as_read",
+        "purpose": "Validates the notification dropdown menu options are present and executes the mark as read action.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_detailed_notification_title",
+        "purpose": "Retrieves the title text from the detailed notification view.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_background_blur",
+        "purpose": "Verifies that the background blur effect is applied when the notification panel is open.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_notifications_panel_close_btn",
+        "purpose": "Clicks the close button to dismiss and close the notifications panel.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_notifications_panel_sign_in_btn",
+        "purpose": "Clicks the sign-in button in the notifications panel to initiate authentication flow.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_notification_account",
+        "purpose": "Clicks on a notification account item to view account-specific notifications.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_urgent_unread_notification_ellipsis",
+        "purpose": "Clicks the ellipsis menu button on an urgent unread notification to reveal action options.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_warning_unread_notifs_ellipsis",
+        "purpose": "Clicks the ellipsis menu button on a warning unread notification to reveal action options.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_delete_warning_unread_notifs",
+        "purpose": "Clicks the delete action to remove a warning unread notification from the list.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      }
+    ]
+  },
+  {
+    "file_path": "libs/flows/windows/hh/flow_container.py",
+    "component": "flow_container",
+    "dependencies": [
+      "MobileApps.libs.flows.web.hpx.devices_details_printer_mfe",
+      "MobileApps.libs.flows.windows.hpx_rebranding.task_group",
+      "MobileApps.libs.flows.windows.hpx.utility.task_utilities",
+      "MobileApps.libs.flows.windows.hpx_rebranding.hppk",
+      "MobileApps.libs.flows.web.hpx.shortcuts",
+      "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_utility",
+      "MobileApps.libs.flows.windows.hpx.utility.wmi_utilities",
+      "MobileApps.libs.flows.windows.hpx_rebranding.supplies_status",
+      "MobileApps.libs.flows.web.hpx.diagnose_fix",
+      "MobileApps.libs.flows.windows.hpx_rebranding.aic",
+      "MobileApps.libs.flows.windows.hpx_rebranding.hp_go",
+      "time",
+      "MobileApps.libs.flows.windows.hpx_rebranding.context_aware",
+      "requests",
+      "re",
+      "MobileApps.libs.flows.windows.hpx_rebranding.system_control",
+      "MobileApps.libs.flows.windows.hpx_rebranding.hpx_support",
+      "MobileApps.libs.flows.windows.hpx.utility.api_utility",
+      "MobileApps.libs.flows.windows.hpx_rebranding.utility.registry_utilities",
+      "MobileApps.libs.flows.windows.hpx_rebranding.pen_control",
+      "xml.etree.ElementTree",
+      "os",
+      "MobileApps.libs.flows.windows.hpx_rebranding.presence_sensing",
+      "MobileApps.libs.flows.windows.hpx_rebranding.for_you_page",
+      "MobileApps.libs.flows.windows.hpx_rebranding.device_card",
+      "MobileApps.libs.flows.windows.hpx_rebranding.wellbeing",
+      "SAF.misc",
+      "MobileApps.libs.flows.windows.hpx_rebranding.video_control",
+      "MobileApps.libs.flows.web.hpx.devices_details_pc_mfe",
+      "MobileApps.libs.flows.web.hpx.devices_support_pc_mfe",
+      "MobileApps.libs.flows.web.hp_id.hp_id",
+      "MobileApps.libs.flows.web.hpx.print",
+      "MobileApps.libs.flows.windows.hpx_rebranding.smart_experience",
+      "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_common",
+      "MobileApps.libs.flows.windows.hpx_rebranding.accessibility",
+      "SPL.driver.driver_factory",
+      "json",
+      "MobileApps.libs.flows.web.hpx.mobilefax",
+      "MobileApps.libs.flows.windows.hpx_rebranding.dock_station",
+      "MobileApps.libs.flows.windows.hpx_rebranding.virtual_assistant",
+      "MobileApps.libs.flows.web.hpx.scan",
+      "logging",
+      "MobileApps.libs.flows.windows.hpx_rebranding.utility.property_utilities",
+      "MobileApps.libs.flows.web.hpx.printables",
+      "MobileApps.libs.flows.windows.hpx_rebranding.bell_icon",
+      "MobileApps.libs.flows.web.hpx.printer_settings",
+      "MobileApps.libs.flows.windows.hpx_rebranding.hpx_settings",
+      "urllib.parse",
+      "MobileApps.libs.flows.windows.hpx_rebranding.energy_consumption",
+      "MobileApps.libs.flows.windows.hpx_rebranding.profile",
+      "selenium.webdriver.common.keys",
+      "MobileApps.libs.flows.windows.hpx_rebranding.add_device",
+      "MobileApps.libs.flows.web.hpx.add_printer",
+      "MobileApps.libs.ma_misc.live_printer",
+      "MobileApps.libs.ma_misc",
+      "MobileApps.libs.one_simulator.printer_simulation",
+      "MobileApps.libs.flows.web.hpx.hp_cloud_scan",
+      "MobileApps.libs.flows.windows.hpx_rebranding.feedback",
+      "MobileApps.libs.flows.web.hpx.printer_status",
+      "MobileApps.libs.flows.windows.hpx_rebranding.gestures",
+      "MobileApps.libs.flows.web.hpx.hpx_fuf",
+      "pytest",
+      "MobileApps.libs.flows.windows.hpx_rebranding.app_consents",
+      "MobileApps.libs.flows.web.hpx.devices_mfe",
+      "MobileApps.libs.flows.windows.hpx_rebranding.battery",
+      "MobileApps.libs.flows.windows.hpx_rebranding.audio",
+      "MobileApps.libs.flows.windows.hpx_rebranding.touchpad",
+      "MobileApps.libs.flows.windows.hpx_rebranding.smart_displays",
+      "MobileApps.resources.const.windows.const",
+      "MobileApps.libs.flows.windows.hpx_rebranding.display_control",
+      "MobileApps.libs.flows.windows.hpx_rebranding.css"
+    ],
+    "locator_keys": [
+      "search_bar_on_windows",
+      "hdr_option_in_settings",
+      "search_box_in_windows_setting",
+      "battery_option_in_setting_under_hdr_option_in_setting",
+      "system_locale"
+    ],
+    "exposed_functions": [
+      {
+        "signature": "navigate_back_with_verification",
+        "purpose": "Navigates back using the back button with retry logic, verifying successful navigation by calling a specified verification method from a given flow.",
+        "input_parameters": [
+          "flow_name",
+          "verify_method",
+          "max_retries"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_app_instance_id",
+        "purpose": "Extracts and returns the application-instance-id UUID from the AsyncStorage.db file on the Windows device via SSH.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_installed_app_path",
+        "purpose": "Retrieves the installation path of a UWP app by querying installed packages via SSH using a partial app name match.",
+        "input_parameters": [
+          "app_name"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "close_hp_app_using_alt_f4",
+        "purpose": "Closes the HP application by sending the Alt+F4 keyboard shortcut.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "close_and_restart_myhp_app",
+        "purpose": "Closes the myHP application, handles any feature unavailable popups, relaunches the app, and maximizes the window.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "minimize_all_apps",
+        "purpose": "Minimizes all open applications on Windows by sending the Windows+D keyboard shortcut.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "set_proxy_on_remote_windows",
+        "purpose": "Configures HTTP/HTTPS proxy settings in the Windows registry on a remote machine via SSH, including optional bypass list.",
+        "input_parameters": [
+          "http_proxy",
+          "https_proxy",
+          "bypass_list"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "select_device",
+        "purpose": "Restarts the app, maximizes the window, and handles initial setup dialogs including cookies acceptance, guest login, and what's new dialogs.",
+        "input_parameters": [
+          "index"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "relaunch_and_reload_myhp",
+        "purpose": "Closes the myHP app if open and relaunches it with retry logic, verifying successful launch by checking for homepage elements.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_whther_app_is_on_printer_card_page",
+        "purpose": "Verifies the application is displaying the printer card page, navigating back or relaunching as needed to reach that state.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "consent_transfer_out_consent_required",
+        "purpose": "Updates the Windows registry to set the TransferOutConsentRequired policy value to True or False based on the specified condition.",
+        "input_parameters": [
+          "ssh",
+          "condition"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "add_and_switch_to_new_window",
+        "purpose": "Waits for a new browser window to open, adds it to the driver context, and switches focus to the new window.",
+        "input_parameters": [
+          "web_driver",
+          "window_name"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "check_and_navigate_to_customize_buttons_page",
+        "purpose": "Navigates to the pen customize buttons page by checking current page state and performing appropriate navigation actions.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "reset_hp_application",
+        "purpose": "Performs a complete reset of the HP application through Windows settings UI, including closing the app, navigating to settings, and relaunching.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "reset_myHP_app_through_command",
+        "purpose": "Resets the myHP application using PowerShell command and optionally relaunches the app.",
+        "input_parameters": [
+          "launch_app"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "navigate_to_pen_control_lone_page_and_click_restore_default_btn",
+        "purpose": "Navigates to the pen control page and clicks the restore default button to reset pen settings.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "swipe_to_top",
+        "purpose": "Scrolls the application window to the top of the page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "check_and_navigate_to_my_dock_page",
+        "purpose": "Verifies dock station visibility and navigates to the dock station page, relaunching the app if necessary.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_uncheck_allow_hdr_games_video_chkbox_in_setting",
+        "purpose": "Navigates to Windows HDR settings and unchecks the HDR games and video checkbox.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "uninstall_disney_plus_app",
+        "purpose": "Uninstalls the Disney Plus application using PowerShell command.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_windows_system_module_name",
+        "purpose": "Retrieves the Windows system model name using WMI query.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "add_capture_logs_file",
+        "purpose": "Copies log capture configuration files to the HP application's local state directory.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "copy_rebrand_logs_with_timestamp",
+        "purpose": "Copies HP application logs to desktop with timestamp for debugging purposes.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "reset_app",
+        "purpose": "Resets the HP application by clearing data and cache, then relaunches it.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "consent_managed_registry_key",
+        "purpose": "Updates the Windows registry to set the HP Consent Managed policy key to the specified condition.",
+        "input_parameters": [
+          "ssh",
+          "condition"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "app_managed_registry_key",
+        "purpose": "Updates the Windows registry to set the HP App Managed policy key to the specified condition.",
+        "input_parameters": [
+          "ssh",
+          "condition"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "consent_allow_marketing",
+        "purpose": "Updates the Windows registry to set the HP marketing consent policy to Accepted, Unknown, or Rejected.",
+        "input_parameters": [
+          "ssh",
+          "condition"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "consent_allow_product_enhancement",
+        "purpose": "Updates the Windows registry to set the HP product enhancement consent policy to Accepted, Unknown, or Rejected.",
+        "input_parameters": [
+          "ssh",
+          "condition"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "consent_allow_support",
+        "purpose": "Updates the Windows registry to set the HP support consent policy to Accepted, Unknown, or Rejected.",
+        "input_parameters": [
+          "ssh",
+          "condition"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_edge_process",
+        "purpose": "Terminates the Microsoft Edge browser process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "launch_app_without_fuf",
+        "purpose": "Launches the HP application without going through the first-use flow.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_screenshot_comparison_result",
+        "purpose": "Executes a method and extracts the screenshot comparison result from tuple return values.",
+        "input_parameters": [
+          "method_to_call"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_DTS_sound_unbind_apps_from_ms_store",
+        "purpose": "Installs the DTS Sound Unbound application from the Microsoft Store.",
+        "input_parameters": [
+          "app",
+          "locator"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_dts_sound_unbound_app_process",
+        "purpose": "Terminates the DTS Sound Unbound application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "uninstall_dts_sound_unbound_app",
+        "purpose": "Uninstalls the DTS Sound Unbound application using PowerShell.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "validate_supplies_status_headers_home_page",
+        "purpose": "Validates printer supply status alert headers and icons on the home page based on alert type (error, warning, or info).",
+        "input_parameters": [
+          "title",
+          "icon",
+          "type"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "read_supplies_status_json_files",
+        "purpose": "Reads and parses printer supply status alert data from JSON configuration files based on IO reference code and alert type.",
+        "input_parameters": [
+          "ioref",
+          "type"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_detailed_body_about_printer_status_alert",
+        "purpose": "Verifies the detailed body text of a printer status alert matches expected content.",
+        "input_parameters": [
+          "body"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_supplies_status_buttons_after_clicked_alert",
+        "purpose": "Verifies that all expected printer management buttons are visible after clicking a supply status alert.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "clear_rebrand_logs_on_desktop",
+        "purpose": "Clears all rebrand log files from the desktop directory.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_system_settings_notifications",
+        "purpose": "Opens the Windows system notifications settings page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_high_contrast_themes_settings",
+        "purpose": "Opens the Windows high contrast themes accessibility settings page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_system_control_mode",
+        "purpose": "Retrieves the current Windows power plan mode (Best Performance, Best Power Efficiency, Balanced, or Unknown).",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "start_hp_hsaserivce",
+        "purpose": "Starts the HP System Info HSA Service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "stop_hp_hsaserivce",
+        "purpose": "Stops the HP System Info HSA Service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "restart_app_navigate_to_hp_go",
+        "purpose": "Restarts the HP application and navigates to the HP Go feature page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_machine_cpu_usage",
+        "purpose": "Retrieves the current CPU usage percentage of the Windows machine.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_memory_usage_percentage",
+        "purpose": "Retrieves the current memory usage percentage of the Windows machine.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_clipboard_content",
+        "purpose": "Retrieves the current content from the Windows clipboard.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "change_remote_tv_language",
+        "purpose": "Changes the Windows system language to the specified language code.",
+        "input_parameters": [
+          "language"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "reopen_hp_app_for_blank_screen",
+        "purpose": "Handles blank screen scenarios by relaunching the HP application and optionally terminating background HP processes.",
+        "input_parameters": [
+          "terminate_hp_background_apps"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "add_registry_key_for_battery_manager",
+        "purpose": "Adds the Windows registry key to enable the battery manager feature in the HP application.",
+        "input_parameters": [
+          "ssh"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "remove_registry_key_for_battery_manager",
+        "purpose": "Removes the Windows registry key that enables the battery manager feature.",
+        "input_parameters": [
+          "ssh"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_and_navigate_battery_page",
+        "purpose": "Verifies the battery manager page is open and navigates to it if not already there.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "close_windows_explorer_app",
+        "purpose": "Terminates the Windows Explorer process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_windows_terminal",
+        "purpose": "Opens the Windows Terminal application.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "close_windows_terminal",
+        "purpose": "Terminates the Windows Terminal application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "set_windows_contrast_theme_from_settings",
+        "purpose": "Sets the Windows high contrast theme to the specified theme name through system settings.",
+        "input_parameters": [
+          "theme_name"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "navigate_to_pen_card_and_get_pen_name",
+        "purpose": "Navigates to the pen control page and retrieves the connected pen device name.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "check_and_navigate_to_display_control_page",
+        "purpose": "Verifies display control page visibility and navigates to it, relaunching the app if necessary.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "close_msstore_app",
+        "purpose": "Terminates the Microsoft Store application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "terminate_conflicting_hp_processes",
+        "purpose": "Terminates all conflicting HP background processes to prepare a clean test automation environment.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_hp_id_sign_in",
+        "purpose": "Verifies that the HP ID sign-in page is displayed and accessible based on the configured stack environment.",
+        "input_parameters": [
+          "web_driver"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "hpx_sign_in_advanced_account",
+        "purpose": "Authenticates with an advanced account specifically configured for testing advanced scan features in stage or production environments.",
+        "input_parameters": [
+          "web_driver"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_dialog_close_btn",
+        "purpose": "Closes the HP ID sign-in dialog or popup window based on the stack environment.",
+        "input_parameters": [
+          "web_driver"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_sign_in",
+        "purpose": "Navigates to the account section and verifies that the user can access the HP ID sign-in flow.",
+        "input_parameters": [
+          "web_driver"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_profile_button",
+        "purpose": "Clicks the user profile button in the devices interface.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "stop_hpsysinfo_fusion_services",
+        "purpose": "Stops the HP System Information Capture Windows service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "start_hpsysinfo_fusion_services",
+        "purpose": "Starts the HP System Information Capture Windows service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_hpsysinfo_fusion_services",
+        "purpose": "Retrieves the current status of the HP System Information Capture Windows service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "stop_hpanalytics_fusion_services",
+        "purpose": "Stops the HP Touchpoint Analytics Windows service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "start_hpanalytics_fusion_services",
+        "purpose": "Starts the HP Touchpoint Analytics Windows service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "sign_out",
+        "purpose": "Signs the user out of their HP account either through the settings panel or navigation menu based on the specified method.",
+        "input_parameters": [
+          "web_driver",
+          "hpx_logout"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "sign_in",
+        "purpose": "Authenticates a user with HP ID credentials through the web-based login flow, handling window management and post-login alerts.",
+        "input_parameters": [
+          "username",
+          "password",
+          "web_driver",
+          "user_icon_click",
+          "sign_in_from_profile",
+          "send_before_click",
+          "min_win"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "hpx_sign_in_flow",
+        "purpose": "Executes the complete HP ID sign-in workflow using environment-specific credentials and verifies successful login with device visibility.",
+        "input_parameters": [
+          "web_driver"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "chrome_data_cleanup",
+        "purpose": "Removes all Chrome browser user data including cookies, cache, local storage, and login data to ensure a clean test state.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "create_account_from_webpage",
+        "purpose": "Navigates to the HP ID account creation page and completes the new account registration process.",
+        "input_parameters": [
+          "web_driver"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "update_properties",
+        "purpose": "Updates the application's locale properties file to set the specified language for localization testing.",
+        "input_parameters": [
+          "language"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "myhp_login_startup_for_localization_scripts",
+        "purpose": "Prepares the myHP application for localization testing by setting the language, relaunching the app, and navigating through initial setup screens.",
+        "input_parameters": [
+          "language"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_winsystemlocale",
+        "purpose": "Retrieves the current Windows system locale, with special handling for certain regions like Saudi Arabia and Thailand.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "update_hpx_support_locale",
+        "purpose": "Updates the HP Support locale settings in the application properties file for the specified language and region.",
+        "input_parameters": [
+          "language"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "select_country",
+        "purpose": "Selects a country from the country list dropdown based on the provided country code and locale.",
+        "input_parameters": [
+          "country_code",
+          "current_locale"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_countrylist",
+        "purpose": "Opens the country list dropdown and retrieves the localized country name for the specified country code.",
+        "input_parameters": [
+          "country_code",
+          "current_locale"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "close_myHP",
+        "purpose": "Closes the myHP application if it is currently running.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_hpx_process",
+        "purpose": "Forcefully terminates the HP.HPX application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_chrome_process",
+        "purpose": "Forcefully terminates all Chrome browser processes.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "restart_myHP",
+        "purpose": "Closes and relaunches the myHP application with optional skip parameter for initial setup screens.",
+        "input_parameters": [
+          "skip"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "update_win_language",
+        "purpose": "Changes the Windows user interface language to the specified language code.",
+        "input_parameters": [
+          "language"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "enable_dark_mode",
+        "purpose": "Enables Windows dark mode theme for both applications and system UI through registry modifications.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "disable_dark_mode",
+        "purpose": "Disables Windows dark mode and reverts to light theme for both applications and system UI.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "enable_location_access",
+        "purpose": "Grants location access permissions for the myHP application at both system and user levels through registry settings.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_pc_support",
+        "purpose": "Navigates to the PC device section and clicks the support button.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "navigate_to_support",
+        "purpose": "Navigates to the support section and handles any HP One sign-in popups that may appear.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "navigate_to_settings",
+        "purpose": "Navigates to the application settings section.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_support_control_card",
+        "purpose": "Clicks the support control card on the home page and handles any sign-in popups.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_support_btn",
+        "purpose": "Clicks the support button and handles any HP One sign-in popups that may appear.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "skip_hpone_signin_popup",
+        "purpose": "Detects and dismisses the HP One sign-in popup if it appears on Grogu devices in production environments.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "press_ctrlkey",
+        "purpose": "Sends keyboard control key combinations to the application.",
+        "input_parameters": [
+          "keys_to_send"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_system_settings_sound",
+        "purpose": "Opens the Windows system sound settings panel.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_system_setting",
+        "purpose": "Opens the main Windows system settings panel.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_system_settings_notifications",
+        "purpose": "Opens the Windows system notifications settings panel.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_camera_process",
+        "purpose": "Forcefully terminates the HP Presence Video camera application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "skip_video_control_first_use_flow",
+        "purpose": "Completes the video control feature's first-time user tutorial by clicking through the onboarding screens.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_hardwareinfo",
+        "purpose": "Retrieves hardware-specific configuration values from the hardware data JSON file based on the platform name and parameter key.",
+        "input_parameters": [
+          "param_key"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "web_password_credential_delete",
+        "purpose": "Deletes all web credentials stored in the Windows Credential Manager vault.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "ensure_web_password_credentials_cleared",
+        "purpose": "Ensures all HP-related web credentials are completely removed from Windows Credential Manager with retry logic and verification.",
+        "input_parameters": [
+          "max_attempts"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "close_windows_settings_panel",
+        "purpose": "Closes the Windows system settings application.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "processing_localization_language",
+        "purpose": "Loads and returns the localized translation strings for a specific module and language from the translation file.",
+        "input_parameters": [
+          "translation_file",
+          "language",
+          "module"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "uninstall_hp_privacy_settings_app",
+        "purpose": "Uninstalls the HP Privacy Settings application from the system.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_hp_privacy_settings_app",
+        "purpose": "Installs the HP Privacy Settings application using a scheduled task and verifies successful installation.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "system_control_cmd",
+        "purpose": "Executes a WMI command for system control and extracts the output data from the command result.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "swipe_window",
+        "purpose": "Performs a swipe gesture on the pen control scroll window in the specified direction and distance.",
+        "input_parameters": [
+          "direction",
+          "distance",
+          "script_swipe"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_printer_info_from_xml_file",
+        "purpose": "Extracts printer device information (serial number, model name, hostname, etc.) from the RecentDeviceList.xml configuration file.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_printer_name",
+        "purpose": "Retrieves the printer name from printer object's bonjour name by extracting numeric identifier.",
+        "input_parameters": [
+          "printer_obj"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_product_number",
+        "purpose": "Returns the product number from the printer object's information.",
+        "input_parameters": [
+          "printer_obj"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "launch_module_using_deeplink",
+        "purpose": "Opens a specific application module or feature using Windows deep link URI.",
+        "input_parameters": [
+          "deep_link"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_msstore_process",
+        "purpose": "Forcefully terminates the Microsoft Store application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_hdr_settings",
+        "purpose": "Launches Windows HDR display settings panel.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "start_hp_networkcap_exe",
+        "purpose": "Starts the HP Network HSA Service for network capability monitoring.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "stop_hp_networkcap_exe",
+        "purpose": "Stops the HP Network HSA Service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "start_hp_apphelpercap_exe",
+        "purpose": "Starts the HP App Helper HSA Service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "stop_hp_apphelpercap_exe",
+        "purpose": "Stops the HP App Helper HSA Service.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_machine_type",
+        "purpose": "Retrieves the Windows OS architecture type (32-bit or 64-bit).",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_windows_serial_number",
+        "purpose": "Fetches the system BIOS serial number from Windows WMI.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "change_system_region_to_india",
+        "purpose": "Changes Windows system region/locale to India (GeoID 89).",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "change_system_region_to_china",
+        "purpose": "Changes Windows system region/locale to China (GeoID 45).",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "change_system_region_to_united_states",
+        "purpose": "Changes Windows system region/locale to United States (GeoID 244).",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_video_apps_from_ms_store_for_disney",
+        "purpose": "Installs video streaming apps from Microsoft Store with authentication, specifically handling Disney+ installation flow.",
+        "input_parameters": [
+          "app",
+          "locator",
+          "user_name",
+          "password"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_video_apps_from_ms_store",
+        "purpose": "Installs video streaming applications from Microsoft Store without authentication and cleans up launched processes.",
+        "input_parameters": [
+          "app",
+          "locator"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_system_brightness_value",
+        "purpose": "Retrieves the current display brightness level from Windows WMI monitor settings.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "set_system_brightness_value",
+        "purpose": "Adjusts the system display brightness by incrementing current value or resetting from maximum.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_system_settings_display",
+        "purpose": "Opens Windows display settings panel and maximizes the window if needed.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_tencent_video_process",
+        "purpose": "Forcefully terminates the Tencent Video (QQLive) application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_iqiyi_video_process",
+        "purpose": "Forcefully terminates the iQIYI video streaming application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_disney_video_process",
+        "purpose": "Forcefully terminates the Disney+ PWA helper process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "disable_windows_camera",
+        "purpose": "Disables the Windows camera device using PowerShell script.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "enable_windows_camera",
+        "purpose": "Enables the Windows camera device using PowerShell script.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_camera_hdr_settings",
+        "purpose": "Opens Windows camera settings panel and maximizes the window.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "capture_feature_byte",
+        "purpose": "Reads and returns a specific configuration line from the RStone.ini stack configuration file.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_poly_camera_lens",
+        "purpose": "Forcefully terminates the Poly Camera Pro application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "windows_setting_page_to_unistall_apps",
+        "purpose": "Navigates to Windows Apps & Features settings and uninstalls a specified application.",
+        "input_parameters": [
+          "app"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_camera_apps_from_ms_store",
+        "purpose": "Authenticates to Microsoft Store for camera app installation with sign-in flow.",
+        "input_parameters": [
+          "user_name",
+          "password"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "uninstall_msboard_app",
+        "purpose": "Removes Microsoft Whiteboard application using PowerShell AppX package removal.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "enabled_in_logging_data_file",
+        "purpose": "Modifies LoggingData.xml to enable logging by changing Enabled flag from false to true.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "check_hpx_default_stack",
+        "purpose": "Reads and returns the current HPX server stack environment (Pie, Stage, or Prod) from LoggingData.xml.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "add_a_printer",
+        "purpose": "Adds a network printer to the system by navigating through device card UI, searching by IP address, and completing driver installation.",
+        "input_parameters": [
+          "printer_obj"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "search_network_printer",
+        "purpose": "Searches for a printer in the device picker screen using IP address, handling both single and multiple IP scenarios.",
+        "input_parameters": [
+          "printer_obj"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "initialize_printer",
+        "purpose": "Initializes and returns a printer object from system configuration, supporting both physical printers and OneSimulator virtual printers.",
+        "input_parameters": [
+          "printer_config"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "trigger_printer_offline_status",
+        "purpose": "Forces printer offline state by disconnecting WiFi and powering off physical printer if applicable.",
+        "input_parameters": [
+          "printer_obj"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "restore_printer_online_status",
+        "purpose": "Restores printer online state by reconnecting to WiFi and powering on physical printer if applicable.",
+        "input_parameters": [
+          "printer_obj"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "ms_store_app_update",
+        "purpose": "Performs Microsoft Store app update by authenticating, navigating to updates section, and triggering update download.",
+        "input_parameters": [
+          "user_name",
+          "password"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "ota_app_after_update",
+        "purpose": "Validates over-the-air app update by comparing pre and post-update version numbers and verifying successful update.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "exit_hp_app_and_msstore",
+        "purpose": "Cleanly exits HP application and Microsoft Store by signing out and closing processes.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "kill_calculator_app_process",
+        "purpose": "Forcefully terminates the Windows Calculator application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "maximize_and_verify_device_card",
+        "purpose": "Maximizes the HP application window and navigates from L0 to L1 page by clicking device card if present.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "open_winodws_power_sleep_page",
+        "purpose": "Opens Windows power and sleep settings panel.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_windows_system_name",
+        "purpose": "Retrieves the Windows computer hostname.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "maximize_and_click_card_lzero_page",
+        "purpose": "Maximizes HP app window and clicks specified card type (device, pen, or dock) on the L0 landing page.",
+        "input_parameters": [
+          "card_type"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "check_and_navigate_to_my_pen_page",
+        "purpose": "Verifies pen card visibility and navigates to My Pen page, relaunching app if necessary.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "flow",
+        "purpose": "Purpose not extracted by LLM.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "launch_app",
+        "purpose": "Launches the HPX application and handles initial first-use-flow (FUF) dialogs including cookie acceptance, camera permissions, privacy pages, and guest login prompts.",
+        "input_parameters": [
+          "skip"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "close_app",
+        "purpose": "Terminates the running HPX application process.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "restart_app",
+        "purpose": "Restarts the HPX application by terminating and relaunching it.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "restart_hpx",
+        "purpose": "Performs a full restart of the HPX application with retry logic and verification that the device card appears on the home page.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "reset_hpx",
+        "purpose": "Completely resets the HPX application environment by closing the app, resetting through command, copying configuration files, and adding a printer.",
+        "input_parameters": [
+          "printer_obj"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "launch_hpx_to_home_page",
+        "purpose": "Launches the HPX application and navigates through all first-use-flow screens to reach the main home page with device cards visible.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "check_files_exist",
+        "purpose": "Verifies if a destination file exists on the remote system and copies the source file if it doesn't exist.",
+        "input_parameters": [
+          "destination_file",
+          "source_file"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "refresh_device_mfe",
+        "purpose": "Triggers a refresh of the device micro-frontend (MFE) component.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "maximize_window",
+        "purpose": "Maximizes the application window to full screen.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "is_myHP_installed",
+        "purpose": "Checks if the myHP application package is installed on the Windows system.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "uninstall_app",
+        "purpose": "Forcefully stops the HP.myHP process and removes the myHP application package from the system.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_app",
+        "purpose": "Installs the HPX/myHP application from a specified installation path using scheduled task automation.",
+        "input_parameters": [
+          "install_path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "re_install_app",
+        "purpose": "Uninstalls and then reinstalls the HPX/myHP application from the specified path.",
+        "input_parameters": [
+          "install_path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "intial_environment",
+        "purpose": "Initializes the test environment by removing registration files, settings, logs, registry entries, and restarting HP services.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "is_app_open",
+        "purpose": "Checks if the HP.HPX process is currently running in the task list.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_app_version",
+        "purpose": "Extracts and returns the application version number from the installation path string.",
+        "input_parameters": [
+          "install_path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "turn_on_hp_privacy_page",
+        "purpose": "Configures registry settings to enable the HP privacy consent page with specific consent values.",
+        "input_parameters": [
+          "ssh"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_login_page",
+        "purpose": "Closes the login page dialog if it is currently displayed.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_audio_standalone_app",
+        "purpose": "Installs the HP Audio Center standalone application bundle using scheduled task automation.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_audio_standalone_app_for_commercial_machine",
+        "purpose": "Installs the Bang & Olufsen Audio Control standalone application for commercial HP machines.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_audio_standalone_app_with_path",
+        "purpose": "Installs the HP Audio Control application by executing the Install.ps1 script from a specific build path.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "uninstall_audio_standalone_app",
+        "purpose": "Removes the HP Audio Center standalone application package from the system.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "uninstall_audio_standalone_app_for_commercial_machine",
+        "purpose": "Removes the Bang & Olufsen Audio Control application package from commercial machines.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "set_privacy_consents",
+        "purpose": "Configures multiple privacy consent registry values based on a provided list of registry key-value pairs.",
+        "input_parameters": [
+          "registry_path",
+          "registry_list"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "re_install_app_and_skip_fuf",
+        "purpose": "Reinstalls the application and automatically skips through the first-use-flow including privacy settings and registration.",
+        "input_parameters": [
+          "path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_audio_standalone_and_skip_fuf",
+        "purpose": "Installs the audio standalone app, reinstalls the main app, and skips through first-use-flow dialogs.",
+        "input_parameters": [
+          "path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "re_install_app_and_skip_login_page",
+        "purpose": "Reinstalls the application, launches it, and closes the login page if it appears.",
+        "input_parameters": [
+          "path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "re_install_app_launch_myHP",
+        "purpose": "Reinstalls the application and then launches the myHP app.",
+        "input_parameters": [
+          "path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "launch_myHP_command",
+        "purpose": "Launches the myHP application using the Windows protocol command or falls back to start menu if command fails.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "launch_myHP",
+        "purpose": "Launches the myHP application with full first-use-flow handling including privacy dialogs, guest login, and optional camera permissions.",
+        "input_parameters": [
+          "skip",
+          "terminate_hp_background_apps"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "launch_myHP_and_skip_fuf",
+        "purpose": "Launches the myHP application and automatically accepts all first-use-flow dialogs to reach the home page quickly.",
+        "input_parameters": [
+          "terminate_hp_background_apps"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "launch_myHP_hotkey",
+        "purpose": "Launches the myHP application directly to the support device page using a custom protocol hotkey.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "launch_hotkey",
+        "purpose": "Launches a specific HPX feature or page using a custom protocol URL.",
+        "input_parameters": [
+          "custom_protocol"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "initial_hpx_printer_env",
+        "purpose": "Initializes the HPX printer environment by copying configuration files including SharedSettings.json and environment-specific properties files.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "initial_hpx_support_env",
+        "purpose": "Initializes the HPX support environment by removing JSON files and setting geographic registry values to US.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "install_bundle",
+        "purpose": "Installs an MSIX bundle package from the specified application location.",
+        "input_parameters": [
+          "app_location"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "remove_file",
+        "purpose": "Removes a file or directory at the specified path using PowerShell force removal.",
+        "input_parameters": [
+          "path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "verify_hpx_support_folder",
+        "purpose": "Verifies that all required HPX support resource files and executables exist in the support resources directory.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_file_version",
+        "purpose": "Retrieves and returns the file version information for a specified file path.",
+        "input_parameters": [
+          "file_path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "load_simulate_file",
+        "purpose": "Loads and returns the JSON content from a simulation file at the specified path.",
+        "input_parameters": [
+          "file_path"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "initial_supportcore",
+        "purpose": "Initializes the support core feature by creating a properties.json file with the supporthome-core feature flag enabled.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "initial_environment",
+        "purpose": "Placeholder method for initializing the test environment (currently empty implementation).",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "set_featureflags",
+        "purpose": "Sets feature flags in the properties configuration file using the provided flag dictionary.",
+        "input_parameters": [
+          "flag_dict"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "initial_feature",
+        "purpose": "Initializes feature flags and portal environment URLs by loading simulation data and writing to properties.json configuration.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "update_hpx_support_deviceinfo",
+        "purpose": "Updates specific device information or configuration sections in the HPX properties.json file.",
+        "input_parameters": [
+          "section",
+          "key",
+          "value"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "click_accept_all_btn_privacy",
+        "purpose": "Restarts the application and clicks the accept all button on the privacy settings page if displayed.",
+        "input_parameters": [],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "initial_simulate_warranty_file",
+        "purpose": "Creates a simulated warranty data file in the HPX LocalState directory based on test rail ID and environment configuration.",
+        "input_parameters": [
+          "file_path",
+          "testrail_id",
+          "env",
+          "simulate_name",
+          "stack"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      },
+      {
+        "signature": "get_ccls_services",
+        "purpose": "Retrieves the list of customer care service titles by calling the CCLS API with product identifiers and language/country parameters.",
+        "input_parameters": [
+          "build_type",
+          "product_big_series_oid",
+          "product_name_oid",
+          "product_series_oid",
+          "lang_country"
+        ],
+        "output_parameters": [
+          "Any"
+        ]
+      }
+    ]
+  }
+]
