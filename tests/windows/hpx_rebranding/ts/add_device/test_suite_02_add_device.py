@@ -26,7 +26,7 @@ class Test_Suite_02_Add_Device(object):
         cls.profile.minimize_chrome()
 
     @pytest.mark.regression
-    def test_01_verify_device_add_via_product_number_C55687272(self):
+    def test_01_verify_device_add_via_product_number_C53(self):
         self.devicesMFE.click_home_loggedin()
         self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)
         logged_in = self.profile.verify_top_profile_icon_signed_in()
@@ -47,7 +47,7 @@ class Test_Suite_02_Add_Device(object):
         assert self.add_device.verify_newly_added_devicename(), "Newly added device name is not displayed"
  
     @pytest.mark.regression
-    def test_02_verify_device_addition_via_serial_number_C55687266(self):
+    def test_02_verify_device_addition_via_serial_number_C54(self):
         self.devicesMFE.click_home_loggedin()
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         logged_in = self.profile.verify_top_profile_icon_signed_in()
