@@ -30,7 +30,7 @@ class Test_Suite_03_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_01_verify_the_color_of_the_urgent_messages_C60336080(self):
+    def test_01_verify_the_color_of_the_urgent_messages_C62(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon invisible"
         self.device_card.click_bell_icon()
@@ -43,7 +43,7 @@ class Test_Suite_03_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_02_verify_the_color_of_the_warning_messages_C60336081(self):
+    def test_02_verify_the_color_of_the_warning_messages_C63(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon invisible"
         self.device_card.click_bell_icon()
@@ -55,7 +55,7 @@ class Test_Suite_03_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_03_verify_the_color_of_the_informative_messages_C60336082(self):
+    def test_03_verify_the_color_of_the_informative_messages_C64(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon invisible"
         self.device_card.click_bell_icon()
@@ -67,7 +67,7 @@ class Test_Suite_03_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_04_notifications_panel_opens_on_bell_click_C67874087(self):
+    def test_04_notifications_panel_opens_on_bell_click_C65(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         assert self.device_card.verify_pc_devices_back_button(), "device back button not found"
         assert self.profile.verify_devicepage_avatar_btn(), "avatar button is not found"
@@ -80,7 +80,7 @@ class Test_Suite_03_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_05_no_notifications_when_logged_out_C60336139(self):
+    def test_05_no_notifications_when_logged_out_C66(self):
         assert self.css.verify_sign_in_button_show_up(), "sign-in button invisible"
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon invisible"
         self.device_card.click_bell_icon()
@@ -91,7 +91,7 @@ class Test_Suite_03_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_06_only_account_messages_displayed_C58684361(self):
+    def test_06_only_account_messages_displayed_C67(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), "PC name on homepage not loaded/visible"
         assert self.device_card.verify_bell_icon_present(), "bell icon invisible"
@@ -103,7 +103,7 @@ class Test_Suite_03_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_07_sort_order_of_messages_C58684367(self):
+    def test_07_sort_order_of_messages_C68(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         self.device_card.click_bell_icon()
         self.bell_icon.click_notification_account()
