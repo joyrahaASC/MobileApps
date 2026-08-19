@@ -32,7 +32,7 @@ class Test_Suite_04_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_01_verify_bell_notifications_displayed_when_logged_in_C60339087(self):
+    def test_01_verify_bell_notifications_displayed_when_logged_in_C69(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon is not present"
         self.device_card.click_bell_icon()
@@ -56,7 +56,7 @@ class Test_Suite_04_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_02_verify_transition_from_empty_bell_to_notification_bell_on_login_C60339089(self):
+    def test_02_verify_transition_from_empty_bell_to_notification_bell_on_login_C70(self):
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon not visible"
         self.device_card.click_bell_icon()
         assert self.bell_icon.verify_notifications_panel_sign_in_btn(), "sign-in button in notification panel is not present"
@@ -79,7 +79,7 @@ class Test_Suite_04_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_03_verify_login_using_sign_in_option_in_bell_flyout_C60372196(self):
+    def test_03_verify_login_using_sign_in_option_in_bell_flyout_C71(self):
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon not visible"
         self.device_card.click_bell_icon()
         assert self.bell_icon.verify_notifications_panel_sign_in_btn(), "sign-in button in notification panel is not present"
@@ -91,7 +91,7 @@ class Test_Suite_04_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_04_verify_delete_option_for_urgent_unread_msg_is_disabled_C60336470(self):
+    def test_04_verify_delete_option_for_urgent_unread_msg_is_disabled_C72(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon not visible"
         self.device_card.click_bell_icon()
@@ -104,7 +104,7 @@ class Test_Suite_04_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_05_verify_delete_option_for_warning_unread_msg_is_enabled_C60336471(self):
+    def test_05_verify_delete_option_for_warning_unread_msg_is_enabled_C73(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         assert self.devicesMFE.verify_bell_icon_show_up(), "bell icon not visible"
         self.device_card.click_bell_icon()
@@ -121,7 +121,7 @@ class Test_Suite_04_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_06_verify_delete_option_for_informative_unread_msg_is_enabled_C60336472(self):
+    def test_06_verify_delete_option_for_informative_unread_msg_is_enabled_C74(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         self.device_card.click_bell_icon()
         self.bell_icon.click_notification_account()
@@ -134,7 +134,7 @@ class Test_Suite_04_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_07_verify_user_can_navigate_back_to_navigation_side_panel_C60370254(self):
+    def test_07_verify_user_can_navigate_back_to_navigation_side_panel_C75(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         self.device_card.click_bell_icon()
         self.bell_icon.click_notification_account()
