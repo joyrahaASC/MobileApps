@@ -30,7 +30,7 @@ class Test_Suite_06_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_01_open_detailed_view_from_message_C58684404(self):
+    def test_01_open_detailed_view_from_message_C80(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         self.device_card.click_bell_icon()
         self.bell_icon.click_notification_account()
@@ -43,7 +43,7 @@ class Test_Suite_06_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_02_mark_message_as_read_by_opening_C58684406(self):
+    def test_02_mark_message_as_read_by_opening_C81(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         self.device_card.click_bell_icon()
         self.bell_icon.click_notification_account()
@@ -63,7 +63,7 @@ class Test_Suite_06_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_03_verify_unread_notifs_description_C60336160(self):
+    def test_03_verify_unread_notifs_description_C82(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         self.device_card.click_bell_icon()
         self.bell_icon.click_notification_account()
@@ -96,7 +96,7 @@ class Test_Suite_06_Bell_Notifications(object):
     @pytest.mark.regression
     @pytest.mark.skip_in_prod
     @pytest.mark.skip_in_stg
-    def test_04_verify_read_notifs_description_C60336161(self):
+    def test_04_verify_read_notifs_description_C83(self):
         self.fc.sign_in(self.user_name, self.password, self.web_driver)
         self.devicesMFE.verify_bell_icon_show_up()
         self.device_card.click_bell_icon()
