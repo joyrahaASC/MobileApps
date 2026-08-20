@@ -3,12 +3,14 @@
   "platforms": {
     "web": {
       "page_class_metadata_path": "",
-      "locators_metadata_path": ""
+      "locators_metadata_path": "",
+      "test_cases_steps_scripts_map_path": ""
     },
     "windows": {
       "page_class_metadata_path": "QAMA Topology/windows/windows_page_class_metadata.json",
       "locators_metadata_path": "QAMA Topology/windows/windows_locators_metadata.json",
-      "test_script_path": "tests/windows/hpx_rebranding/tss1"
+      "test_script_path": "tests/windows/hpx_rebranding/tss1",
+      "test_cases_steps_scripts_map_path": "QAMA Topology/windows/windows_test_cases_steps_scripts_map.json"
     },
     "android": {
       "page_class_metadata_path": "",
