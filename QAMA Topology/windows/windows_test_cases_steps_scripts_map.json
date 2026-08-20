@@ -187,5 +187,660 @@
         "Verify add device page opens successfully": "assert self.add_device.verify_add_device_page(), 'add device page is not found'"
       }
     }
+  },
+  "C58": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Click the bell icon in the global header.": {
+        "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is visible": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Verify PC devices back button is visible": "assert self.device_card.verify_pc_devices_back_button(), 'device back button invisible'",
+        "Click the PC devices back button to navigate back": "self.device_card.click_pc_devices_back_button()",
+        "Verify bell icon is visible again": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Click the bell icon": "self.device_card.click_bell_icon()",
+        "Verify avatar close button is visible indicating panel opened": "assert self.profile.verify_avatar_close_btn(), 'avatar close button invisible'",
+        "Verify notifications title is visible in the panel": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'"
+      }
+    }
+  },
+  "C59": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Ensure the user is not signed in (guest mode).": {
+        "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is visible to confirm guest mode": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'"
+      },
+      "2. Click the bell icon to open the notifications panel.": {
+        "Click the bell icon": "self.device_card.click_bell_icon()",
+        "Verify notifications title is displayed": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Verify sign-in button is displayed in notification panel": "assert self.bell_icon.verify_notifications_panel_sign_in_btn(), 'sign-in button in notification panel invisible'",
+        "Verify avatar close button is visible": "assert self.profile.verify_avatar_close_btn(), 'avatar close button invisible'",
+        "Close the notification panel": "self.profile.click_close_avatar_btn()"
+      }
+    }
+  },
+  "C66": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "correlation_map": {
+      "1. Log out of the application.": {
+        "Verify sign-in button is visible indicating logged out state": "assert self.css.verify_sign_in_button_show_up(), 'sign-in button invisible'"
+      },
+      "2. Open the notifications panel.": {
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify sign-in prompt message is displayed": "assert self.bell_icon.verify_sign_in_to_view_msgs(), 'sign in or create an account to view all of your messages is invisible'",
+        "Verify notifications sidebar UI is displayed": "notifs_title_name = self.bell_icon.verify_notifications_sidebar_ui()",
+        "Assert notifications title is correct": "assert notifs_title_name == 'Notifications', 'notifications title name mismatch'"
+      }
+    }
+  },
+  "C64": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in to an account that has unread informative messages.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)"
+      },
+      "2. Open the notifications panel and view the informative messages list.": {
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Click on the account notifications category": "self.bell_icon.click_notification_account()",
+        "Verify informative unread notifications are present": "assert self.bell_icon.verify_informative_unread_notifs(), 'informative unread msgs not found'",
+        "Click on the informative unread notification": "self.bell_icon.click_informative_unread_notifs()",
+        "Verify the informative message icon color is correct": "assert self.bell_icon.verify_info_msg_icon(), 'informative msg icon invisible'"
+      }
+    }
+  },
+  "C60": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_02_bell_notifications.py",
+    "correlation_map": {
+      "1. Open the notifications side panel by clicking the bell icon.": {
+        "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Delete web password credentials": "request.cls.fc.web_password_credential_delete()",
+        "Load HPID credentials from account details": "hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']",
+        "Store username and password": "cls.user_name, cls.password = (hpid_credentials['username'], hpid_credentials['password'])",
+        "Minimize Chrome browser": "cls.profile.minimize_chrome()",
+        "Verify sign-in button is visible": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify notifications title is visible": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Verify sign-in button in notification panel is visible": "assert self.bell_icon.verify_notifications_panel_sign_in_btn(), 'sign-in button in notification panel invisible'",
+        "Verify avatar close button is visible": "assert self.profile.verify_avatar_close_btn(), 'avatar close button invisible'"
+      }
+    }
+  },
+  "C61": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_02_bell_notifications.py",
+    "correlation_map": {
+      "1. Open the notifications side panel.": {
+        "Verify bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify notifications title is displayed": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Verify sign-in button is present in notifications panel": "assert self.bell_icon.verify_notifications_panel_sign_in_btn(), 'sign-in button in notification panel invisible'"
+      },
+      "2. Click the close/back button on the panel.": {
+        "Verify close button is present and text is 'Close'": "close_btn_text = self.bell_icon.verify_notifications_panel_close_btn()",
+        "Assert close button text matches 'Close'": "assert close_btn_text == 'Close', 'Text on Close button is not matching or its incorrect'",
+        "Click the close button on notifications panel": "self.bell_icon.click_notifications_panel_close_btn()",
+        "Verify sign-in button is visible after closing panel": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is present after closing panel": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'"
+      }
+    }
+  },
+  "C55": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Launch the HPX application.": {
+        "Invoke HPX launch fixture": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_myhp_launch')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Kill existing Chrome processes": "request.cls.fc.kill_chrome_process()"
+      },
+      "2. Observe the global header navigation bar.": {
+        "Verify profile icon is displayed": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is displayed": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is displayed": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'"
+      }
+    }
+  },
+  "C62": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in to an account that has unread urgent messages.": {
+        "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Delete web password credentials": "request.cls.fc.web_password_credential_delete()",
+        "Load username from account details": "cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']['username']",
+        "Load password from account details": "cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']['password']",
+        "Sign in with username and password": "self.fc.sign_in(self.user_name, self.password, self.web_driver)"
+      },
+      "2. Open the notifications panel and view the urgent messages list.": {
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Click notification account to view messages": "self.bell_icon.click_notification_account()",
+        "Verify urgent unread notifications are present": "notification_type = self.bell_icon.verify_urgent_unread_notifs()",
+        "Assert notification type is urgent": "assert notification_type == 'urgent notification', 'urgent unread msgs not found'",
+        "Click urgent unread notifications to view details": "self.bell_icon.click_urgent_unread_notifs()",
+        "Verify urgent message icon is displayed with correct color": "assert self.bell_icon.verify_urgent_msg_icon(), 'urgent msg icon invisible'"
+      }
+    }
+  },
+  "C56": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Navigate to the PC devices page.": {
+        "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is visible": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is visible on initial page": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Verify PC devices back button is present": "assert self.device_card.verify_pc_devices_back_button(), 'device back button invisible'",
+        "Click PC devices back button to navigate": "self.device_card.click_pc_devices_back_button()"
+      },
+      "2. Check the global header for the notifications bell icon.": {
+        "Verify bell icon is visible after navigation": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'"
+      }
+    }
+  },
+  "C57": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Locate the bell icon in the global header.": {
+        "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is visible": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is visible in the global header": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Verify PC devices back button is visible": "assert self.device_card.verify_pc_devices_back_button(), 'device back button invisible'",
+        "Click the PC devices back button to return to main view": "self.device_card.click_pc_devices_back_button()",
+        "Verify bell icon is still visible after navigation": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'"
+      },
+      "2. Click the bell icon.": {
+        "Click the bell icon to trigger notification UI": "self.device_card.click_bell_icon()",
+        "Verify avatar close button appears confirming notification UI opened": "assert self.profile.verify_avatar_close_btn(), 'avatar close button invisible'"
+      }
+    }
+  },
+  "C65": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in to the application.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Verify PC devices back button is present": "assert self.device_card.verify_pc_devices_back_button(), 'device back button not found'",
+        "Verify device page avatar button is present": "assert self.profile.verify_devicepage_avatar_btn(), 'avatar button is not found'",
+        "Verify bell icon is visible on dashboard": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon is not found'",
+        "Verify homepage plus button is present": "assert self.device_card.verify_homepage_plus_button(), 'homepage plus button is not found'",
+        "Verify navbar sign-in button is present": "assert self.profile.verify_navbar_sign_in_button(), 'sign-in button is not found'"
+      },
+      "2. Click the bell icon from the dashboard.": {
+        "Click the bell icon": "self.device_card.click_bell_icon()",
+        "Verify notifications sidebar UI is displayed": "self.bell_icon.verify_notifications_sidebar_ui()"
+      }
+    }
+  },
+  "C63": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in to an account that has unread warning messages.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'"
+      },
+      "2. Open the notifications panel and view the warning messages list.": {
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Click notification account tab": "self.bell_icon.click_notification_account()",
+        "Verify warning unread notifications are present": "assert self.bell_icon.verify_warning_unread_notifs(), 'warning unread msgs not found'",
+        "Click warning unread notifications to view details": "self.bell_icon.click_warning_unread_notifs()",
+        "Verify warning message icon color is displayed correctly": "assert self.bell_icon.verify_warning_msg_icon(), 'warning msg icon invisible'"
+      }
+    }
+  },
+  "C68": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Click notification account category": "self.bell_icon.click_notification_account()"
+      },
+      "2. Review the list of unread and read messages.": {
+        "Verify unread messages category is displayed": "assert self.bell_icon.verify_unread_text(), 'unread messages category not found'",
+        "Verify read messages category is displayed": "assert self.bell_icon.verify_read_text(), 'read messages category not found'"
+      }
+    }
+  },
+  "C67": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in to the application.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Verify PC device name is displayed on homepage": "assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), 'PC name on homepage not loaded/visible'"
+      },
+      "2. Open the notifications panel and navigate to the Account tab.": {
+        "Verify bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Click the Account tab in notifications panel": "self.bell_icon.click_notification_account()",
+        "Verify account category is displayed": "account_title = self.bell_icon.verify_account_category()",
+        "Assert account title matches expected value": "assert account_title == 'Account', 'account title name mismatch'"
+      }
+    }
+  },
+  "C69": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in to the application.": {
+        "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Delete web password credentials": "request.cls.fc.web_password_credential_delete()",
+        "Load username from account details": "cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']['username']",
+        "Load password from account details": "cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']['password']",
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)"
+      },
+      "2. Open the notifications panel.": {
+        "Verify bell icon is displayed": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon is not present'",
+        "Click the bell icon": "self.device_card.click_bell_icon()",
+        "Click notification account": "self.bell_icon.click_notification_account()",
+        "Verify urgent unread notifications": "notification_type = self.bell_icon.verify_urgent_unread_notifs()",
+        "Assert urgent notification type": "assert notification_type == 'urgent notification', 'urgent unread msgs not found'",
+        "Get urgent notification name": "urgent_notifs_name = self.bell_icon.verify_unread_urgent_notifs_name()",
+        "Log urgent notification name": "logging.info(f'Notification Name: {urgent_notifs_name}')",
+        "Verify informative unread notifications": "notification_type = self.bell_icon.verify_informative_unread_notifs()",
+        "Assert informative notification type": "assert notification_type == 'informative notification', 'informative unread msgs not found'",
+        "Get informative notification name": "informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()",
+        "Log informative notification name": "logging.info(f'Notification Name: {informative_notifs_name}')",
+        "Verify warning unread notifications": "notification_type = self.bell_icon.verify_warning_unread_notifs()",
+        "Assert warning notification type": "assert notification_type == 'warning notification', 'warning unread msgs not found'",
+        "Get warning notification name": "warning_notifs_name = self.bell_icon.verify_unread_warning_notifs_name()",
+        "Log warning notification name": "logging.info(f'Notification Name: {warning_notifs_name}')"
+      }
+    }
+  },
+  "C74": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Click the bell icon to open notifications": "self.device_card.click_bell_icon()",
+        "Click notification account to view notifications": "self.bell_icon.click_notification_account()",
+        "Verify unread messages category is present": "assert self.bell_icon.verify_unread_text(), 'unread messages category not found'",
+        "Verify informative unread notifications are present": "assert self.bell_icon.verify_informative_unread_notifs(), 'informative unread notifications is not present'"
+      },
+      "2. Click the ellipsis (...) menu on an unread informative message.": {
+        "Click the ellipsis menu on informative unread notification": "self.bell_icon.click_informative_unread_notifs_ellipsis()"
+      },
+      "3. Select the delete option.": {
+        "Click delete option for informative unread notification": "self.bell_icon.click_delete_informative_unread_notifs()",
+        "Verify informative notification is removed": "assert not self.bell_icon.verify_informative_unread_notifs(), 'informative notification still present'"
+      }
+    }
+  },
+  "C70": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "correlation_map": {
+      "1. Open the notifications panel while logged out (shows empty state).": {
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon not visible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify sign-in button is present in notifications panel": "assert self.bell_icon.verify_notifications_panel_sign_in_btn(), 'sign-in button in notification panel is not present'"
+      },
+      "2. Click the sign-in prompt within the panel and authenticate.": {
+        "Close the notifications panel": "self.bell_icon.click_notifications_panel_close_btn()",
+        "Verify device details page is loaded": "assert self.devices_details_pc_mfe.verify_back_devices_button_on_pc_devices_page_show_up(), 'Device details page not loaded'",
+        "Verify sign-in button is visible": "assert self.css.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Click the sign-in button": "self.css.click_sign_in_button()",
+        "Sign in with user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)",
+        "Verify user is signed in by checking profile icon": "logged_in = self.profile.verify_top_profile_icon_signed_in()",
+        "Assert user is successfully signed in": "assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\""
+      },
+      "3. Re-open or view the notifications panel.": {
+        "Click the bell icon to re-open notifications panel": "self.device_card.click_bell_icon()",
+        "Click notification account to view notifications": "self.bell_icon.click_notification_account()",
+        "Verify urgent unread notifications are present": "notification_type = self.bell_icon.verify_urgent_unread_notifs()",
+        "Assert urgent notification type is correct": "assert notification_type == 'urgent notification', 'urgent unread msgs not found'",
+        "Verify informative unread notifications are present": "notification_type = self.bell_icon.verify_informative_unread_notifs()",
+        "Assert informative notification type is correct": "assert notification_type == 'informative notification', 'informative unread msgs not found'",
+        "Verify warning unread notifications are present": "notification_type = self.bell_icon.verify_warning_unread_notifs()",
+        "Assert warning notification type is correct": "assert notification_type == 'warning notification', 'warning unread msgs not found'"
+      }
+    }
+  },
+  "C72": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon not visible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Click notification account to view notifications": "self.bell_icon.click_notification_account()",
+        "Verify unread messages category is present": "assert self.bell_icon.verify_unread_text(), 'unread messages category not found'",
+        "Verify urgent unread notifications are present": "assert self.bell_icon.verify_urgent_unread_notifs(), 'urgent unread notifications is not present'"
+      },
+      "2. Click the ellipsis (...) menu on an unread urgent message.": {
+        "Click the ellipsis menu on urgent unread notification": "self.bell_icon.click_urgent_unread_notification_ellipsis()",
+        "Verify delete option is disabled for urgent unread notifications": "assert self.bell_icon.verify_delete_disabled_urgent_unread_notifs(), 'delete option is enabled'"
+      }
+    }
+  },
+  "C73": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon not visible'",
+        "Click the bell icon to open notifications": "self.device_card.click_bell_icon()",
+        "Click notification account to view notifications": "self.bell_icon.click_notification_account()",
+        "Verify unread messages category is present": "assert self.bell_icon.verify_unread_text(), 'unread messages category not found'"
+      },
+      "2. Click the ellipsis (...) menu on an unread warning message.": {
+        "Verify warning unread notification is present": "notification_type = self.bell_icon.verify_warning_unread_notifs()",
+        "Assert notification type is warning": "assert notification_type == 'warning notification', 'warning unread msgs not found'",
+        "Get warning notification name": "warning_notifs_name = self.bell_icon.verify_unread_warning_notifs_name()",
+        "Log the warning notification name": "logging.info(f'Notification Name: {warning_notifs_name}')",
+        "Click ellipsis menu on warning notification": "self.bell_icon.click_warning_unread_notifs_ellipsis()"
+      },
+      "3. Select the delete option.": {
+        "Click delete option for warning notification": "self.bell_icon.click_delete_warning_unread_notifs()",
+        "Verify warning notification is removed": "assert not self.bell_icon.verify_warning_unread_notifs(), 'Warning notification still present'"
+      }
+    }
+  },
+  "C75": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "correlation_map": {
+      "1. Open a detailed view of a specific informative notification.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Click notification account to view notifications": "self.bell_icon.click_notification_account()",
+        "Verify unread messages category is displayed": "assert self.bell_icon.verify_unread_text(), 'unread messages category not found'",
+        "Verify informative unread notifications are present": "assert self.bell_icon.verify_informative_unread_notifs(), 'informative unread notifications is not present'",
+        "Get the name of the informative notification": "informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()",
+        "Log the notification name": "logging.info(f'Notification Name: {informative_notifs_name}')",
+        "Click on the informative unread notification to open detailed view": "self.bell_icon.click_informative_unread_notifs()"
+      },
+      "2. Click the back button within the detailed notification view.": {
+        "Verify the back button is present on detailed notification page": "detailed_notifs_back_btn_text = self.bell_icon.verify_detailed_notification_back_btn()",
+        "Assert the back button text is 'Account'": "assert detailed_notifs_back_btn_text == 'Account', 'Back button not present OR text incorrect on detailed notification page'",
+        "Click the back button on detailed notification page": "self.bell_icon.click_detailed_notification_back_btn()",
+        "Verify the notifications side panel is visible": "assert self.bell_icon.verify_notification_side_panel(), 'notifications side panel invisible'"
+      }
+    }
+  },
+  "C71": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "correlation_map": {
+      "1. Open the notifications panel while logged out.": {
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon not visible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify sign-in button is present in the notifications panel": "assert self.bell_icon.verify_notifications_panel_sign_in_btn(), 'sign-in button in notification panel is not present'"
+      },
+      "2. Click the sign-in button located inside the flyout panel.": {
+        "Click the sign-in button in the notifications panel": "self.bell_icon.click_notifications_panel_sign_in_btn()"
+      },
+      "3. Complete the authentication flow.": {
+        "Sign in with user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)",
+        "Get user initials after sign-in": "user_initials = self.profile.get_user_initials_after_signin()",
+        "Verify user is successfully signed in by checking initials": "assert user_initials in ('RG', 'RP'), 'User not signed in/credentials not matching'"
+      }
+    }
+  },
+  "C76": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_05_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Delete web password credentials": "request.cls.fc.web_password_credential_delete()",
+        "Load HPID credentials from configuration": "hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']",
+        "Store username and password for test": "cls.user_name, cls.password = (hpid_credentials['username'], hpid_credentials['password'])",
+        "Minimize Chrome browser": "cls.profile.minimize_chrome()",
+        "Check if user is already logged in": "logged_in = self.profile.verify_top_profile_icon_signed_in()",
+        "Verify profile icon shows signed-in state": "assert self.profile.verify_top_profile_icon_signed_in(), \"Profile icon isn't showing initials after sign-in\"",
+        "Verify bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify notifications title is displayed": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Click notification account to view notifications": "self.bell_icon.click_notification_account()",
+        "[Implicit Action] if not logged_in:\n    self.css.click_sign_in_button()\n    self.fc.sign_in(self.user_name, self.password, self.web_driver)": "if not logged_in:\n    self.css.click_sign_in_button()\n    self.fc.sign_in(self.user_name, self.password, self.web_driver)"
+      },
+      "2. Locate any notification tile and click its ellipsis (...) menu.": {
+        "Verify notification tile ellipsis is visible": "assert self.bell_icon.verify_notification_tile_ellipsis(), 'notification tile ellipsis invisible'",
+        "Click the notification tile ellipsis menu": "self.bell_icon.click_notification_tile_ellipsis()",
+        "Verify dropdown menu is revealed": "assert self.bell_icon.verify_notification_dropdown_revealed(), 'notification drop down invisible'",
+        "Verify Mark as read option is present in dropdown": "assert self.bell_icon.verify_dropdown_mark_as_read_option_present(), 'mark as read option not visible in dropdown'",
+        "Verify Delete option is present in dropdown": "assert self.bell_icon.verify_dropdown_delete_option_present(), 'delete option not found in dropdown'"
+      }
+    }
+  },
+  "C78": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_05_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Verify the profile icon shows signed-in state": "assert self.profile.verify_top_profile_icon_signed_in(), \"Profile icon isn't showing initials after sign-in\"",
+        "Verify the bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify the notifications title is displayed": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Click the notification account to view notifications": "self.bell_icon.click_notification_account()",
+        "Verify the unread text category is visible": "assert self.bell_icon.verify_unread_text(), 'unread notifications category invisible'"
+      },
+      "2. Swipe or scroll through the list to view both Unread and Read categories.": {
+        "Verify informative unread notifications are present": "notification_type = self.bell_icon.verify_informative_unread_notifs()",
+        "Assert informative notification type is correct": "assert notification_type == 'informative notification', 'informative unread msgs not found'",
+        "Verify warning unread notifications are present": "notification_type = self.bell_icon.verify_warning_unread_notifs()",
+        "Assert warning notification type is correct": "assert notification_type == 'warning notification', 'warning unread msgs not found'",
+        "Verify urgent unread notifications are present": "notification_type = self.bell_icon.verify_urgent_unread_notifs()",
+        "Assert urgent notification type is correct": "assert notification_type == 'urgent notification', 'urgent unread msgs not found'",
+        "Swipe to the read text section": "self.driver.swipe('read_text')",
+        "Minimize and click HP from taskbar": "self.hpx_settings.minimize_and_click_hp_from_taskbar()",
+        "Verify the read text category is visible": "assert self.bell_icon.verify_read_text(), 'read notifications category invisible'",
+        "Verify informative read notifications are visible": "assert self.bell_icon.verify_informative_notifications(), 'informative read notifications invisible'",
+        "Verify warning read notifications are visible": "assert self.bell_icon.verify_warning_notifications(), 'warning read notifications invisible'",
+        "Verify urgent read notifications are visible": "assert self.bell_icon.verify_urgent_notifications(), 'urgent read notifications invisible'"
+      }
+    }
+  },
+  "C80": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_06_bell_notifcations.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Delete web password credentials": "request.cls.fc.web_password_credential_delete()",
+        "Load username from account details": "cls.user_name = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']['username']",
+        "Load password from account details": "cls.password = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']['password']",
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Click the bell icon to open notifications": "self.device_card.click_bell_icon()",
+        "Click notification account to open notifications panel": "self.bell_icon.click_notification_account()",
+        "Swipe down to view read notifications": "self.driver.swipe('read_text', direction='down')"
+      },
+      "2. Click on a specific urgent message from the list.": {
+        "Verify urgent notifications are present": "assert self.bell_icon.verify_urgent_notifications(), 'urgent notifications not found'",
+        "Click on an urgent read notification": "self.bell_icon.click_urgent_read_notifs()",
+        "Get the notification description from detailed view": "description = self.bell_icon.get_notif_description()",
+        "Log the message detailed view description": "logging.info(f'Message detailed view: {description}')"
+      }
+    }
+  },
+  "C81": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_06_bell_notifcations.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Click the bell icon to open notifications": "self.device_card.click_bell_icon()",
+        "Click notification account to view notifications panel": "self.bell_icon.click_notification_account()",
+        "Verify unread messages category is present": "assert self.bell_icon.verify_unread_text(), 'unread messages category not found'",
+        "Verify informative unread notifications exist": "(self.bell_icon.verify_informative_unread_notifs(), 'info unread msgs not found')"
+      },
+      "2. Click on an unread informative message to open its detailed view.": {
+        "Get the name of the unread informative notification": "unread_informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()",
+        "Log the unread informative notification name": "logging.info(f'informative unread notifs name: {unread_informative_notifs_name}')",
+        "Click on the unread informative notification": "self.bell_icon.click_informative_unread_notifs()",
+        "Get the notification description from detailed view": "description = self.bell_icon.get_notif_description()",
+        "Log the message description": "logging.info(f'msg description: {description}')"
+      },
+      "3. Navigate back to the list.": {
+        "Click back button to return to notifications list": "self.bell_icon.click_detailed_notification_back_btn()",
+        "Verify informative notifications section is present": "assert self.bell_icon.verify_informative_notifications(), 'informative notifications not found'",
+        "Get the name of the read informative notification": "read_informative_notifs_name = self.bell_icon.get_informative_notifications_name()",
+        "Log the read informative notification name": "logging.info(f'read informative notifs name: {read_informative_notifs_name}')",
+        "Assert the message moved from unread to read section": "assert unread_informative_notifs_name == read_informative_notifs_name, 'informative msg did not get marked as read after opening the notification'"
+      }
+    }
+  },
+  "C83": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_06_bell_notifcations.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Verify bell icon is displayed": "self.devicesMFE.verify_bell_icon_show_up()",
+        "Click the bell icon to open notifications": "self.device_card.click_bell_icon()",
+        "Click notification account to view notifications panel": "self.bell_icon.click_notification_account()",
+        "Swipe to read text section": "self.driver.swipe('read_text')",
+        "Minimize and click HP from taskbar": "self.hpx_settings.minimize_and_click_hp_from_taskbar()"
+      },
+      "2. Open the detailed view for a previously read informative, urgent, and warning message.": {
+        "Verify informative read notifications are present": "assert self.bell_icon.verify_informative_notifications(), 'informative read msgs not found'",
+        "Click informative read notification": "self.bell_icon.click_informative_read_notifs()",
+        "Get informative notification description": "description = self.bell_icon.get_notif_description()",
+        "Log informative read notification description": "logging.info(f'Informative read notification description: {description}')",
+        "Navigate back to notifications list": "self.bell_icon.click_notifications_back_btn()",
+        "Verify urgent read notifications are present": "assert self.bell_icon.verify_urgent_notifications(), 'urgent read msgs not found'",
+        "Click urgent read notification": "self.bell_icon.click_urgent_read_notifs()",
+        "Get urgent notification description": "description = self.bell_icon.get_notif_description()",
+        "Log urgent read notification description": "logging.info(f'Urgent read notification description: {description}')",
+        "Navigate back to notifications list after urgent": "self.bell_icon.click_notifications_back_btn()",
+        "Verify warning read notifications are present": "assert self.bell_icon.verify_warning_notifications(), 'warning read msgs not found'",
+        "Click warning read notification": "self.bell_icon.click_warning_read_notifs()",
+        "Get warning notification description": "description = self.bell_icon.get_notif_description()",
+        "Log warning read notification description": "logging.info(f'Warning read notification description: {description}')"
+      }
+    }
+  },
+  "C82": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_06_bell_notifcations.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Click the bell icon to open notifications": "self.device_card.click_bell_icon()",
+        "Click notification account to view notifications panel": "self.bell_icon.click_notification_account()",
+        "Verify unread messages category is present": "assert self.bell_icon.verify_unread_text(), 'unread messages category not found'"
+      },
+      "2. Open the detailed view for an unread informative, urgent, and warning message.": {
+        "Get unread informative notification name": "informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()",
+        "Log informative notification name": "logging.info(f'Notification Name: {informative_notifs_name}')",
+        "Verify informative unread notifications are present": "assert self.bell_icon.verify_informative_unread_notifs(), 'informative unread notifications is not present'",
+        "Click informative unread notification": "self.bell_icon.click_informative_unread_notifs()",
+        "Get informative notification description": "description = self.bell_icon.get_notif_description()",
+        "Log informative unread notification description": "logging.info(f'Informative unread notification description: {description}')",
+        "Navigate back from detailed notification view": "self.bell_icon.click_detailed_notification_back_btn()",
+        "Get unread urgent notification name": "urgent_notifs_name = self.bell_icon.verify_unread_urgent_notifs_name()",
+        "Log urgent notification name": "logging.info(f'Notification Name: {urgent_notifs_name}')",
+        "Verify urgent unread notifications are present": "assert self.bell_icon.verify_urgent_unread_notifs(), 'urgent unread msgs not found'",
+        "Click urgent unread notification": "self.bell_icon.click_urgent_unread_notifs()",
+        "Get urgent notification description": "description = self.bell_icon.get_notif_description()",
+        "Log urgent unread notification description": "logging.info(f'Urgent unread notification description: {description}')",
+        "Navigate back from urgent notification detailed view": "self.bell_icon.click_detailed_notification_back_btn()",
+        "Verify warning unread notifications are present": "assert self.bell_icon.verify_warning_unread_notifs(), 'warning unread notifications is not present'",
+        "Get unread warning notification name": "warning_notifs_name = self.bell_icon.verify_unread_warning_notifs_name()",
+        "Log warning notification name": "logging.info(f'Notification Name: {warning_notifs_name}')",
+        "Verify warning unread messages are found": "assert self.bell_icon.verify_warning_unread_notifs(), 'warning unread msgs not found'",
+        "Click warning unread notification": "self.bell_icon.click_warning_unread_notifs()",
+        "Get warning notification description": "description = self.bell_icon.get_notif_description()",
+        "Log warning unread notification description": "logging.info(f'Warning unread notification description: {description}')"
+      }
+    }
+  },
+  "C79": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_05_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Check if user is already signed in": "logged_in = self.profile.verify_top_profile_icon_signed_in()",
+        "Verify profile icon shows signed-in state": "assert self.profile.verify_top_profile_icon_signed_in(), \"Profile icon isn't showing initials after sign-in\"",
+        "Verify bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify notifications title is visible": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Click notification account to view notifications": "self.bell_icon.click_notification_account()",
+        "Verify unread notifications category is visible": "assert self.bell_icon.verify_unread_text(), 'unread notifications category invisible'",
+        "Swipe to read notifications section": "self.driver.swipe('read_text')",
+        "Minimize and click HP from taskbar": "self.hpx_settings.minimize_and_click_hp_from_taskbar()",
+        "Verify notification tile ellipsis is present": "assert self.bell_icon.verify_notification_tile_ellipsis(), 'notification ellipsis not found'",
+        "[Implicit Action] if not logged_in:\n    self.css.click_sign_in_button()\n    self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)": "if not logged_in:\n    self.css.click_sign_in_button()\n    self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)"
+      },
+      "2. View the detailed view of an urgent read notification.": {
+        "Verify urgent notifications are present": "assert self.bell_icon.verify_urgent_notifications(), 'urgent notifications not found'",
+        "Get urgent notification name from list view": "read_urgent_notifs_name = self.bell_icon.get_urgent_notifications_name()",
+        "Log urgent notification name": "logging.info(f'read urgent notifs name: {read_urgent_notifs_name}')",
+        "Click urgent read notification to open detailed view": "self.bell_icon.click_urgent_read_notifs()",
+        "Get notification title from detailed view": "detailed_read_notifs_name = self.bell_icon.get_detailed_notification_title()",
+        "Log detailed notification name": "logging.info(f'detailed read notifs name: {detailed_read_notifs_name}')",
+        "Verify notification name matches between list and detailed view": "assert read_urgent_notifs_name == detailed_read_notifs_name, 'urgent notif name mismatch between list view and detailed view'",
+        "Verify urgent message icon is visible": "assert self.bell_icon.verify_urgent_msg_icon(), 'urgent msg icon invisible'",
+        "Get notification description": "description = self.bell_icon.get_notif_description()",
+        "Log notification description": "logging.info(f'Message detailed view: {description}')",
+        "Verify timestamp is present": "assert self.bell_icon.verify_time_stamp(), 'message time stamp not present'",
+        "Get timestamp value": "timestamp = self.bell_icon.get_time_stamp()",
+        "Log timestamp": "logging.info(f'Timestamp: {timestamp}')",
+        "Verify timestamp contains 'ago'": "assert 'ago' in timestamp.lower(), f\"Timestamp should contain 'ago', got: '{timestamp}'\"",
+        "Verify timestamp contains a number": "assert any((char.isdigit() for char in timestamp)), f\"Timestamp should contain a number. Got: '{timestamp}'\"",
+        "Verify detailed notification back button text": "detailed_notif_back_btn_text = self.bell_icon.verify_detailed_notification_back_btn()",
+        "Assert back button text is 'Account'": "assert detailed_notif_back_btn_text == 'Account', 'detailed notification back btn text mismatch'",
+        "Click detailed notification back button": "self.bell_icon.click_detailed_notification_back_btn()",
+        "Click notifications back button": "self.bell_icon.click_notifications_back_btn()",
+        "Click notifications panel close button": "self.bell_icon.click_notifications_panel_close_btn()",
+        "Verify profile icon is still signed in": "assert self.profile.verify_top_profile_icon_signed_in(), \"Profile icon isn't showing initials after sign-in\"",
+        "Verify bell icon is still present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Verify PC device name is visible on homepage": "assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), 'PC name on homepage not loaded/visible'",
+        "Verify device back button is present": "assert self.device_card.verify_pc_devices_back_button(), 'device back button not found'",
+        "Verify homepage plus button is present": "assert self.device_card.verify_homepage_plus_button(), 'homepage plus button is not found'"
+      }
+    }
+  },
+  "C77": {
+    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_05_bell_notifications.py",
+    "correlation_map": {
+      "1. Sign in and open the notifications panel.": {
+        "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Verify the top profile icon indicates a signed-in state": "self.profile.verify_top_profile_icon_signed_in()",
+        "Verify the bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify the notifications title is displayed": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Click the notification account to view notifications": "self.bell_icon.click_notification_account()"
+      },
+      "2. Click the ellipsis menu on unread urgent, warning, and informative messages.": {
+        "Get the unread urgent notification name": "urgent_unread_notifs_name = self.bell_icon.verify_unread_urgent_notifs_name()",
+        "Log the urgent notification name": "logging.info(f'Notification Name: {urgent_unread_notifs_name}')",
+        "Verify the urgent unread notification ellipsis is present": "assert self.bell_icon.verify_urgent_unread_notification_ellipsis(), 'urgent unread notification ellipsis invisible'",
+        "Click the urgent unread notification ellipsis": "self.bell_icon.click_urgent_unread_notification_ellipsis()",
+        "Swipe to top of notifications section after urgent": "self.bell_icon.swipe_to_top_notifs_section()",
+        "Minimize and click HP from taskbar after urgent": "self.hpx_settings.minimize_and_click_hp_from_taskbar()",
+        "Get the unread informative notification name": "unread_informative_notifs_name = self.bell_icon.verify_unread_informative_notifs_name()",
+        "Log the informative notification name": "logging.info(f'informative unread notifs name: {unread_informative_notifs_name}')",
+        "Verify the informative unread notification ellipsis is present": "assert self.bell_icon.verify_informative_unread_notification_ellipsis(), 'informative unread notification ellipsis invisible'",
+        "Click the informative unread notification ellipsis": "self.bell_icon.click_informative_unread_notification_ellipsis()",
+        "Swipe to top of notifications section after informative": "self.bell_icon.swipe_to_top_notifs_section()",
+        "Minimize and click HP from taskbar after informative": "self.hpx_settings.minimize_and_click_hp_from_taskbar()",
+        "Get the unread warning notification name": "unread_warning_notifs_name = self.bell_icon.verify_unread_warning_notifs_name()",
+        "Log the warning notification name": "logging.info(f'warning unread notifs name: {unread_warning_notifs_name}')",
+        "Verify the warning unread notification ellipsis is present": "assert self.bell_icon.verify_warning_unread_notification_ellipsis(), 'warning unread notification ellipsis not found'",
+        "Click the warning unread notification ellipsis": "self.bell_icon.click_warning_unread_notification_ellipsis()"
+      },
+      "3. Select \"Mark as read\" for each.": {
+        "Verify notifications and mark urgent as read": "self.bell_icon.verify_notifs_and_mark_as_read()",
+        "Swipe till read notifications section for urgent": "self.bell_icon.swipe_till_read_notifs()",
+        "Minimize and click HP from taskbar for urgent verification": "self.hpx_settings.minimize_and_click_hp_from_taskbar()",
+        "Verify urgent notifications are now in read section": "assert self.bell_icon.verify_urgent_notifications(), 'urgent notifications not found'",
+        "Get the read urgent notification name": "read_urgent_notifs_name = self.bell_icon.get_urgent_notifications_name()",
+        "Log the read urgent notification name": "logging.info(f'read urgent notifs name: {read_urgent_notifs_name}')",
+        "Assert urgent notification was marked as read": "assert urgent_unread_notifs_name == read_urgent_notifs_name, 'urgent msg did not get marked as read after opening the notification'",
+        "Verify notifications and mark informative as read": "self.bell_icon.verify_notifs_and_mark_as_read()",
+        "Swipe till read notifications section for informative": "self.bell_icon.swipe_till_read_notifs()",
+        "Minimize and click HP from taskbar for informative verification": "self.hpx_settings.minimize_and_click_hp_from_taskbar()",
+        "Verify informative notifications are now in read section": "assert self.bell_icon.verify_informative_notifications(), 'informative notifications not found'",
+        "Get the read informative notification name": "read_informative_notifs_name = self.bell_icon.get_informative_notifications_name()",
+        "Log the read informative notification name": "logging.info(f'read informative notifs name: {read_informative_notifs_name}')",
+        "Assert informative notification was marked as read": "assert unread_informative_notifs_name == read_informative_notifs_name, 'informative msg did not get marked as read after opening the notification'",
+        "Verify notifications and mark warning as read": "self.bell_icon.verify_notifs_and_mark_as_read()",
+        "Swipe till read notifications section for warning": "self.bell_icon.swipe_till_read_notifs()",
+        "Minimize and click HP from taskbar for warning verification": "self.hpx_settings.minimize_and_click_hp_from_taskbar()",
+        "Verify warning notifications are now in read section": "assert self.bell_icon.verify_warning_notifications(), 'warning notifications not found'",
+        "Get the read warning notification name": "read_warning_notifs_name = self.bell_icon.get_warning_notifications_name()",
+        "Log the read warning notification name": "logging.info(f'read warning notifs name: {read_warning_notifs_name}')",
+        "Assert warning notification was marked as read": "assert unread_warning_notifs_name == read_warning_notifs_name, 'warning msg did not get marked as read after opening the notification'"
+      }
+    }
   }
 }
