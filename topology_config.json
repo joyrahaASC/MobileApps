@@ -1,30 +1,25 @@
 {
-  "shadow_branch_name": "shadow_qama_topology_1787104446",
+  "shadow_branch_name": "shadow_qama_topology_1787234976",
   "platforms": {
     "web": {
       "page_class_metadata_path": "",
-      "locators_metadata_path": "",
-      "test_cases_steps_scripts_map_path": ""
+      "locators_metadata_path": ""
     },
     "windows": {
-      "page_class_metadata_path": "QAMA Topology/windows/windows_page_class_metadata.json",
-      "locators_metadata_path": "QAMA Topology/windows/windows_locators_metadata.json",
-      "test_cases_steps_scripts_map_path": "QAMA Topology/windows/windows_test_cases_steps_scripts_map.json"
+      "page_class_metadata_path": "",
+      "locators_metadata_path": ""
     },
     "android": {
       "page_class_metadata_path": "",
-      "locators_metadata_path": "",
-      "test_cases_steps_scripts_map_path": ""
+      "locators_metadata_path": ""
     },
     "ios": {
       "page_class_metadata_path": "",
-      "locators_metadata_path": "",
-      "test_cases_steps_scripts_map_path": ""
+      "locators_metadata_path": ""
     },
     "mac": {
       "page_class_metadata_path": "",
-      "locators_metadata_path": "",
-      "test_cases_steps_scripts_map_path": ""
+      "locators_metadata_path": ""
     }
   }
 }
