@@ -6,7 +6,7 @@
       "locators_metadata_path": ""
     },
     "windows": {
-      "page_class_metadata_path": "",
+      "page_class_metadata_path": "QAMA Topology/windows/windows_page_class_metadata.json",
       "locators_metadata_path": ""
     },
     "android": {
