@@ -7,7 +7,8 @@
     },
     "windows": {
       "page_class_metadata_path": "QAMA Topology/windows/windows_page_class_metadata.json",
-      "locators_metadata_path": "QAMA Topology/windows/windows_locators_metadata.json"
+      "locators_metadata_path": "QAMA Topology/windows/windows_locators_metadata.json",
+      "test_script_path": "tests/windows/hpx_rebranding/tss1"
     },
     "android": {
       "page_class_metadata_path": "",
