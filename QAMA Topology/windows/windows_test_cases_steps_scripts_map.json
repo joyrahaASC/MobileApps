@@ -1,1 +1,191 @@
-{}
+{
+  "C54": {
+    "script_file_path": "tests/windows/hpx_rebranding/tss1/add_device/test_suite_02_add_device.py",
+    "correlation_map": {
+      "1. Log in to the application with valid credentials.": {
+        "Click home button for logged in user": "self.devicesMFE.click_home_loggedin()",
+        "Sign in with username and password": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
+        "Verify top profile icon shows signed in state": "logged_in = self.profile.verify_top_profile_icon_signed_in()",
+        "Assert user is signed in": "assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\""
+      },
+      "2. Open the Add Device page and select \"Search by Serial Number\".": {
+        "Verify add device button is present": "self.profile.verify_add_device_button()",
+        "Click add device button": "self.profile.click_add_device_button()",
+        "Assert add device page is displayed": "assert self.add_device.verify_add_device_page(), 'Add device page is not displayed'",
+        "Assert search by serial number button is found": "assert self.add_device.verify_search_by_serial_number_btn(), 'search by serial number button not found'",
+        "Click search by serial number button": "self.add_device.click_search_by_serial_number_btn()"
+      },
+      "3. Enter a valid serial number.": {
+        "Input serial number": "self.add_device.input_enter_serial_number('8CC5281Y49')",
+        "Get entered serial number value": "entered_value = self.add_device.get_entered_serial_number()",
+        "Assert serial number is displayed correctly": "assert entered_value == '8CC5281Y49', f'Serial number not displayed correctly, found: {entered_value}'"
+      },
+      "4. Click the \"Add Device\" confirmation link/button.": {
+        "Click add device hyperlink": "self.add_device.click_add_device_hyperlink()",
+        "Assert newly added device name is displayed": "assert self.add_device.verify_newly_added_devicename(), 'Newly added device name is not displayed'"
+      }
+    }
+  },
+  "C52": {
+    "script_file_path": "tests/windows/hpx_rebranding/tss1/add_device/test_suite_01_add_device.py",
+    "correlation_map": {
+      "1. Open the Add Device page.": {
+        "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
+        "Verify add device button is present": "self.profile.verify_add_device_button()",
+        "Click the add device button": "self.profile.click_add_device_button()",
+        "Verify add device page is displayed": "assert self.add_device.verify_add_device_page(), 'add device page is not found'"
+      },
+      "2. Review the content under the \"Missing a Device?\" section.": {
+        "Verify missing device content is displayed correctly": "assert self.add_device.verify_missing_device_content(), 'content in missing device is not matching'"
+      }
+    }
+  },
+  "C53": {
+    "script_file_path": "tests/windows/hpx_rebranding/tss1/add_device/test_suite_02_add_device.py",
+    "correlation_map": {
+      "1. Log in to the application with valid credentials.": {
+        "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_to_reset_and_launch_myhp')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Delete web password credentials": "request.cls.fc.web_password_credential_delete()",
+        "Load HPID credentials from JSON": "hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']",
+        "Store username and password": "cls.user_name, cls.password = (hpid_credentials['username'], hpid_credentials['password'])",
+        "Minimize Chrome browser": "cls.profile.minimize_chrome()",
+        "Click home button for logged-in user": "self.devicesMFE.click_home_loggedin()",
+        "Sign in with user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver, user_icon_click=False)",
+        "Verify top profile icon shows signed-in state": "logged_in = self.profile.verify_top_profile_icon_signed_in()",
+        "Assert user is signed in": "assert logged_in, \"User not signed in/After signing in the 'Sign In' button failed to disappear after 20 seconds\""
+      },
+      "2. Open the Add Device page and select \"Search by Serial Number\".": {
+        "Verify add device button is present": "self.profile.verify_add_device_button()",
+        "Click add device button": "self.profile.click_add_device_button()",
+        "Verify add device page is displayed": "assert self.add_device.verify_add_device_page(), 'Add device page is not displayed'",
+        "Verify search by serial number button is present": "assert self.add_device.verify_search_by_serial_number_btn(), 'search by serial number button not found'",
+        "Click search by serial number button": "self.add_device.click_search_by_serial_number_btn()"
+      },
+      "3. Enter a valid serial number.": {
+        "Enter serial number": "self.add_device.input_enter_serial_number('8CC5281Y49')",
+        "Get entered serial number value": "entered_value = self.add_device.get_entered_serial_number()",
+        "Assert serial number is correctly entered": "assert entered_value == '8CC5281Y49', f'Serial number not displayed correctly, found: {entered_value}'"
+      },
+      "4. Enter a valid product number.": {
+        "Verify product number textbox is present": "assert self.add_device.verify_product_number_textbox(), 'Product number textbox not found'",
+        "Enter product number": "self.add_device.input_enter_product_number('9U886PA#ACJ')",
+        "Get entered product number value": "entered_value = self.add_device.get_entered_product_number()",
+        "Assert product number is correctly entered": "assert entered_value == '9U886PA#ACJ', f'Product number not displayed correctly, found: {entered_value}'"
+      },
+      "5. Click the \"Add Device\" confirmation link/button.": {
+        "Click add device hyperlink": "self.add_device.click_add_device_hyperlink()",
+        "Verify newly added device name is displayed": "assert self.add_device.verify_newly_added_devicename(), 'Newly added device name is not displayed'"
+      }
+    }
+  },
+  "C50": {
+    "script_file_path": "tests/windows/hpx_rebranding/tss1/add_device/test_suite_01_add_device.py",
+    "correlation_map": {
+      "1. Navigate to the Add Device page and select \"Search by Serial Number\".": {
+        "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
+        "Verify add device button is present": "self.profile.verify_add_device_button()",
+        "Click add device button to navigate to Add Device page": "self.profile.click_add_device_button()",
+        "Verify Add Device page is displayed": "assert self.add_device.verify_add_device_page(), 'add device page is not found'",
+        "Verify Search by Serial Number button is present": "assert self.add_device.verify_search_by_serial_number_btn(), 'search by serial number button not found'",
+        "Click Search by Serial Number button": "self.add_device.click_search_by_serial_number_btn()",
+        "Verify serial number textbox is visible": "assert self.add_device.verify_serial_number_textbox(), 'text input field Serial Number not visible'"
+      },
+      "2. Enter a valid serial number (e.g., '8CC5281Y49') into the text field.": {
+        "Enter serial number into the text field": "self.add_device.input_enter_serial_number('8CC5281Y49')",
+        "Get the entered serial number value": "entered_value = self.add_device.get_entered_serial_number()",
+        "Verify the entered serial number is displayed correctly": "assert entered_value == '8CC5281Y49', 'Serial number not displayed correctly, found: {entered_value}'"
+      }
+    }
+  },
+  "C48": {
+    "script_file_path": "tests/windows/hpx_rebranding/tss1/add_device/test_suite_01_add_device.py",
+    "correlation_map": {
+      "1. Navigate to the Add Device page.": {
+        "Verify PC device name is displayed on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
+        "Verify add device button is present": "self.profile.verify_add_device_button()",
+        "Click the add device button": "self.profile.click_add_device_button()",
+        "Verify add device page is displayed": "assert self.add_device.verify_add_device_page(), 'add device page is not found'"
+      },
+      "2. Select the \"Search by Serial Number\" option.": {
+        "Verify search by serial number button is present": "assert self.add_device.verify_search_by_serial_number_btn(), 'search by serial number button not found'",
+        "Click the search by serial number button": "self.add_device.click_search_by_serial_number_btn()",
+        "Verify serial number textbox is visible": "assert self.add_device.verify_serial_number_textbox(), 'text input field Serial Number not visible'"
+      },
+      "3. Click the Back button on the Add Device panel.": {
+        "Verify add a device back button is visible": "assert self.add_device.verify_add_a_device_back_btn(), 'Add a device back button not visible'",
+        "Click the add a device back button": "self.add_device.click_add_a_device_back_btn()",
+        "Verify user is navigated back to add device page": "assert self.add_device.verify_add_device_page(), 'add device page is not found'"
+      }
+    }
+  },
+  "C46": {
+    "script_file_path": "tests/windows/hpx_rebranding/tss1/add_device/test_suite_01_add_device.py",
+    "correlation_map": {
+      "1. Launch the HPX application.": {
+        "Invoke HPX launch fixture": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_myhp_launch')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Kill existing Chrome processes": "request.cls.fc.kill_chrome_process()"
+      },
+      "2. Verify the PC name is visible on the homepage.": {
+        "Verify PC device name is displayed on homepage": "assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), 'PC name on homepage not loaded/visible'"
+      },
+      "3. Click the 'Add Device' button on the profile header.": {
+        "Verify add device button is present": "assert self.profile.verify_add_device_button(), 'add device button is not found'",
+        "Click the add device button": "self.profile.click_add_device_button()",
+        "Verify add device page opens successfully": "assert self.add_device.verify_add_device_page(), 'add device page is not found'"
+      }
+    }
+  },
+  "C49": {
+    "script_file_path": "tests/windows/hpx_rebranding/tss1/add_device/test_suite_01_add_device.py",
+    "correlation_map": {
+      "1. Open the Add Device side panel.": {
+        "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
+        "Verify add device button is present": "self.profile.verify_add_device_button()",
+        "Click the add device button": "self.profile.click_add_device_button()",
+        "Verify add device page is displayed": "assert self.add_device.verify_add_device_page(), 'add device page is not found'"
+      },
+      "2. Click the Close (X) button on the panel.": {
+        "Verify close button is present on add device page": "assert self.add_device.verify_close_button_on_add_device_page(), 'Close button not present on add device page'",
+        "Click the close button on add device page": "self.add_device.click_close_button_on_add_device_page()",
+        "Verify PC device name shows up on homepage after closing": "assert self.devices_details_pc_mfe.verify_pc_device_name_show_up(), 'PC name on homepage not loaded/visible'"
+      }
+    }
+  },
+  "C51": {
+    "script_file_path": "tests/windows/hpx_rebranding/tss1/add_device/test_suite_01_add_device.py",
+    "correlation_map": {
+      "1. Open the Add Device page.": {
+        "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
+        "Verify add device button is present": "self.profile.verify_add_device_button()",
+        "Click the add device button": "self.profile.click_add_device_button()",
+        "Verify add device page is displayed": "assert self.add_device.verify_add_device_page(), 'add device page is not found'"
+      },
+      "2. Review the content under the \"Add a Printer\" section.": {
+        "Verify add a printer content matches design specifications": "assert self.add_device.verify_add_printer_content(), 'content in add a printer is not matching'"
+      }
+    }
+  },
+  "C47": {
+    "script_file_path": "tests/windows/hpx_rebranding/tss1/add_device/test_suite_01_add_device.py",
+    "correlation_map": {
+      "1. Navigate to the Add Device page.": {
+        "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
+        "Verify add device button is present": "self.profile.verify_add_device_button()",
+        "Click the add device button": "self.profile.click_add_device_button()",
+        "Verify add device page is displayed": "assert self.add_device.verify_add_device_page(), 'add device page is not found'"
+      },
+      "2. Select the \"Search by Serial Number\" option.": {
+        "Verify search by serial number button is present": "assert self.add_device.verify_search_by_serial_number_btn(), 'search by serial number button not found'",
+        "Click the search by serial number button": "self.add_device.click_search_by_serial_number_btn()",
+        "Verify serial number textbox is visible": "assert self.add_device.verify_serial_number_textbox(), 'text input field Serial Number not visible'"
+      },
+      "3. Locate and click the \"Need help finding your serial number?\" link.": {
+        "Verify need help finding your serial number link is present": "assert self.add_device.verify_need_help_finding_your_serial_number_link(), 'need help finding your serial number link not found'",
+        "Click the need help finding your serial number link": "self.add_device.click_need_help_finding_your_serial_number_link()",
+        "Verify browser webview pane opens": "self.devicesMFE.verify_browser_webview_pane()"
+      }
+    }
+  }
+}
