@@ -13,15 +13,18 @@
     },
     "android": {
       "page_class_metadata_path": "",
-      "locators_metadata_path": ""
+      "locators_metadata_path": "",
+      "test_cases_steps_scripts_map_path": ""
     },
     "ios": {
       "page_class_metadata_path": "",
-      "locators_metadata_path": ""
+      "locators_metadata_path": "",
+      "test_cases_steps_scripts_map_path": ""
     },
     "mac": {
       "page_class_metadata_path": "",
-      "locators_metadata_path": ""
+      "locators_metadata_path": "",
+      "test_cases_steps_scripts_map_path": ""
     }
   }
 }
