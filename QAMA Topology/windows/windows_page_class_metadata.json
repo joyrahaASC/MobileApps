@@ -1,6 +1,6 @@
 [
   {
-    "file_path": "libs/flows/windows/hh/add_device.py",
+    "file_path": "libs/flows/windows/hpx_rebranding/add_device.py",
     "component": "add_device",
     "dependencies": [
       "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow"
@@ -232,7 +232,7 @@
     ]
   },
   {
-    "file_path": "libs/flows/windows/hh/bell_icon.py",
+    "file_path": "libs/flows/windows/hpx_rebranding/bell_icon.py",
     "component": "bell_icon",
     "dependencies": [
       "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow"
@@ -806,7 +806,7 @@
     ]
   },
   {
-    "file_path": "libs/flows/windows/hh/feedback.py",
+    "file_path": "libs/flows/windows/hpx_rebranding/feedback.py",
     "component": "feedback",
     "dependencies": [
       "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow",
@@ -1370,7 +1370,7 @@
     ]
   },
   {
-    "file_path": "libs/flows/windows/hh/battery.py",
+    "file_path": "libs/flows/windows/hpx_rebranding/battery.py",
     "component": "battery",
     "dependencies": [
       "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow",
@@ -2959,7 +2959,7 @@
     ]
   },
   {
-    "file_path": "libs/flows/windows/hh/audio.py",
+    "file_path": "libs/flows/windows/hpx_rebranding/audio.py",
     "component": "audio",
     "dependencies": [
       "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow",
@@ -7482,7 +7482,7 @@
     ]
   },
   {
-    "file_path": "libs/flows/windows/hh/hpx_settings.py",
+    "file_path": "libs/flows/windows/hpx_rebranding/hpx_settings.py",
     "component": "hpx_settings",
     "dependencies": [
       "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow",
@@ -8300,7 +8300,7 @@
     ]
   },
   {
-    "file_path": "libs/flows/windows/hh/profile.py",
+    "file_path": "libs/flows/windows/hpx_rebranding/profile.py",
     "component": "profile",
     "dependencies": [
       "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow",
@@ -8894,7 +8894,7 @@
     ]
   },
   {
-    "file_path": "libs/flows/windows/hh/flow_container.py",
+    "file_path": "libs/flows/windows/hpx_rebranding/flow_container.py",
     "component": "flow_container",
     "dependencies": [
       "MobileApps.libs.flows.web.hpx.hp_cloud_scan",
@@ -10849,7 +10849,7 @@
     ]
   },
   {
-    "file_path": "libs/flows/windows/hh/pen_control.py",
+    "file_path": "libs/flows/windows/hpx_rebranding/pen_control.py",
     "component": "pen_control",
     "dependencies": [
       "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow",
