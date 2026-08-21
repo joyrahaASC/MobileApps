@@ -42,7 +42,7 @@
           "intent": "Verify edit feedback screen opens",
           "query": "Verify edit feedback screen opens",
           "mapped_function": "verify_edit_feedback",
-          "rationale": "The function verify_edit_feedback exists in feedback.py and scrolls to and verifies that the feedback text edit field is visible, confirming the edit feedback screen is open."
+          "rationale": "The function verify_edit_feedback exists in feedback.py and scrolls to and verifies that the feedback text edit field is visible."
         },
         {
           "intent": "Input tell your experience text",
@@ -60,20 +60,23 @@
       "missing_methods": [
         {
           "intent": "Assert tell your experience text is truncated",
-          "proposed_signature": "assert_text_is_truncated(expected_max_length: int) -> bool",
-          "detailed_requirements": "This method should retrieve the entered text from the feedback text field using get_entered_text(), compare its length against the expected maximum character limit (expected_max_length), and assert that the text has been properly truncated if it exceeds the limit. The method should return True if truncation occurred as expected, False otherwise. It should also verify that the character count display (using get_feedback_text_char_count()) reflects the truncated length correctly. The method belongs in feedback.py because it validates feedback form text input behavior and character limits.",
+          "proposed_signature": "assert_text_is_truncated(expected_text: str, max_length: int) -> bool",
+          "detailed_requirements": "This method should verify that the text entered in the 'tell your experience' field is truncated to a maximum character limit. It should: 1) Retrieve the current text value from the feedback text field using get_entered_text(), 2) Compare the length of the entered text against the expected maximum length (max_length parameter), 3) Verify that if the input text exceeds max_length, the displayed text is truncated to exactly max_length characters, 4) Optionally verify that a character count indicator shows the truncation (e.g., '500/500'), 5) Return True if truncation is correctly applied, False otherwise, 6) Log the comparison results for debugging. The method belongs in feedback.py because it validates behavior specific to the feedback text input field.",
           "implementation_checklist": [
             "Wait for 'edit_feedback' element to be present using self.driver.wait_for_object('edit_feedback')",
-            "Call existing method self.get_entered_text() to retrieve the current text value from the feedback text field",
-            "Calculate the length of the retrieved text using len() function",
-            "Store the actual text length in a variable",
-            "Wait for 'edit_feedback_char_count' element to be present using self.driver.wait_for_object('edit_feedback_char_count')",
-            "Call existing method self.get_feedback_text_char_count() to retrieve the character count display text",
-            "Parse the character count display text to extract the current count (format expected: 'X/Y' where X is current count)",
-            "Assert that the actual text length equals the expected_max_length parameter",
-            "Assert that the parsed character count from display matches the actual text length",
-            "Assert that the actual text length does not exceed expected_max_length (verify truncation occurred)",
-            "Return True if all assertions pass, indicating truncation is working correctly"
+            "Call existing self.get_entered_text() method to retrieve the current text value from the feedback text field",
+            "Store the retrieved text in a variable (e.g., actual_text)",
+            "Calculate the length of actual_text using len(actual_text)",
+            "Compare the calculated length against the max_length parameter",
+            "Assert that len(actual_text) <= max_length to verify truncation is applied",
+            "If expected_text parameter is provided and longer than max_length, verify actual_text equals expected_text[:max_length]",
+            "Wait for 'edit_feedback_char_count' element to be present using self.driver.wait_for_object('edit_feedback_char_count', timeout=10)",
+            "Call self.get_feedback_text_char_count() to retrieve the character count display text",
+            "Parse the character count text to extract current count and max count (e.g., '500/500' format)",
+            "Assert that the displayed current count matches len(actual_text)",
+            "Assert that the displayed max count matches max_length parameter",
+            "Log the comparison results including actual_text length, max_length, and character count display",
+            "Return True if all assertions pass, False otherwise"
           ],
           "required_locator_keys": [
             "edit_feedback",
