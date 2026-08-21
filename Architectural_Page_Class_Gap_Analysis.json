@@ -42,7 +42,7 @@
           "intent": "Verify edit feedback screen opens",
           "query": "Verify edit feedback screen opens",
           "mapped_function": "verify_edit_feedback",
-          "rationale": "The function verify_edit_feedback exists in feedback.py and scrolls to and verifies that the feedback text edit field is visible, confirming the edit feedback screen is open."
+          "rationale": "The function verify_edit_feedback exists in feedback.py and scrolls to and verifies that the feedback text edit field is visible."
         },
         {
           "intent": "Input tell your experience text",
@@ -61,8 +61,8 @@
         {
           "intent": "Assert tell your experience text is truncated",
           "query": "Assert tell your experience text is truncated",
-          "proposed_signature": "assert_text_is_truncated(expected_max_length: int) -> bool",
-          "detailed_requirements": "This method should retrieve the entered text from the feedback text field using get_entered_text(), compare its length against the expected maximum character limit (expected_max_length), and assert that the text has been properly truncated if it exceeds the limit. The method should return True if truncation occurred as expected, False otherwise. It should also verify that the character count display (using get_feedback_text_char_count()) reflects the truncated length correctly. The method belongs in feedback.py because it validates feedback form text input behavior and character limits."
+          "proposed_signature": "assert_text_is_truncated(expected_text: str, max_length: int) -> bool",
+          "detailed_requirements": "This method should verify that the text entered in the 'tell your experience' field is truncated to a maximum character limit. It should: 1) Retrieve the current text value from the feedback text field using get_entered_text(), 2) Compare the length of the entered text against the expected maximum length (max_length parameter), 3) Verify that if the input text exceeds max_length, the displayed text is truncated to exactly max_length characters, 4) Optionally verify that a character count indicator shows the truncation (e.g., '500/500'), 5) Return True if truncation is correctly applied, False otherwise, 6) Log the comparison results for debugging. The method belongs in feedback.py because it validates behavior specific to the feedback text input field."
         }
       ]
     }
