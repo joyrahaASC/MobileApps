@@ -10,8 +10,8 @@
   },
   "test_case_id": "C84",
   "tiers": {
-    "tier_1_locators": [],
-    "tier_2_independent_pages": [
+    "Tier_1_Locators": [],
+    "Tier_2_Indep_Pages": [
       {
         "file": "feedback.py",
         "path": "libs/flows/windows/hpx_rebranding/feedback.py",
@@ -72,7 +72,8 @@
         }
       }
     ],
-    "tier_99_reference": [
+    "Tier_3_Dep_Pages": [],
+    "Tier_99_Ref": [
       {
         "file": "profile.py",
         "path": "libs/flows/windows/hpx_rebranding/profile.py",
