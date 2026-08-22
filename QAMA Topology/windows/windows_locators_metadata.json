@@ -2874,21 +2874,6 @@
           "xpath": "//Text[@Name='How was your overall HP app experience today?']"
         }
       },
-      "edit_feedback": {
-        "locator": {
-          "id": [
-            "Feedback.OverallFeedback.CommentsTextarea__textarea",
-            "Feedback.OverallFeedback.CommentsTextarea"
-          ]
-        }
-      },
-      "edit_feedback_char_count": {
-        "locator": {
-          "xpath": [
-            "//Edit[contains(@AutomationId,'Feedback.OverallFeedback.CommentsTextarea')]/following-sibling::Text[contains(@Name, 'Characters used:')]"
-          ]
-        }
-      },
       "contacting_email": {
         "locator": {
           "id": "Feedback.OverallFeedback.EmailTextField__text-box"
