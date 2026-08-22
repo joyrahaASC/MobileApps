@@ -13,38 +13,22 @@
     "Tier_1_Locators": [],
     "Tier_2_Indep_Pages": [
       {
-        "file": "profile.py",
-        "path": "libs/flows/windows/hpx_rebranding/profile.py",
+        "file": "devices_mfe_page.py",
+        "path": "libs/flows/windows/hpx_rebranding/pages/devices_mfe_page.py",
         "category": "EXACT_MATCH"
       },
       {
-        "file": "css.py",
-        "path": "libs/flows/windows/hpx_rebranding/css.py",
+        "file": "profile_page.py",
+        "path": "libs/flows/windows/hpx_rebranding/pages/profile_page.py",
         "category": "CANDIDATE"
       },
       {
-        "file": "feedback.py",
-        "path": "libs/flows/windows/hpx_rebranding/feedback.py",
-        "category": "CANDIDATE"
-      },
-      {
-        "file": "virtual_assistant.py",
-        "path": "libs/flows/windows/hpx_rebranding/virtual_assistant.py",
-        "category": "CANDIDATE"
-      },
-      {
-        "file": "hppk.py",
-        "path": "libs/flows/windows/hpx_rebranding/hppk.py",
+        "file": "feedback_page.py",
+        "path": "libs/flows/windows/hpx_rebranding/pages/feedback_page.py",
         "category": "CANDIDATE"
       }
     ],
-    "Tier_3_Dep_Pages": [
-      {
-        "file": "flow_container.py",
-        "path": "libs/flows/windows/hpx_rebranding/flow_container.py",
-        "category": "CANDIDATE"
-      }
-    ],
+    "Tier_3_Dep_Pages": [],
     "Tier_99_Ref": []
   }
 }
