@@ -1,0 +1,8 @@
+{
+  "ui_map_file_path": "resources/ui_map/windows/hpx_rebranding/feedback.json",
+  "missing_locators": [
+    "edit_feedback",
+    "edit_feedback_char_count"
+  ],
+  "existing_json_content": "{\n    \"menu_btn_from_feedback\": {\n        \"locator\": {\n            \"id\": \"SideFlyout.SideFlyoutView.NavigationBackArrowLeftIcon\",\n            \"xpath\": \"//Button[@Name='Menu']\"\n        }\n    }\n}"
+}
