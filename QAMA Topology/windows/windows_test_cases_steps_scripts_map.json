@@ -1,6 +1,6 @@
 {
   "C54": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/add_device/test_suite_02_add_device.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
     "correlation_map": {
       "1. Log in to the application with valid credentials.": {
         "Click home for logged in user": "self.devicesMFE.click_home_loggedin()",
@@ -27,7 +27,7 @@
     }
   },
   "C53": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/add_device/test_suite_02_add_device.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_02_add_device.py",
     "correlation_map": {
       "1. Log in to the application with valid credentials.": {
         "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_to_reset_and_launch_myhp')",
@@ -66,7 +66,7 @@
     }
   },
   "C52": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/add_device/test_suite_01_add_device.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
     "correlation_map": {
       "1. Open the Add Device page.": {
         "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
@@ -80,7 +80,7 @@
     }
   },
   "C47": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/add_device/test_suite_01_add_device.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
     "correlation_map": {
       "1. Navigate to the Add Device page.": {
         "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
@@ -101,7 +101,7 @@
     }
   },
   "C51": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/add_device/test_suite_01_add_device.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
     "correlation_map": {
       "1. Open the Add Device page.": {
         "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
@@ -115,7 +115,7 @@
     }
   },
   "C48": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/add_device/test_suite_01_add_device.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
     "correlation_map": {
       "1. Navigate to the Add Device page.": {
         "Verify PC device name is displayed on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
@@ -136,7 +136,7 @@
     }
   },
   "C50": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/add_device/test_suite_01_add_device.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
     "correlation_map": {
       "1. Navigate to the Add Device page and select \"Search by Serial Number\".": {
         "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
@@ -155,7 +155,7 @@
     }
   },
   "C49": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/add_device/test_suite_01_add_device.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
     "correlation_map": {
       "1. Open the Add Device side panel.": {
         "Verify PC device name shows up on homepage": "self.devices_details_pc_mfe.verify_pc_device_name_show_up()",
@@ -171,7 +171,7 @@
     }
   },
   "C46": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/add_device/test_suite_01_add_device.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/add_device/test_suite_01_add_device.py",
     "correlation_map": {
       "1. Launch the HPX application.": {
         "Invoke HPX launch fixture": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_myhp_launch')",
@@ -189,7 +189,7 @@
     }
   },
   "C58": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
     "correlation_map": {
       "1. Click the bell icon in the global header.": {
         "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
@@ -205,7 +205,7 @@
     }
   },
   "C59": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
     "correlation_map": {
       "1. Ensure the user is not signed in (guest mode).": {
         "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
@@ -222,7 +222,7 @@
     }
   },
   "C66": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
     "correlation_map": {
       "1. Log out of the application.": {
         "Verify sign-in button is visible indicating logged out state": "assert self.css.verify_sign_in_button_show_up(), 'sign-in button invisible'"
@@ -237,7 +237,7 @@
     }
   },
   "C64": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
     "correlation_map": {
       "1. Sign in to an account that has unread informative messages.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)"
@@ -253,7 +253,7 @@
     }
   },
   "C60": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_02_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
     "correlation_map": {
       "1. Open the notifications side panel by clicking the bell icon.": {
         "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
@@ -272,7 +272,7 @@
     }
   },
   "C61": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_02_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_02_bell_notifications.py",
     "correlation_map": {
       "1. Open the notifications side panel.": {
         "Verify bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
@@ -290,7 +290,7 @@
     }
   },
   "C55": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
     "correlation_map": {
       "1. Launch the HPX application.": {
         "Invoke HPX launch fixture": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_myhp_launch')",
@@ -305,7 +305,7 @@
     }
   },
   "C62": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
     "correlation_map": {
       "1. Sign in to an account that has unread urgent messages.": {
         "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
@@ -327,7 +327,7 @@
     }
   },
   "C56": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
     "correlation_map": {
       "1. Navigate to the PC devices page.": {
         "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
@@ -342,7 +342,7 @@
     }
   },
   "C57": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_01_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_01_bell_notifications.py",
     "correlation_map": {
       "1. Locate the bell icon in the global header.": {
         "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
@@ -359,7 +359,7 @@
     }
   },
   "C65": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
     "correlation_map": {
       "1. Sign in to the application.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -376,7 +376,7 @@
     }
   },
   "C63": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
     "correlation_map": {
       "1. Sign in to an account that has unread warning messages.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -392,7 +392,7 @@
     }
   },
   "C68": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -406,7 +406,7 @@
     }
   },
   "C67": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_03_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_03_bell_notifications.py",
     "correlation_map": {
       "1. Sign in to the application.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -422,7 +422,7 @@
     }
   },
   "C69": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
     "correlation_map": {
       "1. Sign in to the application.": {
         "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
@@ -452,7 +452,7 @@
     }
   },
   "C74": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -471,7 +471,7 @@
     }
   },
   "C70": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
     "correlation_map": {
       "1. Open the notifications panel while logged out (shows empty state).": {
         "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon not visible'",
@@ -500,7 +500,7 @@
     }
   },
   "C72": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -517,7 +517,7 @@
     }
   },
   "C73": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -540,7 +540,7 @@
     }
   },
   "C75": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
     "correlation_map": {
       "1. Open a detailed view of a specific informative notification.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -561,7 +561,7 @@
     }
   },
   "C71": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_04_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_04_bell_notifications.py",
     "correlation_map": {
       "1. Open the notifications panel while logged out.": {
         "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon not visible'",
@@ -579,7 +579,7 @@
     }
   },
   "C76": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_05_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
@@ -606,7 +606,7 @@
     }
   },
   "C78": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_05_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -634,7 +634,7 @@
     }
   },
   "C80": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_06_bell_notifcations.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
@@ -656,7 +656,7 @@
     }
   },
   "C81": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_06_bell_notifcations.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -682,7 +682,7 @@
     }
   },
   "C83": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_06_bell_notifcations.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -711,7 +711,7 @@
     }
   },
   "C82": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_06_bell_notifcations.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_06_bell_notifcations.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
@@ -745,7 +745,7 @@
     }
   },
   "C79": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_05_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Check if user is already signed in": "logged_in = self.profile.verify_top_profile_icon_signed_in()",
@@ -790,7 +790,7 @@
     }
   },
   "C77": {
-    "script_file_path": "tests/windows/hpx_rebranding/ts/bell_notifications/test_suite_05_bell_notifications.py",
+    "script_file_path": "tests/windows/hpx_rebranding/Framework/bell_notifications/test_suite_05_bell_notifications.py",
     "correlation_map": {
       "1. Sign in and open the notifications panel.": {
         "Sign in using user credentials": "self.fc.sign_in(self.user_name, self.password, self.web_driver)",
