@@ -1,6 +1,6 @@
 [
   {
-    "file_path": "resources/ui_map/windows/lc/add_device.json",
+    "file_path": "resources/ui_map/windows/hpx_rebranding/add_device.json",
     "locators": {
       "add_device_page_side_bar": {
         "locator": {
@@ -113,7 +113,7 @@
     }
   },
   {
-    "file_path": "resources/ui_map/windows/lc/audio.json",
+    "file_path": "resources/ui_map/windows/hpx_rebranding/audio.json",
     "locators": {
       "audio_card_on_home_page": {
         "locator": {
@@ -1677,7 +1677,7 @@
     }
   },
   {
-    "file_path": "resources/ui_map/windows/lc/battery.json",
+    "file_path": "resources/ui_map/windows/hpx_rebranding/battery.json",
     "locators": {
       "battery_manager_title_ltwo": {
         "locator": {
@@ -2367,7 +2367,7 @@
     }
   },
   {
-    "file_path": "resources/ui_map/windows/lc/bell_icon.json",
+    "file_path": "resources/ui_map/windows/hpx_rebranding/bell_icon.json",
     "locators": {
       "notifications_title": {
         "locator": {
@@ -2669,7 +2669,7 @@
     }
   },
   {
-    "file_path": "resources/ui_map/windows/lc/feedback.json",
+    "file_path": "resources/ui_map/windows/hpx_rebranding/feedback.json",
     "locators": {
       "menu_btn_from_feedback": {
         "locator": {
@@ -2680,7 +2680,7 @@
     }
   },
   {
-    "file_path": "resources/ui_map/windows/lc/hpx_settings.json",
+    "file_path": "resources/ui_map/windows/hpx_rebranding/hpx_settings.json",
     "locators": {
       "settings_header": {
         "locator": {
@@ -3148,7 +3148,7 @@
     }
   },
   {
-    "file_path": "resources/ui_map/windows/lc/pen_control.json",
+    "file_path": "resources/ui_map/windows/hpx_rebranding/pen_control.json",
     "locators": {
       "media_control_dropdown": {
         "locator": {
@@ -6113,7 +6113,7 @@
     }
   },
   {
-    "file_path": "resources/ui_map/windows/lc/profile.json",
+    "file_path": "resources/ui_map/windows/hpx_rebranding/profile.json",
     "locators": {
       "maximize_chrome": {
         "locator": {
