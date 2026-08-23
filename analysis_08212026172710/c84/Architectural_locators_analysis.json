@@ -8,27 +8,23 @@
       "resolved_intents": [
         {
           "intent": "Verify profile icon is visible",
-          "query": "devicesMFE verify_profile_icon_show_up",
           "mapped_function": "verify_profile_icon_show_up",
-          "rationale": "The function verify_profile_icon_show_up exists in profile.py and verifies that the top profile icon is displayed."
+          "query": "devicesMFE verify_profile_icon_show_up"
         },
         {
           "intent": "Click the profile button",
-          "query": "Click the profile button",
           "mapped_function": "click_devicepage_avatar_btn",
-          "rationale": "The function click_devicepage_avatar_btn exists in profile.py and clicks the avatar button on the device page to open the profile panel."
+          "query": "Click the profile button"
         },
         {
           "intent": "Verify feedback button is present",
-          "query": "Verify feedback button is present",
           "mapped_function": "verify_feedback_btn",
-          "rationale": "The function verify_feedback_btn exists in profile.py and verifies the presence of the feedback button and retrieves its name attribute."
+          "query": "Verify feedback button is present"
         },
         {
-          "intent": "Click the feedback button",
-          "query": "Click the feedback button",
+          "intent": "Click feedback button",
           "mapped_function": "click_feedback_btn",
-          "rationale": "The function click_feedback_btn exists in profile.py and clicks the feedback button to open the feedback form or dialog."
+          "query": "Click feedback button"
         }
       ],
       "missing_methods": []
@@ -39,55 +35,65 @@
       "situation": "Situation-2",
       "resolved_intents": [
         {
-          "intent": "Verify edit feedback screen is displayed",
-          "query": "Verify edit feedback screen is displayed",
-          "mapped_function": "verify_edit_feedback",
-          "rationale": "The function verify_edit_feedback exists in feedback.py and scrolls to and verifies that the feedback text edit field is visible."
+          "intent": "Verify tell your experience text box is visible",
+          "mapped_function": "verify_tell_your_experience",
+          "query": "Verify tell your experience text box is visible"
         },
         {
           "intent": "Input tell your experience text",
-          "query": "Input tell your experience text",
           "mapped_function": "input_tell_your_experience",
-          "rationale": "The function input_tell_your_experience exists in feedback.py and enters the user's detailed feedback experience text into the feedback text field."
+          "query": "Input tell your experience text"
         },
         {
-          "intent": "Get tell your experience text value",
-          "query": "Get tell your experience text value",
+          "intent": "Get entered tell your experience text value",
           "mapped_function": "get_entered_text",
-          "rationale": "The function get_entered_text exists in feedback.py and retrieves the text currently entered in the feedback text edit field."
+          "query": "Get entered tell your experience text value"
         }
       ],
       "missing_methods": [
         {
-          "intent": "Assert tell your experience text is truncated to characters",
-          "query": "Assert tell your experience text is truncated to characters",
-          "proposed_signature": "assert_text_truncated_to_max_characters(expected_max_length: int) -> bool",
-          "detailed_requirements": "This method should verify that the text entered in the 'tell your experience' feedback field is truncated to a maximum character limit. Steps: 1) Retrieve the current text from the feedback edit field using get_entered_text() or similar method. 2) Get the character count display text using get_feedback_text_char_count() to verify the UI shows the correct count. 3) Assert that the length of the entered text does not exceed the expected_max_length parameter. 4) Return True if the text is properly truncated, False otherwise. 5) Should handle edge cases where text might be exactly at the limit or below it. The method should validate both the actual text length and the character counter display to ensure consistency.",
-          "rationale": "While feedback.py has methods to input text (input_tell_your_experience) and get character count (get_feedback_text_char_count), there is no explicit method to assert that text is truncated to a specific character limit. This validation logic belongs in feedback.py as it directly relates to the feedback form's text input constraints.",
+          "intent": "Verify edit feedback screen is displayed",
+          "proposed_signature": "verify_edit_feedback_screen_displayed()",
+          "detailed_requirements": "This method should verify that the edit feedback screen is displayed by checking for the presence of key elements that uniquely identify the feedback editing interface. It should wait for the feedback slide title element to be visible, verify the presence of the feedback text edit field, and confirm that the screen is in an editable state. The method should return True if all verification checks pass, False otherwise. It should use appropriate timeout values to handle page load delays and should raise an exception if the screen is not displayed within the expected timeframe.",
           "implementation_checklist": [
-            "Wait for 'edit_feedback' element to be present using self.driver.wait_for_object('edit_feedback')",
-            "Call existing get_entered_text() method to retrieve the current text value from the feedback edit field",
-            "Store the retrieved text in a variable (e.g., entered_text)",
-            "Calculate the actual character length using len(entered_text)",
-            "Wait for 'edit_feedback_char_count' element to be present using self.driver.wait_for_object('edit_feedback_char_count')",
-            "Call existing get_feedback_text_char_count() method to retrieve the character count display text",
-            "Parse the character count display text to extract the current count (e.g., from '1500/2000' extract '1500')",
-            "Assert that len(entered_text) <= expected_max_length",
-            "Assert that len(entered_text) matches the parsed current count from the character counter display",
-            "Assert that the parsed current count does not exceed expected_max_length",
-            "Return True if all assertions pass, otherwise raise AssertionError with descriptive message"
+            "Wait for 'hpx_feedback_page_title' to be visible using self.driver.wait_for_object",
+            "Wait for 'tell_your_experience_title' to be visible using self.driver.wait_for_object",
+            "Verify 'tell_your_experience_title' element is enabled/editable by checking is_enabled() or similar state",
+            "Optionally wait for 'rating_star_field' to be visible as additional confirmation",
+            "Return True if all elements are present and visible, False or raise exception otherwise"
           ],
           "required_locator_keys": [
-            "edit_feedback",
-            "edit_feedback_char_count"
+            "hpx_feedback_page_title",
+            "tell_your_experience_title",
+            "rating_star_field"
+          ]
+        },
+        {
+          "intent": "Assert tell your experience text is truncated to maximum characters",
+          "proposed_signature": "assert_experience_text_truncated_to_max_chars(expected_max_chars: int)",
+          "detailed_requirements": "This method should verify that the tell your experience text input field enforces a maximum character limit by truncating input that exceeds the limit. It should: 1) Get the current text value from the feedback text field using get_entered_text() or similar method, 2) Get the character count display using get_feedback_text_char_count() to verify the count matches the actual text length, 3) Compare the length of the entered text against the expected_max_chars parameter, 4) Assert that the text length does not exceed the maximum allowed characters, 5) Optionally verify that the character count indicator shows the correct format (e.g., 'X/Y characters'), 6) Return True if the text is properly truncated to the maximum length, False otherwise. The method should handle edge cases where the text might be exactly at the limit or below it.",
+          "implementation_checklist": [
+            "Wait for 'tell_your_experience_title' to be visible using self.driver.wait_for_object",
+            "Call existing self.get_entered_text() method to retrieve current text value from feedback text field",
+            "Calculate actual character length of retrieved text using len()",
+            "Call existing self.get_feedback_text_char_count() method to retrieve character count display text",
+            "Parse the character count display text to extract current count and max count (e.g., from '500/2000' format)",
+            "Assert that len(retrieved_text) <= expected_max_chars",
+            "Assert that len(retrieved_text) equals the current count shown in character count display",
+            "Assert that the max count shown in character count display equals expected_max_chars",
+            "Return True if all assertions pass, raise AssertionError with descriptive message otherwise"
+          ],
+          "required_locator_keys": [
+            "tell_your_experience_title"
           ]
         }
       ],
       "locator_gaps": {
         "ui_map_file": "feedback.json",
         "present_locators": [
-          "edit_feedback",
-          "edit_feedback_char_count"
+          "hpx_feedback_page_title",
+          "tell_your_experience_title",
+          "rating_star_field"
         ],
         "missing_locators": []
       }
