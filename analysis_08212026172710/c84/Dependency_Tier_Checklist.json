@@ -1,10 +1,10 @@
 {
   "aava_config": {
-    "aava_username": "joy.raha@acendion.com",
     "repo_owner": "joyrahaASC",
     "repo_name": "MobileApps",
     "branch": "feature1",
     "intent_path": "libs/flows/windows/hpx_rebranding",
+    "aava_username": "joy.raha@acendion.com",
     "platform": "windows",
     "analysis_path": "analysis_08212026172710/c84"
   },
@@ -13,38 +13,105 @@
     "Tier_1_Locators": [],
     "Tier_2_Indep_Pages": [
       {
-        "file": "profile.py",
-        "path": "libs/flows/windows/hpx_rebranding/profile.py",
-        "category": "EXACT_MATCH"
-      },
-      {
         "file": "feedback.py",
         "path": "libs/flows/windows/hpx_rebranding/feedback.py",
-        "category": "CANDIDATE"
-      },
-      {
-        "file": "css.py",
-        "path": "libs/flows/windows/hpx_rebranding/css.py",
-        "category": "CANDIDATE"
-      },
-      {
-        "file": "virtual_assistant.py",
-        "path": "libs/flows/windows/hpx_rebranding/virtual_assistant.py",
-        "category": "CANDIDATE"
-      },
-      {
-        "file": "hppk.py",
-        "path": "libs/flows/windows/hpx_rebranding/hppk.py",
-        "category": "CANDIDATE"
+        "situation": "Situation-2",
+        "resolved_intents": [
+          {
+            "intent": "Verify tell your experience text box is visible",
+            "mapped_function": "verify_tell_your_experience",
+            "query": "Verify tell your experience text box is visible"
+          },
+          {
+            "intent": "Input tell your experience text",
+            "mapped_function": "input_tell_your_experience",
+            "query": "Input tell your experience text"
+          },
+          {
+            "intent": "Get entered tell your experience text value",
+            "mapped_function": "get_entered_text",
+            "query": "Get entered tell your experience text value"
+          }
+        ],
+        "missing_methods": [
+          {
+            "intent": "Verify edit feedback screen is displayed",
+            "proposed_signature": "verify_edit_feedback_screen_displayed()",
+            "detailed_requirements": "This method should verify that the edit feedback screen is displayed by checking for the presence of key elements that uniquely identify the feedback editing interface. It should wait for the feedback slide title element to be visible, verify the presence of the feedback text edit field, and confirm that the screen is in an editable state. The method should return True if all verification checks pass, False otherwise. It should use appropriate timeout values to handle page load delays and should raise an exception if the screen is not displayed within the expected timeframe.",
+            "implementation_checklist": [
+              "Wait for 'hpx_feedback_page_title' to be visible using self.driver.wait_for_object",
+              "Wait for 'tell_your_experience_title' to be visible using self.driver.wait_for_object",
+              "Verify 'tell_your_experience_title' element is enabled/editable by checking is_enabled() or similar state",
+              "Optionally wait for 'rating_star_field' to be visible as additional confirmation",
+              "Return True if all elements are present and visible, False or raise exception otherwise"
+            ],
+            "required_locator_keys": [
+              "hpx_feedback_page_title",
+              "tell_your_experience_title",
+              "rating_star_field"
+            ]
+          },
+          {
+            "intent": "Assert tell your experience text is truncated to maximum characters",
+            "proposed_signature": "assert_experience_text_truncated_to_max_chars(expected_max_chars: int)",
+            "detailed_requirements": "This method should verify that the tell your experience text input field enforces a maximum character limit by truncating input that exceeds the limit. It should: 1) Get the current text value from the feedback text field using get_entered_text() or similar method, 2) Get the character count display using get_feedback_text_char_count() to verify the count matches the actual text length, 3) Compare the length of the entered text against the expected_max_chars parameter, 4) Assert that the text length does not exceed the maximum allowed characters, 5) Optionally verify that the character count indicator shows the correct format (e.g., 'X/Y characters'), 6) Return True if the text is properly truncated to the maximum length, False otherwise. The method should handle edge cases where the text might be exactly at the limit or below it.",
+            "implementation_checklist": [
+              "Wait for 'tell_your_experience_title' to be visible using self.driver.wait_for_object",
+              "Call existing self.get_entered_text() method to retrieve current text value from feedback text field",
+              "Calculate actual character length of retrieved text using len()",
+              "Call existing self.get_feedback_text_char_count() method to retrieve character count display text",
+              "Parse the character count display text to extract current count and max count (e.g., from '500/2000' format)",
+              "Assert that len(retrieved_text) <= expected_max_chars",
+              "Assert that len(retrieved_text) equals the current count shown in character count display",
+              "Assert that the max count shown in character count display equals expected_max_chars",
+              "Return True if all assertions pass, raise AssertionError with descriptive message otherwise"
+            ],
+            "required_locator_keys": [
+              "tell_your_experience_title"
+            ]
+          }
+        ],
+        "locator_gaps": {
+          "ui_map_file": "feedback.json",
+          "present_locators": [
+            "hpx_feedback_page_title",
+            "tell_your_experience_title",
+            "rating_star_field"
+          ],
+          "missing_locators": []
+        }
       }
     ],
-    "Tier_3_Dep_Pages": [
+    "Tier_3_Dep_Pages": [],
+    "Tier_99_Ref": [
       {
-        "file": "flow_container.py",
-        "path": "libs/flows/windows/hpx_rebranding/flow_container.py",
-        "category": "CANDIDATE"
+        "file": "profile.py",
+        "path": "libs/flows/windows/hpx_rebranding/profile.py",
+        "situation": "Situation-1",
+        "resolved_intents": [
+          {
+            "intent": "Verify profile icon is visible",
+            "mapped_function": "verify_profile_icon_show_up",
+            "query": "devicesMFE verify_profile_icon_show_up"
+          },
+          {
+            "intent": "Click the profile button",
+            "mapped_function": "click_devicepage_avatar_btn",
+            "query": "Click the profile button"
+          },
+          {
+            "intent": "Verify feedback button is present",
+            "mapped_function": "verify_feedback_btn",
+            "query": "Verify feedback button is present"
+          },
+          {
+            "intent": "Click feedback button",
+            "mapped_function": "click_feedback_btn",
+            "query": "Click feedback button"
+          }
+        ],
+        "missing_methods": []
       }
-    ],
-    "Tier_99_Ref": []
+    ]
   }
 }
