@@ -1,7 +1,0 @@
-{
-  "ui_map_file_path": "resources/ui_map/windows/hpx_rebranding/existing_locators.json",
-  "missing_locators": [
-    "dummy_locator_existing"
-  ],
-  "existing_json_content": ""
-}
