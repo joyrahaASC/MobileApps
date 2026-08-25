@@ -4,15 +4,5 @@
             "id": "SideFlyout.SideFlyoutView.NavigationBackArrowLeftIcon",
             "xpath": "//Button[@Name='Menu']"
         }
-    },
-    "edit_feedback": {
-        "locator": {
-            "id": "TBD_edit_feedback"
-        }
-    },
-    "edit_feedback_char_count": {
-        "locator": {
-            "id": "TBD_edit_feedback_char_count"
-        }
     }
 }
