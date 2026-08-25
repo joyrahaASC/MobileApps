@@ -10,7 +10,7 @@ class TestC84:
         """Setup fixture for test initialization."""
         self.flow = HPXRebrandingFlow()
         yield
-        # Teardown logic if needed
+        # Teardown code if needed
 
     def test_c84(self):
         """Test case C84 for HPX Rebranding flow."""
