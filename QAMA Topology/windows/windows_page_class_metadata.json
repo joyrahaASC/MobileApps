@@ -8349,14 +8349,6 @@
         ]
       },
       {
-        "signature": "click_signed_in_profile_icon",
-        "purpose": "Clicks the profile icon when the user is already signed in to access profile options.",
-        "input_parameters": [],
-        "output_parameters": [
-          "Any"
-        ]
-      },
-      {
         "signature": "click_view_privacy_resources_btn",
         "purpose": "Navigates to privacy resources by clicking the privacy resources button.",
         "input_parameters": [],
@@ -8375,14 +8367,6 @@
       {
         "signature": "click_subscriptions_link",
         "purpose": "Navigates to the subscriptions management page by clicking the subscriptions link.",
-        "input_parameters": [],
-        "output_parameters": [
-          "Any"
-        ]
-      },
-      {
-        "signature": "click_profile_icon_show_up",
-        "purpose": "Clicks the avatar icon on the device page to display profile options.",
         "input_parameters": [],
         "output_parameters": [
           "Any"
