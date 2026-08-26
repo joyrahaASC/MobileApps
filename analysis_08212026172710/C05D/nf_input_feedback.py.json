@@ -1,0 +1,77 @@
+{
+  "python_file_path": "libs/flows/windows/hpx_rebranding/feedback.py",
+  "missing_methods": [
+    {
+      "intent": "Verify edit feedback screen is displayed",
+      "proposed_signature": "verify_edit_feedback_screen_displayed()",
+      "detailed_requirements": "Wait for the edit feedback screen to be fully loaded and displayed. Verify key elements of the feedback screen are visible (e.g., title, text box, submit button). Use explicit wait with visibility_of_element_located. Return True if displayed correctly, False otherwise.",
+      "implementation_checklist": [
+        "Wait for edit_feedback element to be visible using explicit wait",
+        "Verify edit_feedback is displayed",
+        "Optionally verify edit_feedback_char_count is visible as supporting element",
+        "Return True if all key elements are visible, False otherwise"
+      ],
+      "required_locator_keys": [
+        "edit_feedback",
+        "edit_feedback_char_count"
+      ]
+    },
+    {
+      "intent": "Verify tell your experience text box is visible",
+      "proposed_signature": "verify_experience_textbox_visible()",
+      "detailed_requirements": "Wait for the 'tell your experience' text box element to be visible on the feedback screen. Use explicit wait with visibility_of_element_located. Return True if visible, False otherwise. Timeout should be configurable with default of 10 seconds.",
+      "implementation_checklist": [
+        "Wait for edit_feedback element to be visible using explicit wait with configurable timeout (default 10s)",
+        "Return True if edit_feedback is visible, False otherwise"
+      ],
+      "required_locator_keys": [
+        "edit_feedback"
+      ]
+    },
+    {
+      "intent": "Input tell your experience text",
+      "proposed_signature": "input_experience_text(text: str)",
+      "detailed_requirements": "Wait for the experience text box to be clickable, clear any existing text, and input the provided text string. Use explicit wait with element_to_be_clickable. Handle any character limits or validation. Parameters: text - the string to input into the text box.",
+      "implementation_checklist": [
+        "Wait for edit_feedback element to be clickable using explicit wait",
+        "Clear existing text from edit_feedback",
+        "Input the provided text string into edit_feedback",
+        "Handle any character limits or validation errors"
+      ],
+      "required_locator_keys": [
+        "edit_feedback"
+      ]
+    },
+    {
+      "intent": "Get tell your experience text value",
+      "proposed_signature": "get_experience_text_value()",
+      "detailed_requirements": "Retrieve and return the current text value from the 'tell your experience' text box. Wait for the element to be present. Use get_attribute('value') or text property as appropriate. Return the text as a string.",
+      "implementation_checklist": [
+        "Wait for edit_feedback element to be present using explicit wait",
+        "Retrieve text value from edit_feedback using get_attribute('value') or text property",
+        "Return the text as a string"
+      ],
+      "required_locator_keys": [
+        "edit_feedback"
+      ]
+    },
+    {
+      "intent": "Assert tell your experience text is truncated",
+      "proposed_signature": "assert_experience_text_truncated(expected_length: int)",
+      "detailed_requirements": "Verify that the text in the experience text box is truncated to the expected maximum length. Get the current text value and assert its length equals the expected_length. Should raise AssertionError with descriptive message if lengths don't match. Parameters: expected_length - the maximum character length expected after truncation.",
+      "implementation_checklist": [
+        "Wait for edit_feedback element to be present",
+        "Get current text value from edit_feedback",
+        "Calculate the length of the retrieved text",
+        "Assert that the length equals expected_length parameter",
+        "Raise AssertionError with descriptive message if lengths don't match",
+        "Optionally verify edit_feedback_char_count displays correct count"
+      ],
+      "required_locator_keys": [
+        "edit_feedback",
+        "edit_feedback_char_count"
+      ]
+    }
+  ],
+  "existing_python_content": ""
+}
