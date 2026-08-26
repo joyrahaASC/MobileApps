@@ -292,3 +292,43 @@ class Feedback(HPXRebrandingFlow):
     def get_feedback_text_char_count(self, timeout=10):
         char_count_text = self.driver.get_attribute("edit_feedback_char_count", "Name", timeout=timeout)
         return char_count_text
+
+    def input_tell_your_experience_text(self, text: str) -> None:
+        """
+        Input text into the 'tell your experience' text field.
+        
+        :param text: The text string to input into the feedback field
+        :return: None
+        """
+        self.driver.swipe("edit_feedback")
+        self.driver.wait_for_object("edit_feedback")
+        element = self.driver.wait_for_object("edit_feedback")
+        element.click()
+        element.send_keys(Keys.CONTROL + "a")
+        element.send_keys(Keys.DELETE)
+        self.driver.send_keys("edit_feedback", text)
+
+    def assert_tell_your_experience_text_is_truncated(self, expected_max_length: int) -> bool:
+        """
+        Assert that the text entered in the 'tell your experience' field is truncated to the maximum character limit.
+        
+        :param expected_max_length: The expected maximum character length
+        :return: True if truncation is properly enforced, raises AssertionError otherwise
+        """
+        self.driver.swipe("edit_feedback")
+        self.driver.wait_for_object("edit_feedback")
+        entered_text = self.get_entered_text()
+        text_length = len(entered_text)
+        self.driver.wait_for_object("edit_feedback_char_count")
+        char_count_display = self.driver.get_attribute("edit_feedback_char_count", "Name")
+        if "/" in char_count_display:
+            parts = char_count_display.split("/")
+            current_count = int(parts[0].strip())
+            max_count = int(parts[1].strip())
+        else:
+            raise AssertionError(f"Character count display format is incorrect: {char_count_display}")
+        assert text_length == expected_max_length, f"Text length {text_length} does not equal expected max length {expected_max_length}"
+        assert text_length <= expected_max_length, f"Text length {text_length} exceeds expected max length {expected_max_length}"
+        assert current_count == text_length, f"Character count display shows {current_count} but actual text length is {text_length}"
+        assert max_count == expected_max_length, f"Max count display shows {max_count} but expected max length is {expected_max_length}"
+        return True
