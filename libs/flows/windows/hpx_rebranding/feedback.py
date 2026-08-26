@@ -270,9 +270,6 @@ class Feedback(HPXRebrandingFlow):
         self.driver.swipe("other_2nd_dropdown")
         self.driver.click("other_2nd_dropdown", timeout=10)
 
-    def input_tell_your_experience(self, experience):
-        self.driver.send_keys("edit_feedback","[test] [internal_testing] " + experience)
-
     def input_contacting_email(self, email):
         self.driver.send_keys("contacting_email", email)
 
@@ -295,50 +292,3 @@ class Feedback(HPXRebrandingFlow):
     def get_feedback_text_char_count(self, timeout=10):
         char_count_text = self.driver.get_attribute("edit_feedback_char_count", "Name", timeout=timeout)
         return char_count_text
-
-    def assert_text_truncated_to_max_characters(self, expected_max_length: int = 2000) -> bool:
-        """
-        Assert that the feedback text is truncated to the maximum allowed characters.
-        
-        :param expected_max_length: The maximum allowed character length (default: 2000)
-        :return: True if the text is properly truncated to max length
-        :raises AssertionError: If the text length exceeds the expected maximum or doesn't match expected truncation
-        """
-        # Wait for the edit_feedback element to be present
-        self.driver.wait_for_object("edit_feedback")
-        
-        # Retrieve the current text from the feedback field
-        actual_text = self.get_entered_text()
-        
-        # Handle edge case: if actual_text is None or empty
-        if actual_text is None or actual_text == "":
-            print(f"Warning: Feedback text field is empty or None")
-            actual_text = "" if actual_text is None else actual_text
-        
-        # Calculate the actual character count
-        actual_length = len(actual_text)
-        print(f"Actual character count: {actual_length}, Maximum allowed: {expected_max_length}")
-        
-        # Wait for the character count display element
-        self.driver.wait_for_object("edit_feedback_char_count")
-        
-        # Get the character count display text
-        char_count_display = self.driver.get_attribute("edit_feedback_char_count", "Name")
-        print(f"Character count display: {char_count_display}")
-        
-        # Parse the character count display (e.g., from '2000/2000' format)
-        if char_count_display and "/" in char_count_display:
-            displayed_count = int(char_count_display.split("/")[0])
-            print(f"Parsed displayed count: {displayed_count}")
-            
-            # Verify that the character count display matches the actual text length
-            assert displayed_count == actual_length, f"Character count display ({displayed_count}) does not match actual text length ({actual_length})"
-        
-        # Assert that the text length does not exceed the expected maximum
-        assert actual_length <= expected_max_length, f"Text length ({actual_length}) exceeds maximum allowed length ({expected_max_length})"
-        
-        # Assert that the text length equals the expected maximum for truncation verification
-        assert actual_length == expected_max_length, f"Text was not truncated to maximum length. Expected: {expected_max_length}, Actual: {actual_length}"
-        
-        print(f"Assertion passed: Text is properly truncated to {expected_max_length} characters")
-        return True
