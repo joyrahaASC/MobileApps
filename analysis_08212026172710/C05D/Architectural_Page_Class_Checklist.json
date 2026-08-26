@@ -1,0 +1,72 @@
+{
+  "test_case_id": "C05D",
+  "files": [
+    {
+      "file": "flow_container.py",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Click profile button",
+          "mapped_function": "click_profile_button"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "profile.py",
+      "situation": "Situation-2",
+      "resolved_intents": [],
+      "missing_methods": [
+        {
+          "intent": "Verify profile icon is visible",
+          "proposed_signature": "verify_profile_icon_visible()",
+          "detailed_requirements": "Wait for the profile icon element to be visible on the screen. Use explicit wait with visibility_of_element_located. Return True if visible, False otherwise. Timeout should be configurable with default of 10 seconds."
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "proposed_signature": "verify_feedback_button_present()",
+          "detailed_requirements": "Wait for the feedback button element to be present in the DOM. Use explicit wait with presence_of_element_located. Return True if present, False otherwise. Timeout should be configurable with default of 10 seconds."
+        },
+        {
+          "intent": "Click feedback button",
+          "proposed_signature": "click_feedback_button()",
+          "detailed_requirements": "Wait for the feedback button to be clickable and click it. Use explicit wait with element_to_be_clickable. Handle any potential overlays or loading states. Should navigate to the feedback screen."
+        }
+      ],
+      "workflow_d_error": "list indices must be integers or slices, not str"
+    },
+    {
+      "file": "feedback.py",
+      "situation": "Situation-2",
+      "resolved_intents": [],
+      "missing_methods": [
+        {
+          "intent": "Verify edit feedback screen is displayed",
+          "proposed_signature": "verify_edit_feedback_screen_displayed()",
+          "detailed_requirements": "Wait for the edit feedback screen to be fully loaded and displayed. Verify key elements of the feedback screen are visible (e.g., title, text box, submit button). Use explicit wait with visibility_of_element_located. Return True if displayed correctly, False otherwise."
+        },
+        {
+          "intent": "Verify tell your experience text box is visible",
+          "proposed_signature": "verify_experience_textbox_visible()",
+          "detailed_requirements": "Wait for the 'tell your experience' text box element to be visible on the feedback screen. Use explicit wait with visibility_of_element_located. Return True if visible, False otherwise. Timeout should be configurable with default of 10 seconds."
+        },
+        {
+          "intent": "Input tell your experience text",
+          "proposed_signature": "input_experience_text(text: str)",
+          "detailed_requirements": "Wait for the experience text box to be clickable, clear any existing text, and input the provided text string. Use explicit wait with element_to_be_clickable. Handle any character limits or validation. Parameters: text - the string to input into the text box."
+        },
+        {
+          "intent": "Get tell your experience text value",
+          "proposed_signature": "get_experience_text_value()",
+          "detailed_requirements": "Retrieve and return the current text value from the 'tell your experience' text box. Wait for the element to be present. Use get_attribute('value') or text property as appropriate. Return the text as a string."
+        },
+        {
+          "intent": "Assert tell your experience text is truncated",
+          "proposed_signature": "assert_experience_text_truncated(expected_length: int)",
+          "detailed_requirements": "Verify that the text in the experience text box is truncated to the expected maximum length. Get the current text value and assert its length equals the expected_length. Should raise AssertionError with descriptive message if lengths don't match. Parameters: expected_length - the maximum character length expected after truncation."
+        }
+      ],
+      "workflow_d_error": "list indices must be integers or slices, not str"
+    }
+  ]
+}
