@@ -1,0 +1,59 @@
+{
+  "test_case_id": "CTSA",
+  "files": [
+    {
+      "file": "profile.py",
+      "path": "libs/flows/windows/hpx_rebranding/profile.py",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        },
+        {
+          "intent": "Click profile button",
+          "mapped_function": "click_profile_icon_show_up"
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn"
+        },
+        {
+          "intent": "Click feedback button",
+          "mapped_function": "click_feedback_btn"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "feedback.py",
+      "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify edit feedback screen is displayed",
+          "mapped_function": "verify_edit_feedback"
+        },
+        {
+          "intent": "Verify tell your experience textbox is found",
+          "mapped_function": "verify_tell_your_experience"
+        },
+        {
+          "intent": "Input tell your experience text",
+          "mapped_function": "input_tell_your_experience"
+        },
+        {
+          "intent": "Get entered tell your experience value",
+          "mapped_function": "get_entered_text"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Assert tell your experience text is truncated",
+          "proposed_signature": "assert_tell_your_experience_text_truncated(expected_max_length: int)",
+          "detailed_requirements": "This method should retrieve the entered text from the 'tell your experience' textbox using get_entered_text() and verify that the text length does not exceed the expected maximum character limit. It should also verify the character count display matches the actual text length. The method should raise an assertion error if the text is not properly truncated at the maximum length boundary. Parameters: expected_max_length - the maximum number of characters allowed in the textbox (typically 1000 or similar). Returns: Boolean True if text is properly truncated, raises AssertionError otherwise."
+        }
+      ]
+    }
+  ]
+}
