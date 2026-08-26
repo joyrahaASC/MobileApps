@@ -1,0 +1,34 @@
+{
+  "python_file_path": "libs/flows/windows/hpx_rebranding/profile.py",
+  "missing_methods": [
+    {
+      "intent": "Verify profile icon is visible",
+      "proposed_signature": "verify_profile_icon_visible()",
+      "detailed_requirements": "This method must verify that the profile icon/avatar is visible on the screen. It should wait for the profile icon element to be present and visible, then return True if visible, False otherwise. Should include appropriate timeout and error handling.",
+      "implementation_checklist": [
+        "Wait for 'profile_icon_signed_in' to be present with timeout=20 and raise_e=False",
+        "If element is found, return True",
+        "If element is not found (wait_for_object returns None/False), return False",
+        "Handle timeout gracefully without raising exception"
+      ],
+      "required_locator_keys": [
+        "profile_icon_signed_in"
+      ]
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "proposed_signature": "verify_feedback_button_present()",
+      "detailed_requirements": "This method must verify that the feedback button is present in the profile side flyout or profile menu. It should wait for the feedback button element to be present in the DOM, then return True if present, False otherwise. Should include appropriate timeout and error handling.",
+      "implementation_checklist": [
+        "Wait for 'feedback_btn' to be present with timeout=10 and raise_e=False",
+        "If element is found, return True",
+        "If element is not found (wait_for_object returns None/False), return False",
+        "Handle timeout gracefully without raising exception"
+      ],
+      "required_locator_keys": [
+        "feedback_btn"
+      ]
+    }
+  ],
+  "existing_python_content": "from MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow import HPXRebrandingFlow\nimport time\n\nclass Profile(HPXRebrandingFlow):\n    flow_name = \"profile\"\n\n    def click_sign_in_from_avatar_sideflyout(self):\n        self.driver.wait_for_object(\"sideflyout_sign_in_link\", timeout=20)\n        self.driver.click(\"sideflyout_sign_in_link\")\n"
+}
