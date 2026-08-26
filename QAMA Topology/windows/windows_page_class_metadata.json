@@ -894,16 +894,6 @@
         ]
       },
       {
-        "signature": "input_tell_your_experience",
-        "purpose": "Enters the user's detailed feedback experience text into the feedback text field, prefixed with test markers.",
-        "input_parameters": [
-          "experience"
-        ],
-        "output_parameters": [
-          "Any"
-        ]
-      },
-      {
         "signature": "input_contacting_email",
         "purpose": "Enters the user's email address for follow-up contact regarding the feedback.",
         "input_parameters": [
