@@ -1,0 +1,54 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/test_C05.py",
+  "top_5_reference_file": "analysis_08212026172710/c84/ns_top_5_matcher_scripts.json",
+  "chronological_steps": [
+    {
+      "intent": "Verify profile icon is visible",
+      "mapped_function": "verify_profile_icon_show_up",
+      "justification": "The function verify_profile_icon_show_up() exists and verifies that the top profile icon is displayed.",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click profile button",
+      "mapped_function": "click_profile_icon_show_up",
+      "justification": "The function click_profile_icon_show_up() exists and clicks the avatar icon on the device page to display profile options.",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "mapped_function": "verify_feedback_btn",
+      "justification": "The function verify_feedback_btn() exists and verifies the presence of the feedback button and retrieves its name attribute.",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click feedback button",
+      "mapped_function": "click_feedback_btn",
+      "justification": "The function click_feedback_btn() exists and clicks the feedback button to open the feedback form or dialog.",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify edit feedback screen is displayed",
+      "mapped_function": "verify_edit_feedback",
+      "justification": "The function verify_edit_feedback() exists and scrolls to and verifies that the feedback text edit field is visible.",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Input tell your experience text",
+      "mapped_function": "input_tell_your_experience",
+      "justification": "The function input_tell_your_experience(experience) exists and enters the user's detailed feedback experience text into the feedback text field.",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Get entered tell your experience text value",
+      "mapped_function": "get_entered_text",
+      "justification": "The function get_entered_text() exists and retrieves the text currently entered in the feedback text edit field.",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Assert tell your experience text is truncated to 2000 characters",
+      "label": "",
+      "mapped_function": "assert_text_truncated_to_max_characters",
+      "page_object_name": "feedback"
+    }
+  ]
+}
