@@ -1,0 +1,53 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/test_c05a.py",
+  "top_5_reference_file": "analysis_08212026172710/c05A/ns_top_5_matcher_scripts.json",
+  "chronological_steps": [
+    {
+      "intent": "Verify profile icon is visible",
+      "query": "devicesMFE verify_profile_icon_show_up",
+      "mapped_function": "verify_profile_icon_show_up",
+      "rationale": "The function verify_profile_icon_show_up exists in profile.py and verifies that the top profile icon is displayed.",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click profile button",
+      "query": "Click profile button",
+      "mapped_function": "click_devicepage_avatar_btn",
+      "rationale": "The function click_devicepage_avatar_btn exists in profile.py and clicks the avatar button on the device page to open the profile panel.",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "query": "Verify feedback button is present",
+      "mapped_function": "verify_feedback_btn",
+      "rationale": "The function verify_feedback_btn exists in profile.py and verifies the presence of the feedback button and retrieves its name attribute.",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click feedback button",
+      "query": "Click feedback button",
+      "mapped_function": "click_feedback_btn",
+      "rationale": "The function click_feedback_btn exists in profile.py and clicks the feedback button to open the feedback form or dialog.",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify edit feedback screen opens",
+      "label": "",
+      "mapped_function": "verify_edit_feedback_screen_opens",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Input tell your experience text",
+      "label": "",
+      "mapped_function": "input_tell_your_experience_text",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Get tell your experience text value",
+      "query": "Get tell your experience text value",
+      "mapped_function": "get_entered_text",
+      "rationale": "The function get_entered_text exists in feedback.py and retrieves the text currently entered in the feedback text edit field.",
+      "page_object_name": "feedback"
+    }
+  ]
+}
