@@ -1,0 +1,30 @@
+{
+  "python_file_path": null,
+  "missing_methods": [
+    {
+      "intent": "Assert tell your experience text is truncated",
+      "label": "Assert tell your experience text is truncated",
+      "proposed_signature": "assert_experience_text_is_truncated(expected_max_length: int = 1000) -> bool",
+      "detailed_requirements": "This method should verify that the text entered in the 'tell your experience' feedback field is truncated to the maximum allowed character limit. The implementation should: 1) Retrieve the current text value from the feedback text field using get_entered_text() or similar method, 2) Get the character count display using get_feedback_text_char_count() to verify the UI shows truncation, 3) Compare the actual text length against the expected maximum length (default 1000 characters), 4) Assert that the text length does not exceed the maximum, 5) Optionally verify that a truncation indicator or character count warning is displayed in the UI, 6) Return True if text is properly truncated, False otherwise, 7) Raise an assertion error with descriptive message if truncation validation fails. This method belongs in feedback.py as it directly validates feedback form text input behavior and character limits.",
+      "rationale": "The feedback.py file contains methods for inputting text (input_tell_your_experience), getting entered text (get_entered_text), and getting character count (get_feedback_text_char_count), but lacks a method to assert/verify that text truncation is working correctly. This validation logic belongs in feedback.py as it's specific to the feedback form's text input constraints.",
+      "implementation_checklist": [
+        "Wait for 'edit_feedback' element to be present using self.driver.wait_for_object('edit_feedback')",
+        "Call existing get_entered_text() method to retrieve the current text value from the feedback text field",
+        "Calculate the actual character length of the retrieved text using len()",
+        "Wait for 'edit_feedback_char_count' element to be present using self.driver.wait_for_object('edit_feedback_char_count', timeout=10)",
+        "Call existing get_feedback_text_char_count() method to retrieve the character count display text",
+        "Parse the character count display text to extract the current count and maximum count (e.g., '1000/1000' format)",
+        "Assert that the actual text length does not exceed expected_max_length parameter (default 1000)",
+        "Assert that the actual text length matches the current count shown in the character count display",
+        "Assert that the maximum count shown in the character count display equals expected_max_length",
+        "If any assertion fails, raise AssertionError with descriptive message including actual length, expected max length, and character count display value",
+        "Return True if all validations pass"
+      ],
+      "required_locator_keys": [
+        "edit_feedback",
+        "edit_feedback_char_count"
+      ]
+    }
+  ],
+  "existing_python_content": "{\n  \"no_of_files\": 5,\n  \"testscript_files\": [\n    \"updated_test_suite_01_add_shortcuts.py\",\n    \"updated_test_suite_02_add_shortcuts.py\",\n    \"updated_test_suite_03_add_shortcuts.py\",\n    \"updated_test_suite_04_add_shortcuts.py\",\n    \"updated_test_suite_05_add_shortcuts.py\"\n  ]\n}"
+}
