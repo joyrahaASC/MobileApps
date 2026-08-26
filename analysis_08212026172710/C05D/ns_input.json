@@ -1,0 +1,65 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/test_C05D.py",
+  "top_5_reference_file": "analysis_08212026172710/C05D/ns_top_5_matcher_scripts.json",
+  "chronological_steps": {
+    "expected_result": "The text box accepts a maximum of 2000 characters and truncates any additional input.",
+    "original_steps": [
+      {
+        "step": "1. Ensure the profile icon is visible and click the profile button.",
+        "granular_expansion": [
+          {
+            "intent": "Verify profile icon is visible",
+            "predicted_code": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'"
+          },
+          {
+            "intent": "Click profile button",
+            "predicted_code": null
+          }
+        ]
+      },
+      {
+        "step": "2. Verify the feedback button is present and click it.",
+        "granular_expansion": [
+          {
+            "intent": "Verify feedback button is present",
+            "predicted_code": null
+          },
+          {
+            "intent": "Click feedback button",
+            "predicted_code": null
+          }
+        ]
+      },
+      {
+        "step": "3. Verify the edit feedback screen opens.",
+        "granular_expansion": [
+          {
+            "intent": "Verify edit feedback screen is displayed",
+            "predicted_code": null
+          }
+        ]
+      },
+      {
+        "step": "4. Input a text string longer than 2000 characters into the 'tell your experience' text box.",
+        "granular_expansion": [
+          {
+            "intent": "Verify tell your experience text box is visible",
+            "predicted_code": null
+          },
+          {
+            "intent": "Input tell your experience text",
+            "predicted_code": null
+          },
+          {
+            "intent": "Get tell your experience text value",
+            "predicted_code": null
+          },
+          {
+            "intent": "Assert tell your experience text is truncated to 2000 characters",
+            "predicted_code": null
+          }
+        ]
+      }
+    ]
+  }
+}
