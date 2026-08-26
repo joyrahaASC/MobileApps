@@ -190,19 +190,12 @@ class Profile(HPXRebrandingFlow):
     def click_account_link(self):
         self.driver.click("profile_account_link", timeout = 10)
 
-    def click_top_profile_icon_signed_in(self):
-        self.driver.click("profile_icon_signed_in", timeout = 10)
-
     def click_support_link(self):
         self.driver.click("support_link", displayed=False, timeout = 10)
 
     def click_sign_in_create_account_btn(self, raise_e=False, timeout=20):
         self.driver.wait_for_object("sideflyout_sign_in_link", timeout=timeout, raise_e=raise_e)
         self.driver.click("sideflyout_sign_in_link", timeout = timeout, raise_e=True)
-
-    def click_profile_icon_signed_in(self):
-        self.driver.wait_for_object("profile_icon_signed_in", timeout = 20)
-        self.driver.click("profile_icon_signed_in", timeout = 10)
 
     def click_navbar_sign_in_button(self):
         self.driver.click("navbar_sign_in_button", timeout = 10)
@@ -230,9 +223,6 @@ class Profile(HPXRebrandingFlow):
 
     def click_subscriptions_link(self):
         self.driver.click("subscriptions_link", timeout = 10)
-
-    def click_profile_icon_show_up(self):
-        self.driver.click("avatar_device_page")
 
     def hover_bell_icon(self):
         self.driver.hover("bell_icon")
