@@ -1,0 +1,55 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/test_C05.py",
+  "top_5_reference_file": "analysis_08212026172710/c84/ns_top_5_matcher_scripts.json",
+  "chronological_steps": [
+    {
+      "intent": "Verify profile icon is displayed",
+      "label": "Verify profile icon is displayed",
+      "mapped_function": "verify_profile_icon_show_up",
+      "mapping_confidence": "exact_match",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click profile button",
+      "label": "Click profile button",
+      "mapped_function": "click_devicepage_avatar_btn",
+      "mapping_confidence": "exact_match",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "label": "Verify feedback button is present",
+      "mapped_function": "verify_feedback_btn",
+      "mapping_confidence": "exact_match",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click feedback button",
+      "label": "Click feedback button",
+      "mapped_function": "click_feedback_btn",
+      "mapping_confidence": "exact_match",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify edit feedback screen is displayed",
+      "label": "Verify edit feedback screen is displayed",
+      "mapped_function": "verify_edit_feedback",
+      "mapping_confidence": "exact_match",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Input tell your experience text",
+      "label": "Input tell your experience text",
+      "mapped_function": "input_tell_your_experience",
+      "mapping_confidence": "exact_match",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Get tell your experience text value",
+      "label": "Get tell your experience text value",
+      "mapped_function": "get_entered_text",
+      "mapping_confidence": "exact_match",
+      "page_object_name": "feedback"
+    }
+  ]
+}
