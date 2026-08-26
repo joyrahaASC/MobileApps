@@ -14,5 +14,20 @@
         "locator": {
             "id": "TBD_edit_feedback_char_count"
         }
+    },
+    "hpx_feedback_page_title": {
+        "locator": {
+            "id": "TBD_hpx_feedback_page_title"
+        }
+    },
+    "tell_your_experience_title": {
+        "locator": {
+            "id": "TBD_tell_your_experience_title"
+        }
+    },
+    "send_feedback_submit_btn": {
+        "locator": {
+            "id": "TBD_send_feedback_submit_btn"
+        }
     }
 }
