@@ -1,0 +1,87 @@
+{
+  "test_case_id": "C05B",
+  "files": [
+    {
+      "file": "profile.py",
+      "path": "libs/flows/windows/hpx_rebranding/profile.py",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        },
+        {
+          "intent": "Click profile button",
+          "mapped_function": "click_devicepage_avatar_btn"
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn"
+        },
+        {
+          "intent": "Click feedback button",
+          "mapped_function": "click_feedback_btn"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "feedback.py",
+      "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify edit feedback screen is displayed",
+          "mapped_function": "verify_edit_feedback"
+        },
+        {
+          "intent": "Verify tell your experience text box is visible",
+          "mapped_function": "verify_tell_your_experience"
+        },
+        {
+          "intent": "Get tell your experience text value",
+          "mapped_function": "get_entered_text"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Input tell your experience text",
+          "proposed_signature": "input_tell_your_experience_text(text: str) -> None",
+          "detailed_requirements": "This method should locate the 'tell your experience' text input field (edit feedback field), clear any existing content, and input the provided text string. The method should wait for the element to be visible and interactable before sending keys. It should handle scrolling to the element if necessary to ensure it is in view.",
+          "implementation_checklist": [
+            "Swipe to 'edit_feedback' element using self.driver.swipe('edit_feedback') to ensure it is in view",
+            "Wait for 'edit_feedback' element to be visible using self.driver.wait_for_object('edit_feedback')",
+            "Clear existing content in 'edit_feedback' field by clicking on it and selecting all text, then deleting",
+            "Input the provided text string into 'edit_feedback' using self.driver.send_keys('edit_feedback', text)",
+            "Optionally verify the text was entered correctly by calling get_entered_text() and comparing with input text"
+          ],
+          "required_locator_keys": [
+            "edit_feedback"
+          ]
+        },
+        {
+          "intent": "Assert tell your experience text is truncated",
+          "proposed_signature": "assert_tell_your_experience_text_is_truncated(expected_max_length: int) -> bool",
+          "detailed_requirements": "This method should verify that the text entered in the 'tell your experience' field is truncated to a maximum character limit. It should retrieve the current text value from the input field, compare its length against the expected maximum length (likely retrieved from the character count display), and assert that the text does not exceed this limit. The method should return True if truncation is properly enforced, False otherwise. It may also need to verify that a character count indicator shows the correct remaining or used character count.",
+          "implementation_checklist": [
+            "Swipe to 'edit_feedback' element using self.driver.swipe('edit_feedback') to ensure it is in view",
+            "Wait for 'edit_feedback' element to be visible using self.driver.wait_for_object('edit_feedback')",
+            "Call existing get_entered_text() method to retrieve the current text value from 'edit_feedback' field",
+            "Calculate the length of the retrieved text using len()",
+            "Wait for 'edit_feedback_char_count' element to be visible using self.driver.wait_for_object('edit_feedback_char_count')",
+            "Get the character count display text from 'edit_feedback_char_count' using self.driver.get_attribute('edit_feedback_char_count', 'Name')",
+            "Parse the character count display to extract current count and max count (e.g., '2000/2000' format)",
+            "Assert that the length of retrieved text equals expected_max_length parameter",
+            "Assert that the length of retrieved text does not exceed expected_max_length",
+            "Assert that the character count display shows the correct format (current_count/max_count)",
+            "Return True if all assertions pass, otherwise raise AssertionError with descriptive message"
+          ],
+          "required_locator_keys": [
+            "edit_feedback",
+            "edit_feedback_char_count"
+          ]
+        }
+      ]
+    }
+  ]
+}
