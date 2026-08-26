@@ -1,0 +1,49 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/test_C05C.py",
+  "top_5_reference_file": "analysis_08212026172710/C05C/ns_top_5_matcher_scripts.json",
+  "chronological_steps": [
+    {
+      "intent": "Verify profile icon is visible",
+      "label": "",
+      "mapped_function": "verify_profile_icon_visible",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click the profile button",
+      "mapped_function": "click_profile_button",
+      "confidence": 100,
+      "reasoning": "Exact match - function signature 'click_profile_button' directly maps to intent 'Click the profile button' and purpose states 'Clicks the profile button in the devices MFE interface.'",
+      "page_object_name": "flow_container"
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "label": "",
+      "mapped_function": "verify_feedback_button_present",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click the feedback button",
+      "label": "",
+      "mapped_function": "click_feedback_button",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Verify edit feedback screen is displayed",
+      "label": "",
+      "mapped_function": "verify_edit_feedback_screen_displayed",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Input tell your experience text",
+      "label": "",
+      "mapped_function": "input_tell_your_experience_text",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Get entered tell your experience text value",
+      "label": "",
+      "mapped_function": "get_tell_your_experience_text_value",
+      "page_object_name": "feedback"
+    }
+  ]
+}
