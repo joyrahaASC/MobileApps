@@ -1,0 +1,109 @@
+{
+  "test_case_id": "C05A",
+  "files": [
+    {
+      "file": "profile.py",
+      "path": "libs/flows/windows/hpx_rebranding/profile.py",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "query": "devicesMFE verify_profile_icon_show_up",
+          "mapped_function": "verify_profile_icon_show_up",
+          "rationale": "The function verify_profile_icon_show_up exists in profile.py and verifies that the top profile icon is displayed."
+        },
+        {
+          "intent": "Click profile button",
+          "query": "Click profile button",
+          "mapped_function": "click_devicepage_avatar_btn",
+          "rationale": "The function click_devicepage_avatar_btn exists in profile.py and clicks the avatar button on the device page to open the profile panel."
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "query": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn",
+          "rationale": "The function verify_feedback_btn exists in profile.py and verifies the presence of the feedback button and retrieves its name attribute."
+        },
+        {
+          "intent": "Click feedback button",
+          "query": "Click feedback button",
+          "mapped_function": "click_feedback_btn",
+          "rationale": "The function click_feedback_btn exists in profile.py and clicks the feedback button to open the feedback form or dialog."
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "feedback.py",
+      "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Get tell your experience text value",
+          "query": "Get tell your experience text value",
+          "mapped_function": "get_entered_text",
+          "rationale": "The function get_entered_text exists in feedback.py and retrieves the text currently entered in the feedback text edit field."
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Verify edit feedback screen opens",
+          "proposed_signature": "verify_edit_feedback_screen_opens()",
+          "detailed_requirements": "This method should verify that the edit feedback screen is displayed after clicking the feedback button. It should check for the presence of key elements such as the feedback slide title, the tell your experience text field, and the submit button. The method should wait for these elements to be visible and return True if the screen is successfully opened, otherwise raise an exception or return False. This verification ensures the user has successfully navigated to the feedback input screen.",
+          "implementation_checklist": [
+            "Wait for 'hpx_feedback_page_title' to be visible using self.driver.wait_for_object",
+            "Wait for 'tell_your_experience_title' to be visible using self.driver.wait_for_object",
+            "Swipe to 'edit_feedback' using self.driver.swipe",
+            "Wait for 'edit_feedback' to be visible using self.driver.wait_for_object",
+            "Swipe to 'send_feedback_submit_btn' using self.driver.swipe",
+            "Wait for 'send_feedback_submit_btn' to be visible using self.driver.wait_for_object",
+            "Return True if all elements are successfully found, otherwise raise exception or return False"
+          ],
+          "required_locator_keys": [
+            "hpx_feedback_page_title",
+            "tell_your_experience_title",
+            "edit_feedback",
+            "send_feedback_submit_btn"
+          ]
+        },
+        {
+          "intent": "Input tell your experience text",
+          "proposed_signature": "input_tell_your_experience_text(text: str)",
+          "detailed_requirements": "This method should locate the 'tell your experience' text input field (edit_feedback element) and input the provided text string. The method should first wait for the text field to be visible and enabled, clear any existing text if necessary, then send the provided text to the field. It should handle scrolling to the element if needed. The method should accept a text parameter and return None or a confirmation of successful input.",
+          "implementation_checklist": [
+            "Swipe to 'edit_feedback' using self.driver.swipe to ensure element is in view",
+            "Wait for 'edit_feedback' to be visible using self.driver.wait_for_object",
+            "Click 'edit_feedback' to focus the text field using self.driver.click",
+            "Clear existing text in 'edit_feedback' if necessary (check if element has existing value)",
+            "Send keys to 'edit_feedback' using self.driver.send_keys with the provided text parameter",
+            "Return None or confirmation of successful input"
+          ],
+          "required_locator_keys": [
+            "edit_feedback"
+          ]
+        },
+        {
+          "intent": "Assert tell your experience text is truncated",
+          "proposed_signature": "assert_tell_your_experience_text_is_truncated(expected_max_length: int)",
+          "detailed_requirements": "This method should verify that the text entered in the 'tell your experience' field is truncated to a maximum character limit. It should retrieve the current text value from the feedback text field using get_entered_text() or by directly accessing the element's value attribute. The method should compare the length of the entered text against the expected maximum length (e.g., 1000 characters based on the character count feature). It should assert that the text length does not exceed the maximum allowed length and optionally verify that the character count display shows the correct truncated count. The method should raise an assertion error if the text is not properly truncated.",
+          "implementation_checklist": [
+            "Swipe to 'edit_feedback' using self.driver.swipe to ensure element is in view",
+            "Wait for 'edit_feedback' to be visible using self.driver.wait_for_object",
+            "Call existing get_entered_text() method to retrieve current text value from 'edit_feedback'",
+            "Calculate the length of the retrieved text using len()",
+            "Assert that the text length does not exceed expected_max_length parameter",
+            "Wait for 'edit_feedback_char_count' to be visible using self.driver.wait_for_object",
+            "Get the character count display text from 'edit_feedback_char_count' using self.driver.get_attribute with 'Name' attribute",
+            "Parse the character count display text to extract current count and max count",
+            "Assert that the current count matches the length of retrieved text and does not exceed expected_max_length",
+            "Raise AssertionError with descriptive message if text is not properly truncated"
+          ],
+          "required_locator_keys": [
+            "edit_feedback",
+            "edit_feedback_char_count"
+          ]
+        }
+      ]
+    }
+  ]
+}
