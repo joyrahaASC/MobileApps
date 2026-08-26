@@ -8807,14 +8807,6 @@
         ]
       },
       {
-        "signature": "click_top_profile_icon_signed_in",
-        "purpose": "Clicks the top profile icon when the user is signed in to open the profile panel.",
-        "input_parameters": [],
-        "output_parameters": [
-          "Any"
-        ]
-      },
-      {
         "signature": "click_support_link",
         "purpose": "Clicks the support link to access support resources.",
         "input_parameters": [],
