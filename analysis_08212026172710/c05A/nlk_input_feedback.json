@@ -1,0 +1,9 @@
+{
+  "ui_map_file_path": "resources/ui_map/windows/hpx_rebranding/feedback.json",
+  "missing_locators": [
+    "hpx_feedback_page_title",
+    "tell_your_experience_title",
+    "send_feedback_submit_btn"
+  ],
+  "existing_json_content": "{\n    \"menu_btn_from_feedback\": {\n        \"locator\": {\n            \"id\": \"SideFlyout.SideFlyoutView.NavigationBackArrowLeftIcon\",\n            \"xpath\": \"//Button[@Name='Menu']\"\n        }\n    },\n    \"edit_feedback\": {\n        \"locator\": {\n            \"id\": \"TBD_edit_feedback\"\n        }\n    },\n    \"edit_feedback_char_count\": {\n        \"locator\": {\n            \"id\": \"TBD_edit_feedback_char_count\"\n        }\n    }\n}"
+}
