@@ -806,56 +806,6 @@
     ]
   },
   {
-    "file_path": "libs/flows/windows/hpx_rebranding/feedback.py",
-    "component": "feedback",
-    "dependencies": [
-      "MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow",
-      "selenium.webdriver.common.keys"
-    ],
-    "locator_keys": [
-      "other_1st_dropdown",
-      "set_up_my_printer",
-      "feature_feedback_popup",
-      "tell_your_experience_title",
-      "send_feedback_submit_btn",
-      "invalid_email_message",
-      "menu_btn_from_feedback",
-      "bug_or_issue",
-      "manage_my_subscriptions",
-      "edit_feedback_char_count",
-      "why_did_you_open_today_options",
-      "hp_privacy_statement_link",
-      "hpx_feedback_page_title",
-      "configure_my_devices",
-      "app_feature_request",
-      "rating_star_field",
-      "why_did_you_open_app_today_title",
-      "edit_feedback",
-      "load_time",
-      "other_2nd_dropdown",
-      "ease_of_use",
-      "1_star",
-      "get_tech_support",
-      "feedback_submission_success_message",
-      "print_or_scan",
-      "contacting_email",
-      "manage_my_account_feedback",
-      "rating_star",
-      "whats_your_feedback_related_to_options",
-      "whats_your_feedback_related_to_title"
-    ],
-    "exposed_functions": [
-      {
-        "signature": "click_whats_your_feedback_related_to_options",
-        "purpose": "Opens the dropdown menu to select what category the user's feedback is related to.",
-        "input_parameters": [],
-        "output_parameters": [
-          "Any"
-        ]
-      }
-    ]
-  },
-  {
     "file_path": "libs/flows/windows/hpx_rebranding/battery.py",
     "component": "battery",
     "dependencies": [
