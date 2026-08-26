@@ -7,15 +7,3 @@ class Profile(HPXRebrandingFlow):
     def click_sign_in_from_avatar_sideflyout(self):
         self.driver.wait_for_object("sideflyout_sign_in_link", timeout=20)
         self.driver.click("sideflyout_sign_in_link")
-
-    def verify_profile_icon_visible(self):
-        element = self.driver.wait_for_object("profile_icon_signed_in", timeout=20, raise_e=False)
-        if element:
-            return True
-        return False
-
-    def verify_feedback_button_present(self):
-        element = self.driver.wait_for_object("feedback_btn", timeout=10, raise_e=False)
-        if element:
-            return True
-        return False
