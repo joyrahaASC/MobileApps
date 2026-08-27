@@ -1,0 +1,178 @@
+{
+  "aava_config": {
+    "aava_username": "joy.raha@acendion.com",
+    "repo_owner": "joyrahaASC",
+    "repo_name": "MobileApps",
+    "branch": "feature1",
+    "intent_path": "libs/flows/windows/hpx_rebranding",
+    "platform": "windows",
+    "analysis_path": "analysis_08262026182100/CTSF1",
+    "test_script_path": "tests/windows/hpx_rebranding/test_CTSF1.py"
+  },
+  "test_case_id": "CTSF1",
+  "tiers": {
+    "Tier_1_Locators": [],
+    "Tier_2_Indep_Pages": [
+      {
+        "file": "feedback.py",
+        "class_name": "Feedback",
+        "situation": "Situation-2",
+        "resolved_intents": [],
+        "missing_methods": [
+          {
+            "intent": "Verify edit feedback screen is displayed",
+            "proposed_signature": "verify_edit_feedback_screen_displayed()",
+            "detailed_requirements": "Wait for the edit feedback screen to be fully loaded and visible. Verify key elements like the feedback text input field, submit button, and screen title are present. Return True if screen is displayed correctly, False otherwise. Should include explicit wait with timeout.",
+            "implementation_checklist": [
+              "Wait for 'hpx_feedback_page_title' to be visible using self.driver.wait_for_object with timeout",
+              "Wait for 'edit_feedback' (feedback text input field) to be visible using self.driver.wait_for_object with timeout",
+              "Swipe to 'send_feedback_submit_btn' using self.driver.swipe",
+              "Wait for 'send_feedback_submit_btn' to be visible using self.driver.wait_for_object with timeout",
+              "Wait for 'tell_your_experience_title' to be visible using self.driver.wait_for_object with timeout",
+              "Return True if all elements are present, False otherwise with appropriate exception handling"
+            ],
+            "required_locator_keys": [
+              "hpx_feedback_page_title",
+              "edit_feedback",
+              "send_feedback_submit_btn",
+              "tell_your_experience_title"
+            ]
+          },
+          {
+            "intent": "Input tell your experience text",
+            "proposed_signature": "input_tell_your_experience_text(text)",
+            "detailed_requirements": "Wait for the 'tell your experience' text input field to be visible and interactable. Clear any existing text and input the provided text parameter. Should include explicit wait with timeout and handle any character limits or validation.",
+            "implementation_checklist": [
+              "Swipe to 'edit_feedback' using self.driver.swipe to ensure visibility",
+              "Wait for 'edit_feedback' to be visible using self.driver.wait_for_object with timeout",
+              "Click on 'edit_feedback' using self.driver.click to focus the field",
+              "Clear existing text from 'edit_feedback' by selecting all and deleting (use Keys.CONTROL + 'a' then Keys.DELETE or Keys.BACKSPACE)",
+              "Send keys to 'edit_feedback' using self.driver.send_keys with the provided text parameter",
+              "Optionally verify text was entered by calling get_entered_text() or self.driver.get_attribute('edit_feedback', 'Value.Value')"
+            ],
+            "required_locator_keys": [
+              "edit_feedback"
+            ]
+          },
+          {
+            "intent": "Get entered tell your experience text value",
+            "proposed_signature": "get_tell_your_experience_text_value()",
+            "detailed_requirements": "Wait for the 'tell your experience' text input field to be present and retrieve its current value/text content. Return the text as a string. Should include explicit wait with timeout.",
+            "implementation_checklist": [
+              "Swipe to 'edit_feedback' using self.driver.swipe to ensure visibility",
+              "Wait for 'edit_feedback' to be present using self.driver.wait_for_object with timeout",
+              "Get attribute 'Value.Value' from 'edit_feedback' using self.driver.get_attribute",
+              "Return the retrieved text value as a string"
+            ],
+            "required_locator_keys": [
+              "edit_feedback"
+            ]
+          },
+          {
+            "intent": "Assert tell your experience text is truncated to characters",
+            "proposed_signature": "assert_text_truncated_to_max_characters(expected_max_length)",
+            "detailed_requirements": "Get the current value of the 'tell your experience' text field and verify that its length does not exceed the expected maximum character limit. Should retrieve the text value, calculate its length, and assert that length <= expected_max_length. Raise an assertion error with descriptive message if validation fails.",
+            "implementation_checklist": [
+              "Swipe to 'edit_feedback' using self.driver.swipe to ensure visibility",
+              "Wait for 'edit_feedback' to be present using self.driver.wait_for_object with timeout",
+              "Get current text value from 'edit_feedback' using self.driver.get_attribute('edit_feedback', 'Value.Value')",
+              "Calculate the length of the retrieved text using len()",
+              "Assert that the calculated length is less than or equal to expected_max_length parameter",
+              "Optionally wait for 'edit_feedback_char_count' using self.driver.wait_for_object with timeout",
+              "Optionally get the character count display text from 'edit_feedback_char_count' using self.driver.get_attribute('edit_feedback_char_count', 'Name')",
+              "Optionally verify the character count display matches the expected format (e.g., 'X/expected_max_length')",
+              "Raise AssertionError with descriptive message including actual length and expected_max_length if validation fails"
+            ],
+            "required_locator_keys": [
+              "edit_feedback",
+              "edit_feedback_char_count"
+            ]
+          }
+        ],
+        "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+        "locator_gaps": {
+          "ui_map_file": "feedback.json",
+          "present_locators": [
+            "hpx_feedback_page_title",
+            "edit_feedback",
+            "send_feedback_submit_btn",
+            "tell_your_experience_title",
+            "edit_feedback_char_count"
+          ],
+          "missing_locators": []
+        }
+      },
+      {
+        "file": "profile.py",
+        "class_name": "Profile",
+        "situation": "Situation-2",
+        "resolved_intents": [],
+        "missing_methods": [
+          {
+            "intent": "Verify profile icon is visible",
+            "proposed_signature": "verify_profile_icon_visible()",
+            "detailed_requirements": "Wait for the profile icon element to be visible on the screen. Return True if visible, False otherwise. Should include explicit wait with timeout and element visibility check.",
+            "implementation_checklist": [
+              "Wait for 'profile_icon_signed_in' to be visible with timeout=10",
+              "If element is found, return True",
+              "If element is not found or timeout occurs, return False"
+            ],
+            "required_locator_keys": [
+              "profile_icon_signed_in"
+            ]
+          },
+          {
+            "intent": "Click profile button",
+            "proposed_signature": "click_profile_button()",
+            "detailed_requirements": "Wait for the profile button element to be clickable and perform a click action. Should include explicit wait with timeout and handle any potential overlays or loading states before clicking.",
+            "implementation_checklist": [
+              "Wait for 'profile_icon_signed_in' to be present with timeout=20",
+              "Verify 'profile_icon_signed_in' is clickable",
+              "Click 'profile_icon_signed_in' with timeout=10"
+            ],
+            "required_locator_keys": [
+              "profile_icon_signed_in"
+            ]
+          },
+          {
+            "intent": "Verify feedback button is present",
+            "proposed_signature": "verify_feedback_button_present()",
+            "detailed_requirements": "Wait for the feedback button element to be present in the DOM after profile panel opens. Return True if present, False otherwise. Should include explicit wait with timeout.",
+            "implementation_checklist": [
+              "Wait for 'feedback_btn' to be present with timeout=10 and raise_e=False",
+              "If element is found, return True",
+              "If element is not found or timeout occurs, return False"
+            ],
+            "required_locator_keys": [
+              "feedback_btn"
+            ]
+          },
+          {
+            "intent": "Click feedback button",
+            "proposed_signature": "click_feedback_button()",
+            "detailed_requirements": "Wait for the feedback button element to be clickable within the profile panel and perform a click action. Should include explicit wait with timeout and verify the button is interactable before clicking.",
+            "implementation_checklist": [
+              "Wait for 'feedback_btn' to be present with timeout=10",
+              "Verify 'feedback_btn' is clickable and enabled",
+              "Click 'feedback_btn' with timeout=10"
+            ],
+            "required_locator_keys": [
+              "feedback_btn"
+            ]
+          }
+        ],
+        "path": "libs/flows/windows/hpx_rebranding/profile.py",
+        "locator_gaps": {
+          "ui_map_file": "profile.json",
+          "present_locators": [
+            "profile_icon_signed_in",
+            "feedback_btn"
+          ],
+          "missing_locators": []
+        }
+      }
+    ],
+    "Tier_3_Dep_Pages": [],
+    "Tier_99_Ref": []
+  }
+}
