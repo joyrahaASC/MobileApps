@@ -342,3 +342,101 @@ class Feedback(HPXRebrandingFlow):
         
         print(f"Assertion passed: Text is properly truncated to {expected_max_length} characters")
         return True
+
+    def verify_edit_feedback_screen_opens(self):
+        """
+        Verify that the edit feedback screen is displayed after clicking the feedback button.
+        Checks for the presence of key elements such as the feedback slide title, the 'tell your experience' text field,
+        dropdown menus for feedback categories, and the submit button.
+        
+        :return: True if all required elements are visible, False otherwise
+        """
+        try:
+            # Wait for feedback page title to be visible
+            self.driver.wait_for_object("hpx_feedback_page_title", timeout=10)
+            
+            # Wait for rating star field to be visible
+            self.driver.wait_for_object("rating_star_field", timeout=10)
+            
+            # Wait for 'why did you open app today' title to be visible
+            self.driver.wait_for_object("why_did_you_open_app_today_title", timeout=10)
+            
+            # Wait for 'why did you open today' options dropdown to be visible
+            self.driver.wait_for_object("why_did_you_open_today_options", timeout=10)
+            
+            # Wait for 'what's your feedback related to' title to be visible
+            self.driver.wait_for_object("whats_your_feedback_related_to_title", timeout=10)
+            
+            # Wait for 'what's your feedback related to' options dropdown to be visible
+            self.driver.wait_for_object("whats_your_feedback_related_to_options", timeout=10)
+            
+            # Swipe to 'tell your experience' title if needed
+            self.driver.swipe("tell_your_experience_title")
+            
+            # Wait for 'tell your experience' title to be visible
+            self.driver.wait_for_object("tell_your_experience_title", timeout=10)
+            
+            # Swipe to edit feedback field
+            self.driver.swipe("edit_feedback")
+            
+            # Wait for edit feedback field to be visible
+            self.driver.wait_for_object("edit_feedback", timeout=10)
+            
+            # Swipe to submit button
+            self.driver.swipe("send_feedback_submit_btn")
+            
+            # Wait for submit button to be visible
+            self.driver.wait_for_object("send_feedback_submit_btn", timeout=10)
+            
+            # All elements successfully found
+            return True
+            
+        except Exception as e:
+            # Handle exceptions and return False if any element fails to load
+            print(f"Error verifying edit feedback screen: {str(e)}")
+            return False
+
+    def assert_tell_your_experience_text_is_truncated(self, expected_max_length=1000):
+        """
+        Verify that the text entered in the 'tell your experience' field is truncated to the maximum allowed character limit.
+        
+        :param expected_max_length: The maximum allowed character length (default: 1000)
+        :raises AssertionError: If the text is not properly truncated or if the character count is incorrect
+        """
+        # Swipe to edit_feedback if needed to bring element into view
+        self.driver.swipe("edit_feedback")
+        
+        # Wait for edit_feedback to be visible
+        self.driver.wait_for_object("edit_feedback", timeout=10)
+        
+        # Call existing get_entered_text() method to retrieve current text value
+        actual_text = self.get_entered_text()
+        
+        # Handle None or empty text
+        if actual_text is None:
+            actual_text = ""
+        
+        # Calculate the length of the retrieved text value
+        actual_length = len(actual_text)
+        
+        # Assert that the calculated length is less than or equal to expected_max_length
+        assert actual_length <= expected_max_length, f"Text length ({actual_length}) exceeds maximum allowed length ({expected_max_length})"
+        
+        # Wait for edit_feedback_char_count to be visible
+        self.driver.wait_for_object("edit_feedback_char_count", timeout=10)
+        
+        # Get the character count display text from edit_feedback_char_count
+        char_count_display = self.driver.get_attribute("edit_feedback_char_count", "Name")
+        
+        # Parse the character count display text to extract current count value
+        if char_count_display and "/" in char_count_display:
+            displayed_count = int(char_count_display.split("/")[0])
+            
+            # Assert that the current count from display matches the actual text length
+            assert displayed_count == actual_length, f"Character count display ({displayed_count}) does not match actual text length ({actual_length})"
+            
+            # Assert that the current count does not exceed expected_max_length
+            assert displayed_count <= expected_max_length, f"Character count display ({displayed_count}) exceeds maximum allowed length ({expected_max_length})"
+        else:
+            # Raise AssertionError if character count display format is incorrect
+            raise AssertionError(f"Character count display format is incorrect: {char_count_display}")
