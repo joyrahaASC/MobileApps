@@ -151,6 +151,25 @@ class Profile(HPXRebrandingFlow):
             return False
         else:
             return True
+
+    def verify_profile_icon_visible(self):
+        """
+        Wait for the profile icon element to be visible on the screen.
+        Return True if visible, False otherwise.
+        """
+        if self.driver.wait_for_object("profile_icon_signed_in", raise_e=False, timeout=10):
+            return True
+        return False
+
+    def verify_feedback_button_present(self):
+        """
+        Wait for and verify that the feedback button is present in the profile side flyout menu.
+        Return True if present, False otherwise.
+        """
+        if self.driver.wait_for_object("feedback_btn", raise_e=False, timeout=10):
+            return True
+        return False
+
 ############################################# Action flows #############################################
 
     def click_close_avatar_btn(self):
@@ -265,6 +284,21 @@ class Profile(HPXRebrandingFlow):
 
     def click_smart_app_link(self):
         self.driver.click("smart_app_link", timeout=10)
+
+    def click_profile_button(self):
+        """
+        Wait for the profile button to be clickable and click it to open the profile side flyout menu.
+        """
+        self.driver.wait_for_object("profile_icon_signed_in", timeout=10)
+        self.driver.click("profile_icon_signed_in", timeout=10)
+        self.driver.wait_for_object("profile_side_panel", timeout=10)
+
+    def click_feedback_button(self):
+        """
+        Wait for the feedback button to be clickable in the profile side flyout menu and click it to navigate to the feedback screen.
+        """
+        self.driver.wait_for_object("feedback_btn", timeout=10)
+        self.driver.click("feedback_btn", timeout=10)
 
     def verify_delete_your_account_link(self, raise_e=False):
         return self.driver.wait_for_object("hpx_profile_delete_account_btn", raise_e=raise_e, timeout=5)
