@@ -55,6 +55,7 @@ from MobileApps.libs.flows.windows.hpx_rebranding.context_aware import ContextAw
 from MobileApps.libs.flows.windows.hpx_rebranding.hp_go import HPGo
 from MobileApps.libs.flows.windows.hpx_rebranding.css import CSS
 from MobileApps.libs.flows.windows.hpx_rebranding.profile import Profile
+from MobileApps.libs.flows.windows.hpx_rebranding.feedback import Feedback
 from MobileApps.libs.flows.windows.hpx_rebranding.hpx_settings import HPXSettings
 from MobileApps.libs.flows.windows.hpx_rebranding.hpx_support import HPXSupport
 from MobileApps.libs.flows.windows.hpx_rebranding.virtual_assistant import VirtualAssistant
@@ -75,15 +76,12 @@ from MobileApps.libs.flows.windows.hpx_rebranding.add_device import AddDevice
 from MobileApps.libs.ma_misc.live_printer import LivePrinter
 from selenium.webdriver.common.keys import Keys
 
-from MobileApps.libs.flows.windows.hpx_rebranding.feedback import Feedback
-
 class FlowContainer(object):
     def __init__(self, driver):
         self.driver = driver
         # Cache for MFE locale files to avoid repeated network calls
         self._mfe_locale_cache = {}
         self.fd = {
-            "feedback": Feedback(driver),
                    "devicesMFE": DevicesMFE(driver),
                    "devicesDetailsMFE": DevicesDetailsPrinterMFE(driver),
                    "scan": Scan(driver),
@@ -120,6 +118,7 @@ class FlowContainer(object):
                    "hp_go": HPGo(driver),
                    "css": CSS(driver),
                    "profile": Profile(driver),
+                   "feedback": Feedback(driver),
                    "hpx_settings": HPXSettings(driver),
                    "hpx_support": HPXSupport(driver),
                    "virtual_assistant": VirtualAssistant(driver),
