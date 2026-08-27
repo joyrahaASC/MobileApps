@@ -1,0 +1,55 @@
+{
+  "test_case_id": "CTSA",
+  "files": [
+    {
+      "file": "profile.py",
+      "path": "libs/flows/windows/hpx_rebranding/profile.py",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        },
+        {
+          "intent": "Click profile button",
+          "mapped_function": "click_devicepage_avatar_btn"
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn"
+        },
+        {
+          "intent": "Click feedback button",
+          "mapped_function": "click_feedback_btn"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "feedback.py",
+      "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify edit feedback screen is displayed",
+          "mapped_function": "verify_edit_feedback"
+        },
+        {
+          "intent": "Input tell your experience text",
+          "mapped_function": "input_tell_your_experience"
+        },
+        {
+          "intent": "Get tell your experience text value",
+          "mapped_function": "get_entered_text"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Assert tell your experience text is truncated",
+          "proposed_signature": "assert_tell_your_experience_text_is_truncated(expected_max_length)",
+          "detailed_requirements": "This method should retrieve the current text from the tell your experience input field using get_entered_text(), get the character count display using get_feedback_text_char_count(), and assert that: 1) The actual text length does not exceed the expected maximum length (e.g., 1000 characters), 2) The character count display shows the correct truncated length, 3) Any text beyond the maximum length has been truncated. The method should return True if text is properly truncated, False otherwise, and raise an assertion error with details if truncation validation fails."
+        }
+      ]
+    }
+  ]
+}
