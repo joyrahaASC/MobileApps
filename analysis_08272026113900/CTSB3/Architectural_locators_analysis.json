@@ -1,0 +1,136 @@
+{
+  "test_case_id": "CTSB3",
+  "files": [
+    {
+      "file": "profile.py",
+      "class_name": "Profile",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn"
+        },
+        {
+          "intent": "Click feedback button",
+          "mapped_function": "click_feedback_btn"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Click profile button",
+          "proposed_signature": "click_profile_button()",
+          "detailed_requirements": "Wait for the profile button element to be visible and clickable, then perform a click action. This method should specifically target the profile button in the devicesMFE context, distinct from existing avatar/icon click methods. Should handle any loading states and verify the profile panel or menu opens successfully.",
+          "implementation_checklist": [
+            "Wait for 'profile_icon_signed_in' to be visible with timeout=20",
+            "Click 'profile_icon_signed_in' with timeout=10",
+            "Wait for 'profile_side_panel' to be visible with timeout=20 to verify the profile panel opened successfully"
+          ],
+          "required_locator_keys": [
+            "profile_icon_signed_in",
+            "profile_side_panel"
+          ]
+        }
+      ],
+      "path": "libs/flows/windows/hpx_rebranding/profile.py",
+      "locator_gaps": {
+        "ui_map_file": "profile.json",
+        "present_locators": [
+          "profile_icon_signed_in",
+          "profile_side_panel"
+        ],
+        "missing_locators": []
+      }
+    },
+    {
+      "file": "feedback.py",
+      "class_name": "Feedback",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Input tell your experience text",
+          "mapped_function": "input_tell_your_experience"
+        },
+        {
+          "intent": "Get tell your experience text value",
+          "mapped_function": "get_entered_text"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Verify edit feedback screen opens",
+          "proposed_signature": "verify_edit_feedback_screen_opens()",
+          "detailed_requirements": "Verify that the edit feedback screen is displayed after clicking the feedback button. Should check for the presence of key elements such as the feedback slide title, the 'tell your experience' text field, dropdown menus for feedback categories, and the submit button. Should return True if all required elements are visible, False otherwise. Should include appropriate timeout handling and raise exceptions if the screen fails to load within the expected timeframe.",
+          "implementation_checklist": [
+            "Wait for 'hpx_feedback_page_title' to be visible using self.driver.wait_for_object with timeout",
+            "Wait for 'rating_star_field' to be visible using self.driver.wait_for_object",
+            "Wait for 'why_did_you_open_app_today_title' to be visible using self.driver.wait_for_object",
+            "Wait for 'why_did_you_open_today_options' to be visible using self.driver.wait_for_object",
+            "Wait for 'whats_your_feedback_related_to_title' to be visible using self.driver.wait_for_object",
+            "Wait for 'whats_your_feedback_related_to_options' to be visible using self.driver.wait_for_object",
+            "Swipe to 'tell_your_experience_title' using self.driver.swipe if needed",
+            "Wait for 'tell_your_experience_title' to be visible using self.driver.wait_for_object",
+            "Swipe to 'edit_feedback' using self.driver.swipe",
+            "Wait for 'edit_feedback' to be visible using self.driver.wait_for_object",
+            "Swipe to 'send_feedback_submit_btn' using self.driver.swipe",
+            "Wait for 'send_feedback_submit_btn' to be visible using self.driver.wait_for_object",
+            "Return True if all elements are successfully found, handle exceptions and return False if any element fails to load within timeout"
+          ],
+          "required_locator_keys": [
+            "hpx_feedback_page_title",
+            "rating_star_field",
+            "why_did_you_open_app_today_title",
+            "why_did_you_open_today_options",
+            "whats_your_feedback_related_to_title",
+            "whats_your_feedback_related_to_options",
+            "tell_your_experience_title",
+            "edit_feedback",
+            "send_feedback_submit_btn"
+          ]
+        },
+        {
+          "intent": "Assert tell your experience text is truncated",
+          "proposed_signature": "assert_tell_your_experience_text_is_truncated(expected_max_length=1000)",
+          "detailed_requirements": "Verify that the text entered in the 'tell your experience' field is truncated to the maximum allowed character limit. Should retrieve the current text value from the feedback text field, compare its length against the expected maximum length (default 1000 characters), and assert that the text does not exceed this limit. Should also verify that the character count display shows the correct truncated length. Should raise an AssertionError with a descriptive message if the text is not properly truncated or if the character count is incorrect.",
+          "implementation_checklist": [
+            "Swipe to 'edit_feedback' using self.driver.swipe if needed to bring element into view",
+            "Wait for 'edit_feedback' to be visible using self.driver.wait_for_object",
+            "Call existing get_entered_text() method to retrieve current text value from 'edit_feedback' field using self.driver.get_attribute('edit_feedback', 'Value.Value')",
+            "Calculate the length of the retrieved text value using len()",
+            "Assert that the calculated length is less than or equal to expected_max_length parameter (default 1000)",
+            "Wait for 'edit_feedback_char_count' to be visible using self.driver.wait_for_object",
+            "Get the character count display text from 'edit_feedback_char_count' using self.driver.get_attribute('edit_feedback_char_count', 'Name')",
+            "Parse the character count display text to extract current count value",
+            "Assert that the current count from display matches the actual text length",
+            "Assert that the current count does not exceed expected_max_length",
+            "Raise AssertionError with descriptive message if text length exceeds expected_max_length or if character count display is incorrect"
+          ],
+          "required_locator_keys": [
+            "edit_feedback",
+            "edit_feedback_char_count"
+          ]
+        }
+      ],
+      "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+      "locator_gaps": {
+        "ui_map_file": "feedback.json",
+        "present_locators": [
+          "hpx_feedback_page_title",
+          "rating_star_field",
+          "why_did_you_open_app_today_title",
+          "why_did_you_open_today_options",
+          "whats_your_feedback_related_to_title",
+          "whats_your_feedback_related_to_options",
+          "tell_your_experience_title",
+          "edit_feedback",
+          "send_feedback_submit_btn",
+          "edit_feedback_char_count"
+        ],
+        "missing_locators": []
+      }
+    }
+  ]
+}
