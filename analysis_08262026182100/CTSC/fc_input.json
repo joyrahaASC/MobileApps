@@ -1,0 +1,9 @@
+{
+  "flow_container_path": "libs/flows/windows/flow_container.py",
+  "new_classes": [
+    {
+      "class_name": "FeedbackPage",
+      "python_file_path": null
+    }
+  ]
+}
