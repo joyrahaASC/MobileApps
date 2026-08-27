@@ -1,0 +1,114 @@
+{
+  "test_case_id": "CTSC1",
+  "files": [
+    {
+      "file": "profile.py",
+      "class_name": "Profile",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        },
+        {
+          "intent": "Click the profile button",
+          "mapped_function": "click_devicepage_avatar_btn"
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn"
+        },
+        {
+          "intent": "Click the feedback button",
+          "mapped_function": "click_feedback_btn"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "feedback.py",
+      "class_name": "Feedback",
+      "situation": "Situation-2",
+      "resolved_intents": [],
+      "missing_methods": [
+        {
+          "intent": "Verify edit feedback screen is displayed",
+          "proposed_signature": "verify_edit_feedback_screen_displayed()",
+          "detailed_requirements": "Wait for and verify that the edit feedback screen is visible. Should check for presence of key elements like the feedback form title or container. Return True if displayed, raise exception if not found within timeout.",
+          "implementation_checklist": [
+            "Wait for hpx_feedback_page_title to be visible",
+            "Verify hpx_feedback_page_title is displayed",
+            "Return True if visible, raise exception otherwise"
+          ],
+          "required_locator_keys": [
+            "hpx_feedback_page_title"
+          ]
+        },
+        {
+          "intent": "Verify tell your experience textbox is visible",
+          "proposed_signature": "verify_tell_your_experience_textbox_visible()",
+          "detailed_requirements": "Wait for and verify that the 'tell your experience' textbox element is visible on the feedback screen. Should locate the textbox by its accessibility id or name. Return True if visible, raise exception if not found within timeout.",
+          "implementation_checklist": [
+            "Wait for edit_feedback to be visible",
+            "Verify edit_feedback is displayed",
+            "Return True if visible, raise exception otherwise"
+          ],
+          "required_locator_keys": [
+            "edit_feedback"
+          ]
+        },
+        {
+          "intent": "Input tell your experience text",
+          "proposed_signature": "input_tell_your_experience_text(text)",
+          "detailed_requirements": "Locate the 'tell your experience' textbox and input the provided text string. Should clear any existing text first, then send the text input. Parameters: text (str) - the text to input into the textbox. Should handle long text strings that may exceed character limits.",
+          "implementation_checklist": [
+            "Wait for edit_feedback to be visible",
+            "Clear existing text in edit_feedback",
+            "Send text input to edit_feedback",
+            "Handle potential character limit exceptions"
+          ],
+          "required_locator_keys": [
+            "edit_feedback"
+          ]
+        },
+        {
+          "intent": "Get the entered tell your experience value",
+          "proposed_signature": "get_tell_your_experience_value()",
+          "detailed_requirements": "Retrieve and return the current text value from the 'tell your experience' textbox. Should locate the textbox element and extract its text content or value attribute. Returns: str - the current text in the textbox.",
+          "implementation_checklist": [
+            "Wait for edit_feedback to be visible",
+            "Get text value from edit_feedback element",
+            "Return the text value as string"
+          ],
+          "required_locator_keys": [
+            "edit_feedback"
+          ]
+        },
+        {
+          "intent": "Assert tell your experience text is truncated",
+          "proposed_signature": "assert_tell_your_experience_text_truncated(expected_length)",
+          "detailed_requirements": "Verify that the text in the 'tell your experience' textbox has been truncated to the expected maximum length. Should get the current text value and compare its length to the expected_length parameter. Parameters: expected_length (int) - the maximum allowed character count. Should raise assertion error if text length exceeds expected_length.",
+          "implementation_checklist": [
+            "Wait for edit_feedback to be visible",
+            "Get text value from edit_feedback element",
+            "Calculate length of retrieved text",
+            "Assert that text length equals expected_length",
+            "Raise assertion error if length exceeds expected_length"
+          ],
+          "required_locator_keys": [
+            "edit_feedback"
+          ]
+        }
+      ],
+      "workflow_d_error": "list indices must be integers or slices, not str",
+      "locator_gaps": {
+        "ui_map_file": "feedback.json",
+        "present_locators": [
+          "hpx_feedback_page_title",
+          "edit_feedback"
+        ],
+        "missing_locators": []
+      }
+    }
+  ]
+}
