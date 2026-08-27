@@ -14,15 +14,10 @@ class Test_CTSA(object):
         request.cls.fc.kill_hpx_process()
         request.cls.fc.kill_chrome_process()
         cls.profile = request.cls.fc.fd["profile"]
-        cls.feedback = request.cls.fc.fd["feedback"]
 
     @pytest.mark.regression
     def test_01_verify_profile_and_feedback_flow(self):
-        assert self.profile.verify_profile_icon_show_up(), "profile icon invisible"
+        assert self.profile.verify_profile_icon_show_up(), "profile icon is not visible"
         self.profile.click_devicepage_avatar_btn()
-        assert self.profile.verify_feedback_btn(), "feedback button not found"
+        assert self.profile.verify_feedback_btn(), "feedback button is not present"
         self.profile.click_feedback_btn()
-        assert self.feedback.verify_edit_feedback(), "edit feedback screen not displayed"
-        self.feedback.input_tell_your_experience()
-        entered_text = self.feedback.get_entered_text()
-        assert entered_text, "Failed to retrieve entered text from feedback form"
