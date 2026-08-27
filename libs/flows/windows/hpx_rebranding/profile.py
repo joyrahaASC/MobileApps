@@ -268,3 +268,13 @@ class Profile(HPXRebrandingFlow):
 
     def verify_delete_your_account_link(self, raise_e=False):
         return self.driver.wait_for_object("hpx_profile_delete_account_btn", raise_e=raise_e, timeout=5)
+
+    def click_profile_button(self):
+        """
+        Click profile button in the devicesMFE context.
+        Waits for the profile button to be visible and clickable, performs click action,
+        and verifies the profile panel opens successfully.
+        """
+        self.driver.wait_for_object("profile_icon_signed_in", timeout=20)
+        self.driver.click("profile_icon_signed_in", timeout=10)
+        self.driver.wait_for_object("profile_side_panel", timeout=20)
