@@ -1,0 +1,29 @@
+{
+  "test_case_id": "CTSC",
+  "status": "COMPLETED",
+  "manifest": {
+    "locators_updated": [],
+    "pages_updated": [],
+    "pages_created": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "flow_container_updated": [
+      {
+        "path": "libs/flows/windows/flow_container.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "test_script_created": [
+      {
+        "path": "tests/windows/hpx_rebranding/test_CTSC.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ]
+  }
+}
