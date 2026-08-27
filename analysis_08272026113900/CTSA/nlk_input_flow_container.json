@@ -1,0 +1,7 @@
+{
+  "ui_map_file_path": "resources/ui_map/windows/hpx_rebranding/flow_container.json",
+  "missing_locators": [
+    "profile_button"
+  ],
+  "existing_json_content": ""
+}
