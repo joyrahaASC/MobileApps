@@ -21,21 +21,6 @@
       "intent": "Click feedback button",
       "mapped_function": "click_feedback_btn",
       "page_object_name": "profile"
-    },
-    {
-      "intent": "Verify edit feedback screen is displayed",
-      "mapped_function": "verify_edit_feedback",
-      "page_object_name": "feedback"
-    },
-    {
-      "intent": "Input tell your experience text",
-      "mapped_function": "input_tell_your_experience",
-      "page_object_name": "feedback"
-    },
-    {
-      "intent": "Get tell your experience text value",
-      "mapped_function": "get_entered_text",
-      "page_object_name": "feedback"
     }
   ]
 }
