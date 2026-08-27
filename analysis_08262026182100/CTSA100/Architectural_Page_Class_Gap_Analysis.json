@@ -1,0 +1,29 @@
+{
+  "test_case_id": "CTSA100",
+  "files": [
+    {
+      "file": "profile.py",
+      "class_name": "Profile",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is displayed",
+          "mapped_function": "verify_profile_icon_show_up"
+        },
+        {
+          "intent": "Click the profile button",
+          "mapped_function": "click_devicepage_avatar_btn"
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn"
+        },
+        {
+          "intent": "Click the feedback button",
+          "mapped_function": "click_feedback_btn"
+        }
+      ],
+      "missing_methods": []
+    }
+  ]
+}
