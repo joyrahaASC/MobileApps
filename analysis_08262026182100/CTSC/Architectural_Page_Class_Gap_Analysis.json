@@ -1,0 +1,66 @@
+{
+  "test_case_id": "CTSC",
+  "files": [
+    {
+      "file": "profile.py",
+      "path": "libs/flows/windows/hpx_rebranding/profile.py",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn"
+        },
+        {
+          "intent": "Click feedback button",
+          "mapped_function": "click_feedback_btn"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "flow_container.py",
+      "path": "libs/flows/windows/hpx_rebranding/flow_container.py",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Click profile button",
+          "mapped_function": "click_profile_button"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "feedback.py",
+      "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+      "class_name": "FeedbackPage",
+      "situation": "Situation-2",
+      "resolved_intents": [],
+      "missing_methods": [
+        {
+          "intent": "Verify edit feedback screen opens",
+          "proposed_signature": "verify_edit_feedback_screen()",
+          "detailed_requirements": "Wait for and verify that the edit feedback screen is displayed. This should check for the presence of key elements that indicate the feedback form is open, such as the feedback text input field, submit button, or screen title. Return True if the screen is visible, raise an exception if not found within timeout."
+        },
+        {
+          "intent": "Input tell your experience text",
+          "proposed_signature": "input_tell_your_experience_text(text)",
+          "detailed_requirements": "Locate the 'tell your experience' text input field on the feedback form and input the provided text string. This method should wait for the text field to be interactable, clear any existing content, and then send the specified text. Parameters: text (str) - The text content to input into the experience field."
+        },
+        {
+          "intent": "Get entered tell your experience text value",
+          "proposed_signature": "get_tell_your_experience_text_value()",
+          "detailed_requirements": "Retrieve and return the current text value from the 'tell your experience' input field. This should read the actual value attribute or text content of the input element and return it as a string. Return type: str - The current text value in the experience field."
+        },
+        {
+          "intent": "Assert tell your experience text is truncated",
+          "proposed_signature": "assert_tell_your_experience_text_is_truncated(expected_max_length)",
+          "detailed_requirements": "Verify that the text in the 'tell your experience' field has been truncated to the expected maximum character length. This method should get the current text value, check its length against the expected maximum, and assert that it equals the maximum length (indicating truncation occurred). Parameters: expected_max_length (int) - The maximum allowed character count. Should raise an assertion error if the text length does not match the expected truncated length."
+        }
+      ]
+    }
+  ]
+}
