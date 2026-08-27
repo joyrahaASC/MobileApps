@@ -1,0 +1,66 @@
+{
+  "python_file_path": "libs/flows/windows/hpx_rebranding/feedback.py",
+  "missing_methods": [
+    {
+      "intent": "Verify edit feedback screen is displayed",
+      "proposed_signature": "verify_edit_feedback_screen_displayed()",
+      "detailed_requirements": "Wait for and verify that the edit feedback screen is displayed with all required elements (text input field, submit button, etc.). Return True if displayed correctly, False otherwise.",
+      "implementation_checklist": [
+        "Wait for edit_feedback to be visible",
+        "Wait for send_feedback_submit_btn to be visible",
+        "Wait for tell_your_experience_title to be visible",
+        "Verify all elements are displayed",
+        "Return True if all elements visible, False otherwise"
+      ],
+      "required_locator_keys": [
+        "edit_feedback",
+        "send_feedback_submit_btn",
+        "tell_your_experience_title"
+      ]
+    },
+    {
+      "intent": "Input tell your experience text",
+      "proposed_signature": "input_tell_your_experience_text(text)",
+      "detailed_requirements": "Wait for the 'tell your experience' text input field to be visible and interactable. Clear any existing text and input the provided text parameter. Should handle text that exceeds 2000 characters.",
+      "implementation_checklist": [
+        "Wait for edit_feedback to be visible",
+        "Wait for edit_feedback to be interactable",
+        "Clear existing text in edit_feedback",
+        "Input provided text parameter into edit_feedback",
+        "Handle text exceeding 2000 characters appropriately"
+      ],
+      "required_locator_keys": [
+        "edit_feedback"
+      ]
+    },
+    {
+      "intent": "Get tell your experience text value",
+      "proposed_signature": "get_tell_your_experience_text_value()",
+      "detailed_requirements": "Wait for the 'tell your experience' text input field and retrieve its current text value. Return the text as a string.",
+      "implementation_checklist": [
+        "Wait for edit_feedback to be visible",
+        "Retrieve text value from edit_feedback",
+        "Return text as string"
+      ],
+      "required_locator_keys": [
+        "edit_feedback"
+      ]
+    },
+    {
+      "intent": "Assert tell your experience text is truncated to 2000 characters",
+      "proposed_signature": "assert_text_truncated_to_2000_chars(expected_text)",
+      "detailed_requirements": "Get the current text value from the 'tell your experience' field and assert that it is truncated to exactly 2000 characters if the input exceeded that limit. Compare with the expected truncated text. Should raise assertion error if validation fails.",
+      "implementation_checklist": [
+        "Call get_tell_your_experience_text_value() to retrieve current text",
+        "Verify text length is exactly 2000 characters if input exceeded limit",
+        "Compare retrieved text with expected_text parameter",
+        "Raise assertion error if validation fails"
+      ],
+      "required_locator_keys": [
+        "edit_feedback"
+      ]
+    }
+  ],
+  "class_name": "Feedback",
+  "flow_name": "feedback"
+}
