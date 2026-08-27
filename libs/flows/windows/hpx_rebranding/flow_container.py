@@ -55,7 +55,6 @@ from MobileApps.libs.flows.windows.hpx_rebranding.context_aware import ContextAw
 from MobileApps.libs.flows.windows.hpx_rebranding.hp_go import HPGo
 from MobileApps.libs.flows.windows.hpx_rebranding.css import CSS
 from MobileApps.libs.flows.windows.hpx_rebranding.profile import Profile
-from MobileApps.libs.flows.windows.hpx_rebranding.feedback import Feedback
 from MobileApps.libs.flows.windows.hpx_rebranding.hpx_settings import HPXSettings
 from MobileApps.libs.flows.windows.hpx_rebranding.hpx_support import HPXSupport
 from MobileApps.libs.flows.windows.hpx_rebranding.virtual_assistant import VirtualAssistant
@@ -118,7 +117,6 @@ class FlowContainer(object):
                    "hp_go": HPGo(driver),
                    "css": CSS(driver),
                    "profile": Profile(driver),
-                   "feedback": Feedback(driver),
                    "hpx_settings": HPXSettings(driver),
                    "hpx_support": HPXSupport(driver),
                    "virtual_assistant": VirtualAssistant(driver),
