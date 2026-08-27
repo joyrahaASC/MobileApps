@@ -1,0 +1,41 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/test_CTSB2.py",
+  "top_5_reference_file": "analysis_08262026182100/CTSB2/ns_top_5_matcher_scripts.json",
+  "chronological_steps": [
+    {
+      "intent": "Verify profile icon is visible",
+      "mapped_function": "verify_profile_icon_show_up",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click the profile button",
+      "mapped_function": "click_profile_icon_show_up",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "mapped_function": "verify_feedback_btn",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click the feedback button",
+      "mapped_function": "click_feedback_btn",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify edit feedback screen opens",
+      "mapped_function": "verify_edit_feedback",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Input tell your experience text",
+      "mapped_function": "input_tell_your_experience",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Get tell your experience text value",
+      "mapped_function": "get_entered_text",
+      "page_object_name": "feedback"
+    }
+  ]
+}
