@@ -1,0 +1,35 @@
+{
+  "test_case_id": "CTSF1",
+  "status": "COMPLETED",
+  "manifest": {
+    "locators_updated": [],
+    "pages_updated": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/profile.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "pages_created": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "flow_container_updated": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/flow_container.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "test_script_created": [
+      {
+        "path": "tests/windows/hpx_rebranding/test_CTSF1.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ]
+  }
+}
