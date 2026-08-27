@@ -75,12 +75,15 @@ from MobileApps.libs.flows.windows.hpx_rebranding.add_device import AddDevice
 from MobileApps.libs.ma_misc.live_printer import LivePrinter
 from selenium.webdriver.common.keys import Keys
 
+from MobileApps.libs.flows.windows.hpx_rebranding.feedback import Feedback
+
 class FlowContainer(object):
     def __init__(self, driver):
         self.driver = driver
         # Cache for MFE locale files to avoid repeated network calls
         self._mfe_locale_cache = {}
         self.fd = {
+            "feedback": Feedback(driver),
                    "devicesMFE": DevicesMFE(driver),
                    "devicesDetailsMFE": DevicesDetailsPrinterMFE(driver),
                    "scan": Scan(driver),
