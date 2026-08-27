@@ -1,0 +1,45 @@
+{
+  "aava_config": {
+    "repo_owner": "joyrahaASC",
+    "repo_name": "MobileApps",
+    "branch": "feature1",
+    "intent_path": "libs/flows/windows/hpx_rebranding",
+    "aava_username": "joy.raha@acendion.com",
+    "platform": "windows",
+    "analysis_path": "analysis_08262026182100/CTSA100",
+    "test_script_path": "tests/windows/hpx_rebranding/test_CTSA100.py"
+  },
+  "test_case_id": "CTSA100",
+  "tiers": {
+    "Tier_1_Locators": [],
+    "Tier_2_Indep_Pages": [],
+    "Tier_3_Dep_Pages": [],
+    "Tier_99_Ref": [
+      {
+        "file": "profile.py",
+        "class_name": "Profile",
+        "situation": "Situation-1",
+        "resolved_intents": [
+          {
+            "intent": "Verify profile icon is displayed",
+            "mapped_function": "verify_profile_icon_show_up"
+          },
+          {
+            "intent": "Click the profile button",
+            "mapped_function": "click_devicepage_avatar_btn"
+          },
+          {
+            "intent": "Verify feedback button is present",
+            "mapped_function": "verify_feedback_btn"
+          },
+          {
+            "intent": "Click the feedback button",
+            "mapped_function": "click_feedback_btn"
+          }
+        ],
+        "missing_methods": [],
+        "path": "libs/flows/windows/hpx_rebranding/profile.py"
+      }
+    ]
+  }
+}
