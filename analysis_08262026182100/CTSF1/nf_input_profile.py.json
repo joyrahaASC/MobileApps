@@ -1,0 +1,58 @@
+{
+  "python_file_path": "libs/flows/windows/hpx_rebranding/profile.py",
+  "missing_methods": [
+    {
+      "intent": "Verify profile icon is visible",
+      "proposed_signature": "verify_profile_icon_visible()",
+      "detailed_requirements": "Wait for the profile icon element to be visible on the screen. Return True if visible, False otherwise. Should include explicit wait with timeout and element visibility check.",
+      "implementation_checklist": [
+        "Wait for 'profile_icon_signed_in' to be visible with timeout=10",
+        "If element is found, return True",
+        "If element is not found or timeout occurs, return False"
+      ],
+      "required_locator_keys": [
+        "profile_icon_signed_in"
+      ]
+    },
+    {
+      "intent": "Click profile button",
+      "proposed_signature": "click_profile_button()",
+      "detailed_requirements": "Wait for the profile button element to be clickable and perform a click action. Should include explicit wait with timeout and handle any potential overlays or loading states before clicking.",
+      "implementation_checklist": [
+        "Wait for 'profile_icon_signed_in' to be present with timeout=20",
+        "Verify 'profile_icon_signed_in' is clickable",
+        "Click 'profile_icon_signed_in' with timeout=10"
+      ],
+      "required_locator_keys": [
+        "profile_icon_signed_in"
+      ]
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "proposed_signature": "verify_feedback_button_present()",
+      "detailed_requirements": "Wait for the feedback button element to be present in the DOM after profile panel opens. Return True if present, False otherwise. Should include explicit wait with timeout.",
+      "implementation_checklist": [
+        "Wait for 'feedback_btn' to be present with timeout=10 and raise_e=False",
+        "If element is found, return True",
+        "If element is not found or timeout occurs, return False"
+      ],
+      "required_locator_keys": [
+        "feedback_btn"
+      ]
+    },
+    {
+      "intent": "Click feedback button",
+      "proposed_signature": "click_feedback_button()",
+      "detailed_requirements": "Wait for the feedback button element to be clickable within the profile panel and perform a click action. Should include explicit wait with timeout and verify the button is interactable before clicking.",
+      "implementation_checklist": [
+        "Wait for 'feedback_btn' to be present with timeout=10",
+        "Verify 'feedback_btn' is clickable and enabled",
+        "Click 'feedback_btn' with timeout=10"
+      ],
+      "required_locator_keys": [
+        "feedback_btn"
+      ]
+    }
+  ],
+  "existing_python_content": "from MobileApps.libs.flows.windows.hpx_rebranding.hpx_rebranding_flow import HPXRebrandingFlow\nimport time\n\nclass Profile(HPXRebrandingFlow):\n    flow_name = \"profile\"\n\n    def click_sign_in_from_avatar_sideflyout(self):\n        self.driver.wait_for_object(\"sideflyout_sign_in_link\", timeout=20)\n        self.driver.click(\"sideflyout_sign_in_link\")\n        \n"
+}
