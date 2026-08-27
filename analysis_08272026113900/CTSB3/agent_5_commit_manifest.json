@@ -1,0 +1,28 @@
+{
+  "test_case_id": "CTSB3",
+  "status": "COMPLETED",
+  "manifest": {
+    "locators_updated": [],
+    "pages_updated": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/profile.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      },
+      {
+        "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "pages_created": [],
+    "flow_container_updated": [],
+    "test_script_created": [
+      {
+        "path": "tests/windows/hpx_rebranding/test_CTSB3.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ]
+  }
+}
