@@ -1,0 +1,71 @@
+{
+  "test_case_id": "CTSB",
+  "files": [
+    {
+      "file": "profile.py",
+      "path": "libs/flows/windows/hpx_rebranding/profile.py",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        },
+        {
+          "intent": "Click the profile button",
+          "mapped_function": "click_devicepage_avatar_btn"
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn"
+        },
+        {
+          "intent": "Click the feedback button",
+          "mapped_function": "click_feedback_btn"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "feedback.py",
+      "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify edit feedback screen is displayed",
+          "mapped_function": "verify_edit_feedback"
+        },
+        {
+          "intent": "Input text into the text field",
+          "mapped_function": "input_tell_your_experience"
+        },
+        {
+          "intent": "Get the entered text field value",
+          "mapped_function": "get_entered_text"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Assert text is truncated to characters",
+          "proposed_signature": "assert_text_truncated_to_max_characters(expected_max_length)",
+          "detailed_requirements": "This method should retrieve the entered text from the feedback text field using get_entered_text(), get the character count display using get_feedback_text_char_count(), verify that the actual text length does not exceed the expected_max_length parameter, and assert that the character count display shows the correct truncation limit. The method should raise an assertion error if the text exceeds the maximum character limit or if the character count display is incorrect.",
+          "implementation_checklist": [
+            "Wait for 'edit_feedback' element to be present using self.driver.wait_for_object('edit_feedback')",
+            "Call existing method self.get_entered_text() to retrieve the current text value from the feedback text field",
+            "Calculate the actual character length of the retrieved text using len() function",
+            "Assert that the actual text length does not exceed expected_max_length parameter (raise AssertionError if it does)",
+            "Wait for 'edit_feedback_char_count' element to be present using self.driver.wait_for_object('edit_feedback_char_count', timeout=10)",
+            "Call existing method self.get_feedback_text_char_count() to retrieve the character count display text",
+            "Parse the character count display text to extract the current count and maximum limit (expected format: 'X/Y' where X is current count and Y is max limit)",
+            "Assert that the parsed maximum limit from the display matches the expected_max_length parameter",
+            "Assert that the parsed current count from the display matches the actual text length calculated earlier",
+            "Return True if all assertions pass, otherwise raise AssertionError with descriptive message indicating which validation failed"
+          ],
+          "required_locator_keys": [
+            "edit_feedback",
+            "edit_feedback_char_count"
+          ]
+        }
+      ]
+    }
+  ]
+}
