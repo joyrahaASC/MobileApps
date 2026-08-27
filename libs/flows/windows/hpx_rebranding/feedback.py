@@ -342,3 +342,73 @@ class Feedback(HPXRebrandingFlow):
         
         print(f"Assertion passed: Text is properly truncated to {expected_max_length} characters")
         return True
+
+    def assert_tell_your_experience_text_is_truncated(self, expected_max_length):
+        """
+        Assert that the tell your experience text is truncated to the maximum allowed characters.
+        
+        :param expected_max_length: The maximum allowed character length (e.g., 1000 characters)
+        :return: True if text is properly truncated, False otherwise
+        :raises AssertionError: If truncation validation fails with details
+        """
+        # Wait for 'edit_feedback' element to be present
+        self.driver.wait_for_object('edit_feedback')
+        
+        # Call existing method to retrieve the current text value from the feedback input field
+        actual_text = self.get_entered_text()
+        
+        # Handle edge case: if actual_text is None, treat as empty string
+        if actual_text is None:
+            actual_text = ""
+        
+        # Calculate the actual character length
+        actual_length = len(actual_text)
+        
+        # Wait for 'edit_feedback_char_count' element to be present
+        self.driver.wait_for_object('edit_feedback_char_count')
+        
+        # Call existing method to retrieve the character count display text
+        char_count_display = self.get_feedback_text_char_count()
+        
+        # Parse the character count display text to extract the current count (e.g., from '1000/1000' format)
+        parsed_current_count = None
+        parsed_max_count = None
+        
+        if char_count_display and "/" in char_count_display:
+            try:
+                parts = char_count_display.split("/")
+                parsed_current_count = int(parts[0].strip())
+                parsed_max_count = int(parts[1].strip())
+            except (ValueError, IndexError) as e:
+                raise AssertionError(
+                    f"Failed to parse character count display '{char_count_display}'. "
+                    f"Expected format: 'current/max'. Error: {str(e)}"
+                )
+        else:
+            raise AssertionError(
+                f"Character count display '{char_count_display}' does not match expected format 'current/max'"
+            )
+        
+        # Assert that len(actual_text) does not exceed expected_max_length parameter
+        if actual_length > expected_max_length:
+            raise AssertionError(
+                f"Text length ({actual_length}) exceeds maximum allowed length ({expected_max_length}). "
+                f"Character count display: {char_count_display}"
+            )
+        
+        # Assert that len(actual_text) equals the parsed current count from the character count display
+        if actual_length != parsed_current_count:
+            raise AssertionError(
+                f"Actual text length ({actual_length}) does not match character count display ({parsed_current_count}). "
+                f"Character count display: {char_count_display}"
+            )
+        
+        # Assert that the character count display shows the correct format (e.g., '{current}/{max}')
+        if parsed_max_count != expected_max_length:
+            raise AssertionError(
+                f"Character count display max ({parsed_max_count}) does not match expected max length ({expected_max_length}). "
+                f"Character count display: {char_count_display}"
+            )
+        
+        # Return True if all assertions pass
+        return True
