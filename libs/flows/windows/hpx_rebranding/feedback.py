@@ -295,3 +295,107 @@ class Feedback(HPXRebrandingFlow):
     def get_feedback_text_char_count(self, timeout=10):
         char_count_text = self.driver.get_attribute("edit_feedback_char_count", "Name", timeout=timeout)
         return char_count_text
+
+    def assert_tell_your_experience_truncated_to_max_characters(self, expected_max_length=2000):
+        """
+        Assert that the tell your experience text is truncated to the maximum character limit.
+        
+        :param expected_max_length: The expected maximum character length (default 2000)
+        :return: True if all assertions pass successfully
+        :raises AssertionError: If text length exceeds maximum or truncation did not occur as expected
+        """
+        # Wait for edit_feedback element to be present
+        self.driver.wait_for_object('edit_feedback')
+        
+        # Call existing method to retrieve the current text value from the feedback text field
+        entered_text = self.get_entered_text()
+        
+        # Calculate the actual character length
+        actual_length = len(entered_text)
+        
+        # Wait for edit_feedback_char_count element to be present
+        self.driver.wait_for_object('edit_feedback_char_count')
+        
+        # Get the character count display text
+        char_count_display = self.driver.get_attribute('edit_feedback_char_count', 'Name')
+        
+        # Parse the character count display to extract current count (e.g., from '2000/2000' format)
+        if '/' in char_count_display:
+            current_count_str = char_count_display.split('/')[0].strip()
+            try:
+                current_count = int(current_count_str)
+            except ValueError:
+                raise AssertionError(f"Unable to parse character count from display: {char_count_display}")
+        else:
+            raise AssertionError(f"Character count display format is unexpected: {char_count_display}")
+        
+        # Assert that actual length does not exceed expected_max_length
+        if actual_length > expected_max_length:
+            raise AssertionError(
+                f"Text length {actual_length} exceeds the maximum allowed length of {expected_max_length}"
+            )
+        
+        # Assert that actual length equals expected_max_length when truncation should have occurred
+        if actual_length != expected_max_length:
+            raise AssertionError(
+                f"Text length {actual_length} does not equal expected maximum length {expected_max_length}. "
+                f"Truncation may not have occurred as expected."
+            )
+        
+        # Assert that the character count display shows the correct format indicating truncation occurred
+        if current_count != expected_max_length:
+            raise AssertionError(
+                f"Character count display shows {current_count} but expected {expected_max_length}"
+            )
+        
+        # Return True if all assertions pass successfully
+        return True
+
+    def verify_feedback_button_present(self):
+        """
+        Wait for and verify that the feedback button is present and visible in the UI.
+        
+        :return: Element object if present, raises exception otherwise
+        """
+        element = self.driver.wait_for_object('menu_btn_from_feedback')
+        if element is None or element is False:
+            raise AssertionError("Feedback button 'menu_btn_from_feedback' is not present")
+        return element
+
+    def click_feedback_button(self):
+        """
+        Wait for the feedback button to be clickable and click it to open the feedback form or dialog.
+        
+        :return: None
+        """
+        self.driver.wait_for_object('menu_btn_from_feedback', timeout=10)
+        self.driver.click('menu_btn_from_feedback', timeout=10)
+
+    def verify_feedback_title_displayed(self, expected_title='Why did you open the app today?'):
+        """
+        Wait for and verify that the feedback form title matches the expected text.
+        
+        :param expected_title: The expected title text (default: 'Why did you open the app today?')
+        :return: True if title matches expected text
+        :raises AssertionError: If title does not match expected text
+        """
+        self.driver.wait_for_object('why_did_you_open_app_today_title')
+        actual_title = self.driver.get_attribute('why_did_you_open_app_today_title', 'Name')
+        
+        if actual_title != expected_title:
+            raise AssertionError(
+                f"Feedback title mismatch. Expected: '{expected_title}', but got: '{actual_title}'"
+            )
+        
+        return True
+
+    def verify_options_list_visible(self):
+        """
+        Wait for and verify that the options list is visible below the feedback title.
+        
+        :return: Element object if visible, raises exception otherwise
+        """
+        element = self.driver.wait_for_object('why_did_you_open_today_options', timeout=20)
+        if element is None or element is False:
+            raise AssertionError("Options list 'why_did_you_open_today_options' is not visible")
+        return element
