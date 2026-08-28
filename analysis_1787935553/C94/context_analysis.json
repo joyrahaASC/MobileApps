@@ -1,0 +1,111 @@
+{
+  "test_case_id": "C94",
+  "files": [
+    {
+      "file": "devices_mfe.py",
+      "class_name": "DevicesMFE",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Click the profile button",
+          "proposed_signature": "click_profile_button()",
+          "detailed_requirements": "Wait for the profile button/icon to be clickable and click it to open the profile panel or menu.",
+          "implementation_checklist": [
+            "Wait for 'profile_button' to be visible",
+            "Wait for 'profile_button' to be clickable",
+            "Click 'profile_button'"
+          ],
+          "required_locator_keys": [
+            "profile_button"
+          ]
+        }
+      ],
+      "path": "devices_mfe.py",
+      "locator_gaps": {
+        "ui_map_file": "devices_mfe.json",
+        "present_locators": [],
+        "missing_locators": [
+          "profile_button"
+        ]
+      }
+    },
+    {
+      "file": "feedback.py",
+      "class_name": "Feedback",
+      "situation": "Situation-3",
+      "resolved_intents": [],
+      "missing_methods": [
+        {
+          "intent": "Verify feedback button is present",
+          "proposed_signature": "verify_feedback_button_present()",
+          "detailed_requirements": "Wait for and verify that the feedback button is present and visible in the UI.",
+          "implementation_checklist": [
+            "Wait for 'menu_btn_from_feedback' to be present using self.driver.wait_for_object('menu_btn_from_feedback')",
+            "Verify the element is returned successfully (not None or False)",
+            "Return the element object or True to confirm presence"
+          ],
+          "required_locator_keys": [
+            "menu_btn_from_feedback"
+          ]
+        },
+        {
+          "intent": "Click the feedback button",
+          "proposed_signature": "click_feedback_button()",
+          "detailed_requirements": "Wait for the feedback button to be clickable and click it to open the feedback form or dialog.",
+          "implementation_checklist": [
+            "Wait for 'menu_btn_from_feedback' to be present using self.driver.wait_for_object('menu_btn_from_feedback', timeout=10)",
+            "Click 'menu_btn_from_feedback' using self.driver.click('menu_btn_from_feedback', timeout=10)",
+            "Optionally wait for feedback form/dialog to appear after click"
+          ],
+          "required_locator_keys": [
+            "menu_btn_from_feedback"
+          ]
+        },
+        {
+          "intent": "Verify title 'Why did you open the app today?' is displayed",
+          "proposed_signature": "verify_feedback_title_displayed(expected_title='Why did you open the app today?')",
+          "detailed_requirements": "Wait for and verify that the feedback form title matches the expected text 'Why did you open the app today?'.",
+          "implementation_checklist": [
+            "Wait for 'why_did_you_open_app_today_title' to be present using self.driver.wait_for_object('why_did_you_open_app_today_title')",
+            "Get the text/Name attribute from 'why_did_you_open_app_today_title' using self.driver.get_attribute('why_did_you_open_app_today_title', 'Name')",
+            "Assert that the retrieved text matches the expected_title parameter ('Why did you open the app today?')",
+            "Return True if assertion passes, raise AssertionError with descriptive message if text does not match"
+          ],
+          "required_locator_keys": [
+            "why_did_you_open_app_today_title"
+          ]
+        },
+        {
+          "intent": "Verify options list is visible under the title",
+          "proposed_signature": "verify_options_list_visible()",
+          "detailed_requirements": "Wait for and verify that the options list (likely radio buttons or checkboxes) is visible below the feedback title.",
+          "implementation_checklist": [
+            "Wait for 'why_did_you_open_today_options' to be present using self.driver.wait_for_object('why_did_you_open_today_options', timeout=20)",
+            "Verify the element is returned successfully (not None or False)",
+            "Optionally verify the element is displayed/visible by checking element properties",
+            "Return the element object or True to confirm visibility"
+          ],
+          "required_locator_keys": [
+            "why_did_you_open_today_options"
+          ]
+        }
+      ],
+      "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+      "locator_gaps": {
+        "ui_map_file": "feedback.json",
+        "present_locators": [
+          "menu_btn_from_feedback",
+          "why_did_you_open_app_today_title",
+          "why_did_you_open_today_options"
+        ],
+        "missing_locators": []
+      }
+    }
+  ]
+}
