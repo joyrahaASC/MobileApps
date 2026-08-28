@@ -1,30 +1,51 @@
 {
-  "shadow_branch_name": "shadow_qama_topology_1787234976",
+  "shadow_branch_name": "shadow_qama_topology_1787925536",
+  "global_context": {
+    "aava_username": "joy.raha@ascendion.com",
+    "repo_owner": "joyrahaASC",
+    "repo_name": "MobileApps",
+    "working_branch": "feature3"
+  },
   "platforms": {
     "web": {
       "page_class_metadata_path": "",
       "locators_metadata_path": "",
-      "test_cases_steps_scripts_map_path": ""
+      "page_class_path": "",
+      "locators_path": "",
+      "test_cases_steps_scripts_map_path": "",
+      "script_path": ""
     },
     "windows": {
       "page_class_metadata_path": "QAMA Topology/windows/windows_page_class_metadata.json",
       "locators_metadata_path": "QAMA Topology/windows/windows_locators_metadata.json",
-      "test_cases_steps_scripts_map_path": ""
+      "page_class_path": "libs/flows/windows/hpx_rebranding",
+      "locators_path": "resources/ui_map/windows/hpx_rebranding",
+      "test_cases_steps_scripts_map_path": "QAMA Topology/windows/windows_test_cases_steps_scripts_map.json",
+      "script_path": "tests/windows/hpx_rebranding/scripts"
     },
     "android": {
       "page_class_metadata_path": "",
       "locators_metadata_path": "",
-      "test_cases_steps_scripts_map_path": ""
+      "page_class_path": "",
+      "locators_path": "",
+      "test_cases_steps_scripts_map_path": "",
+      "script_path": ""
     },
     "ios": {
       "page_class_metadata_path": "",
       "locators_metadata_path": "",
-      "test_cases_steps_scripts_map_path": ""
+      "page_class_path": "",
+      "locators_path": "",
+      "test_cases_steps_scripts_map_path": "",
+      "script_path": ""
     },
     "mac": {
       "page_class_metadata_path": "",
       "locators_metadata_path": "",
-      "test_cases_steps_scripts_map_path": ""
+      "page_class_path": "",
+      "locators_path": "",
+      "test_cases_steps_scripts_map_path": "",
+      "script_path": ""
     }
   }
 }
