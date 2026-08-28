@@ -187,5 +187,122 @@
         "Verify user is navigated back to add device page": "assert self.add_device.verify_add_device_page(), 'add device page is not found'"
       }
     }
+  },
+  "C58": {
+    "script_file_path": "tests/windows/hpx_rebranding/scripts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Click the bell icon in the global header.": {
+        "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is visible": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Verify PC devices back button is visible": "assert self.device_card.verify_pc_devices_back_button(), 'device back button invisible'",
+        "Click the PC devices back button to navigate back": "self.device_card.click_pc_devices_back_button()",
+        "Verify bell icon is visible again after navigation": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Click the bell icon": "self.device_card.click_bell_icon()",
+        "Verify avatar close button is visible indicating panel opened": "assert self.profile.verify_avatar_close_btn(), 'avatar close button invisible'",
+        "Verify notifications title is visible in the panel": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'"
+      }
+    }
+  },
+  "C61": {
+    "script_file_path": "tests/windows/hpx_rebranding/scripts/bell_notifications/test_suite_02_bell_notifications.py",
+    "correlation_map": {
+      "1. Open the notifications side panel.": {
+        "Verify bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify notifications title is displayed": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Verify sign-in button is present in notifications panel": "assert self.bell_icon.verify_notifications_panel_sign_in_btn(), 'sign-in button in notification panel invisible'"
+      },
+      "2. Click the close/back button on the panel.": {
+        "Verify close button is present and text is 'Close'": "close_btn_text = self.bell_icon.verify_notifications_panel_close_btn()",
+        "Assert close button text matches 'Close'": "assert close_btn_text == 'Close', 'Text on Close button is not matching or its incorrect'",
+        "Click the close button on notifications panel": "self.bell_icon.click_notifications_panel_close_btn()",
+        "Verify sign-in button is visible after closing panel": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is present after closing panel": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'"
+      }
+    }
+  },
+  "C55": {
+    "script_file_path": "tests/windows/hpx_rebranding/scripts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Launch the HPX application.": {
+        "Invoke HPX launch fixture": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_myhp_launch')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Kill existing Chrome processes": "request.cls.fc.kill_chrome_process()"
+      },
+      "2. Observe the global header navigation bar.": {
+        "Verify profile icon is displayed": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is displayed": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is displayed": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'"
+      }
+    }
+  },
+  "C56": {
+    "script_file_path": "tests/windows/hpx_rebranding/scripts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Navigate to the PC devices page.": {
+        "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is visible": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is visible on initial page": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Verify PC devices back button is present": "assert self.device_card.verify_pc_devices_back_button(), 'device back button invisible'",
+        "Click PC devices back button to navigate": "self.device_card.click_pc_devices_back_button()"
+      },
+      "2. Check the global header for the notifications bell icon.": {
+        "Verify bell icon is visible after navigation": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'"
+      }
+    }
+  },
+  "C60": {
+    "script_file_path": "tests/windows/hpx_rebranding/scripts/bell_notifications/test_suite_02_bell_notifications.py",
+    "correlation_map": {
+      "1. Open the notifications side panel by clicking the bell icon.": {
+        "Invoke class setup fixture for OTA regression": "@pytest.mark.usefixtures('class_setup_fixture_ota_regression', 'function_setup_clear_sign_out')",
+        "Kill existing HPX processes": "request.cls.fc.kill_hpx_process()",
+        "Delete web password credentials": "request.cls.fc.web_password_credential_delete()",
+        "Load HPID credentials from account details": "hpid_credentials = saf_misc.load_json(ma_misc.get_abs_path(HPX_ACCOUNT.account_details_path))['hpid']",
+        "Store username and password": "cls.user_name, cls.password = (hpid_credentials['username'], hpid_credentials['password'])",
+        "Minimize Chrome browser": "cls.profile.minimize_chrome()",
+        "Verify sign-in button is visible": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is present": "assert self.device_card.verify_bell_icon_present(), 'bell icon invisible'",
+        "Click the bell icon to open notifications panel": "self.device_card.click_bell_icon()",
+        "Verify notifications title is visible": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Verify sign-in button in notification panel is visible": "assert self.bell_icon.verify_notifications_panel_sign_in_btn(), 'sign-in button in notification panel invisible'",
+        "Verify avatar close button is visible": "assert self.profile.verify_avatar_close_btn(), 'avatar close button invisible'"
+      }
+    }
+  },
+  "C57": {
+    "script_file_path": "tests/windows/hpx_rebranding/scripts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Locate the bell icon in the global header.": {
+        "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is visible": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is visible in the global header": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'",
+        "Verify PC devices back button is visible": "assert self.device_card.verify_pc_devices_back_button(), 'device back button invisible'",
+        "Click the PC devices back button to navigate back": "self.device_card.click_pc_devices_back_button()",
+        "Verify bell icon is still visible after navigation": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'"
+      },
+      "2. Click the bell icon.": {
+        "Click the bell icon to trigger notification UI": "self.device_card.click_bell_icon()",
+        "Verify avatar close button appears confirming notification UI opened": "assert self.profile.verify_avatar_close_btn(), 'avatar close button invisible'"
+      }
+    }
+  },
+  "C59": {
+    "script_file_path": "tests/windows/hpx_rebranding/scripts/bell_notifications/test_suite_01_bell_notifications.py",
+    "correlation_map": {
+      "1. Ensure the user is not signed in (guest mode).": {
+        "Verify profile icon is visible": "assert self.devicesMFE.verify_profile_icon_show_up(), 'profile icon invisible'",
+        "Verify sign-in button is visible to confirm guest mode": "assert self.devicesMFE.verify_sign_in_button_show_up(), 'sign-in button invisible'",
+        "Verify bell icon is visible": "assert self.devicesMFE.verify_bell_icon_show_up(), 'bell icon invisible'"
+      },
+      "2. Click the bell icon to open the notifications panel.": {
+        "Click the bell icon": "self.device_card.click_bell_icon()",
+        "Verify notifications title is displayed": "assert self.bell_icon.verify_notifications_title(), 'notification title invisible'",
+        "Verify sign-in button is displayed in notification panel": "assert self.bell_icon.verify_notifications_panel_sign_in_btn(), 'sign-in button in notification panel invisible'",
+        "Verify avatar close button is visible": "assert self.profile.verify_avatar_close_btn(), 'avatar close button invisible'",
+        "Close the notification panel": "self.profile.click_close_avatar_btn()"
+      }
+    }
   }
 }
