@@ -1,0 +1,40 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/scripts_1/feedback/test_suite_02_feedback.py",
+  "top_5_reference_file": "analysis_1787956383/C94/ns_top_5_matcher_scripts.json",
+  "chronological_steps": [
+    {
+      "intent": "Verify why did you open the app today options list is present",
+      "mapped_function": "verify_why_did_you_open_app_today_list",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Assert title is 'Why did you open the app today?'",
+      "label": "",
+      "mapped_function": "assert_why_did_you_open_app_today_title",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Verify profile icon is visible",
+      "label": "",
+      "mapped_function": "verify_profile_icon_visible",
+      "page_object_name": "profilePanel"
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "label": "",
+      "mapped_function": "verify_feedback_button_present",
+      "page_object_name": "profilePanel"
+    },
+    {
+      "intent": "Click feedback button",
+      "label": "",
+      "mapped_function": "click_feedback_button",
+      "page_object_name": "profilePanel"
+    },
+    {
+      "intent": "Click profile button",
+      "mapped_function": "click_profile_button",
+      "page_object_name": "flowContainer"
+    }
+  ]
+}
