@@ -1,0 +1,124 @@
+{
+  "aava_config": {
+    "aava_username": "joy.raha@ascendion.com",
+    "repo_owner": "joyrahaASC",
+    "repo_name": "MobileApps",
+    "branch": "feature1",
+    "intent_path": "libs/flows/windows/hpx_rebranding",
+    "platform": "windows",
+    "analysis_path": "analysis_1787956383/C94",
+    "test_script_path": "tests/windows/hpx_rebranding/scripts_1/feedback/test_suite_02_feedback.py"
+  },
+  "test_case_id": "C94",
+  "tiers": {
+    "Tier_1_Locators": [],
+    "Tier_2_Indep_Pages": [
+      {
+        "file": "feedback.py",
+        "class_name": "Feedback",
+        "situation": "Situation-2",
+        "resolved_intents": [
+          {
+            "intent": "Verify why did you open the app today options list is present",
+            "mapped_function": "verify_why_did_you_open_app_today_list"
+          }
+        ],
+        "missing_methods": [
+          {
+            "intent": "Assert title is 'Why did you open the app today?'",
+            "proposed_signature": "assert_why_did_you_open_app_today_title(expected_title='Why did you open the app today?')",
+            "detailed_requirements": "Wait for the 'Why did you open the app today' title element to be visible, retrieve its text content, and assert that it matches the expected title string. Should raise an assertion error if the title does not match.",
+            "implementation_checklist": [
+              "Wait for 'why_did_you_open_app_today_title' to be visible using self.driver.wait_for_object",
+              "Get the text attribute from 'why_did_you_open_app_today_title' using self.driver.get_attribute with 'Name' property",
+              "Store the retrieved text in a variable (actual_title)",
+              "Compare actual_title with expected_title parameter",
+              "If actual_title does not match expected_title, raise AssertionError with descriptive message showing both expected and actual values",
+              "If actual_title matches expected_title, return True to indicate successful assertion"
+            ],
+            "required_locator_keys": [
+              "why_did_you_open_app_today_title"
+            ]
+          }
+        ],
+        "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+        "locator_gaps": {
+          "ui_map_file": "feedback.json",
+          "present_locators": [
+            "why_did_you_open_app_today_title"
+          ],
+          "missing_locators": []
+        }
+      },
+      {
+        "file": "profile_panel.py",
+        "class_name": "ProfilePanel",
+        "situation": "Situation-2",
+        "resolved_intents": [],
+        "missing_methods": [
+          {
+            "intent": "Verify profile icon is visible",
+            "proposed_signature": "verify_profile_icon_visible()",
+            "detailed_requirements": "Wait for the profile icon element to be visible on the devices MFE interface and verify its display state. Should return True if visible, False otherwise.",
+            "implementation_checklist": [
+              "Wait for 'profile_button' to be visible using driver.wait_for_object with raise_e=False and timeout=10",
+              "Return True if element is found and visible, False otherwise"
+            ],
+            "required_locator_keys": [
+              "profile_button"
+            ]
+          },
+          {
+            "intent": "Verify feedback button is present",
+            "proposed_signature": "verify_feedback_button_present()",
+            "detailed_requirements": "Wait for the feedback button element to be present in the profile panel and verify its existence. Should return True if present, False otherwise.",
+            "implementation_checklist": [
+              "Wait for 'feedback_button' to be present using driver.wait_for_object with raise_e=False and timeout=10",
+              "Return True if element is found (not False), False otherwise"
+            ],
+            "required_locator_keys": [
+              "feedback_button"
+            ]
+          },
+          {
+            "intent": "Click feedback button",
+            "proposed_signature": "click_feedback_button()",
+            "detailed_requirements": "Wait for the feedback button element to be clickable in the profile panel and click it to navigate to the feedback page.",
+            "implementation_checklist": [
+              "Wait for 'feedback_button' to be clickable",
+              "Click 'feedback_button' using driver.click with timeout=10"
+            ],
+            "required_locator_keys": [
+              "feedback_button"
+            ]
+          }
+        ],
+        "path": "libs/flows/windows/hpx_rebranding/profile_panel.py",
+        "locator_gaps": {
+          "ui_map_file": "profile_panel.json",
+          "present_locators": [
+            "profile_button",
+            "feedback_button"
+          ],
+          "missing_locators": []
+        }
+      }
+    ],
+    "Tier_3_Dep_Pages": [],
+    "Tier_99_Ref": [
+      {
+        "file": "flow_container.py",
+        "class_name": "FlowContainer",
+        "situation": "Situation-1",
+        "resolved_intents": [
+          {
+            "intent": "Click profile button",
+            "mapped_function": "click_profile_button"
+          }
+        ],
+        "missing_methods": [],
+        "path": "libs/flows/windows/hpx_rebranding/flow_container.py"
+      }
+    ]
+  }
+}
