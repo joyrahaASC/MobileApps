@@ -1,0 +1,108 @@
+{
+  "aava_config": {
+    "aava_username": "joy.raha@ascendion.com",
+    "repo_owner": "joyrahaASC",
+    "repo_name": "MobileApps",
+    "branch": "test1",
+    "intent_path": "libs/flows/windows/hpx_rebranding",
+    "platform": "windows",
+    "analysis_path": "analysis_1787890858/C92",
+    "test_script_path": "tests/windows/hpx_rebranding/scripts/feedback/test_suite_01_feedback.py"
+  },
+  "test_case_id": "C92",
+  "tiers": {
+    "Tier_1_Locators": [
+      {
+        "ui_map_file": "profile_panel.json",
+        "missing_locators": [
+          "profile_button",
+          "feedback_button"
+        ]
+      }
+    ],
+    "Tier_2_Indep_Pages": [
+      {
+        "file": "profile_panel.py",
+        "class_name": "ProfilePanel",
+        "situation": "Situation-3",
+        "resolved_intents": [],
+        "missing_methods": [
+          {
+            "intent": "Click profile button",
+            "proposed_signature": "click_profile_button()",
+            "detailed_requirements": "Wait for the profile button element to be clickable and perform a click action on it. This should open or activate the profile interface.",
+            "implementation_checklist": [
+              "Wait for 'profile_button' to be clickable",
+              "Click 'profile_button'"
+            ],
+            "required_locator_keys": [
+              "profile_button"
+            ]
+          },
+          {
+            "intent": "Verify feedback button is present",
+            "proposed_signature": "verify_feedback_button_present()",
+            "detailed_requirements": "Wait for and verify that the feedback button element is present in the DOM. Return True if present, False otherwise. This is a verification method that checks existence without interaction.",
+            "implementation_checklist": [
+              "Wait for 'feedback_button' to be present",
+              "Return True if element is found, False otherwise"
+            ],
+            "required_locator_keys": [
+              "feedback_button"
+            ]
+          },
+          {
+            "intent": "Click feedback button",
+            "proposed_signature": "click_feedback_button()",
+            "detailed_requirements": "Wait for the feedback button element to be clickable and perform a click action on it. This should open the feedback form or dialog.",
+            "implementation_checklist": [
+              "Wait for 'feedback_button' to be clickable",
+              "Click 'feedback_button'"
+            ],
+            "required_locator_keys": [
+              "feedback_button"
+            ]
+          },
+          {
+            "intent": "Assert feedback button should be present",
+            "proposed_signature": "assert_feedback_button_present()",
+            "detailed_requirements": "Assert that the feedback button element is present in the DOM. This method should raise an assertion error if the button is not found. Use explicit wait with appropriate timeout.",
+            "implementation_checklist": [
+              "Wait for 'feedback_button' to be present with explicit timeout",
+              "Assert that 'feedback_button' element is present",
+              "Raise AssertionError with descriptive message if element is not found"
+            ],
+            "required_locator_keys": [
+              "feedback_button"
+            ]
+          }
+        ],
+        "path": "libs/flows/windows/hpx_rebranding/profile_panel.py",
+        "locator_gaps": {
+          "ui_map_file": "profile_panel.json",
+          "present_locators": [],
+          "missing_locators": [
+            "profile_button",
+            "feedback_button"
+          ]
+        }
+      }
+    ],
+    "Tier_3_Dep_Pages": [],
+    "Tier_99_Ref": [
+      {
+        "file": "devices_mfe.py",
+        "class_name": "DevicesMFE",
+        "situation": "Situation-1",
+        "resolved_intents": [
+          {
+            "intent": "Verify profile icon is visible",
+            "mapped_function": "verify_profile_icon_show_up"
+          }
+        ],
+        "missing_methods": [],
+        "path": "devices_mfe.py"
+      }
+    ]
+  }
+}
