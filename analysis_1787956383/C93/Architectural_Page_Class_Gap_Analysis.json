@@ -1,0 +1,75 @@
+{
+  "test_case_id": "C93",
+  "files": [
+    {
+      "file": "flow_container.py",
+      "class_name": "FlowContainer",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "click_profile_button"
+        },
+        {
+          "intent": "Click profile button",
+          "mapped_function": "click_profile_button"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "feedback.py",
+      "class_name": "Feedback",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify edit feedback screen is displayed",
+          "mapped_function": "verify_edit_feedback"
+        },
+        {
+          "intent": "Input tell your experience text",
+          "mapped_function": "input_tell_your_experience"
+        },
+        {
+          "intent": "Get tell your experience text value",
+          "mapped_function": "get_entered_text"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Verify feedback button is present",
+          "proposed_signature": "verify_feedback_button_present()",
+          "detailed_requirements": "Wait for and verify that the feedback button element is visible and present on the screen. Return True if present, False otherwise."
+        },
+        {
+          "intent": "Click feedback button",
+          "proposed_signature": "click_feedback_button()",
+          "detailed_requirements": "Wait for the feedback button to be clickable and click it to navigate to the feedback screen."
+        },
+        {
+          "intent": "Assert tell your experience text is truncated to 2000 characters",
+          "proposed_signature": "verify_text_truncated_to_max_length(expected_length=2000)",
+          "detailed_requirements": "Get the current text from the tell your experience field using get_entered_text() and verify that its length does not exceed the specified maximum length (default 2000 characters). Return True if text is properly truncated, False otherwise."
+        }
+      ]
+    },
+    {
+      "file": "profile_panel.py",
+      "class_name": "ProfilePanel",
+      "situation": "Situation-3",
+      "resolved_intents": [],
+      "missing_methods": [
+        {
+          "intent": "Verify feedback button is present",
+          "proposed_signature": "verify_feedback_button_present()",
+          "detailed_requirements": "Wait for and verify that the feedback button element is visible and present in the profile panel. Return True if present, False otherwise."
+        },
+        {
+          "intent": "Click feedback button",
+          "proposed_signature": "click_feedback_button()",
+          "detailed_requirements": "Wait for the feedback button in the profile panel to be clickable and click it to navigate to the feedback screen."
+        }
+      ]
+    }
+  ]
+}
