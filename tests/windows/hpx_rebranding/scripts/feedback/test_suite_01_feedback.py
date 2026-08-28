@@ -1,5 +1,5 @@
 import pytest
-from libs.flows.windows.hpx_rebranding.flow_container import FlowContainer
+from libs.flows.windows.flow_container import FlowContainer
 
 
 class TestFeedback:
@@ -12,42 +12,34 @@ class TestFeedback:
         cls = self.__class__
         request.cls.driver = windows_test_setup
         request.cls.fc = FlowContainer(request.cls.driver)
-        cls.profile = request.cls.fc.fd["profile"]
-        cls.feedback = request.cls.fc.fd["feedback"]
+        cls.profilePanel = request.cls.fc.fd["profilePanel"]
+        cls.feedbackScreen = request.cls.fc.fd["feedbackScreen"]
+        cls.devicesMFE = request.cls.fc.fd["devicesMFE"]
 
-    def test_feedback_text_truncation(self):
+    def test_feedback_flow(self):
         """
-        Test Case: Verify feedback text is truncated to 2000 characters
-        Steps:
-        1. Verify profile icon is visible
-        2. Click profile button
-        3. Verify feedback button is present
-        4. Click feedback button
-        5. Verify edit feedback screen is displayed
-        6. Input tell your experience text
-        7. Get entered tell your experience value
-        8. Assert tell your experience text is truncated to 2000 characters
+        Test feedback flow with profile interaction and text validation
         """
-        # Step 1: Verify profile icon is visible
-        self.profile.verify_profile_icon_show_up()
+        # Click profile button
+        self.profilePanel.click_profile_button()
         
-        # Step 2: Click profile button
-        self.profile.click_devicepage_avatar_btn()
+        # Verify feedback button is present
+        self.profilePanel.verify_feedback_button_present()
         
-        # Step 3: Verify feedback button is present
-        self.profile.verify_feedback_btn()
+        # Click feedback button
+        self.profilePanel.click_feedback_button()
         
-        # Step 4: Click feedback button
-        self.profile.click_feedback_btn()
+        # Verify edit feedback screen is displayed
+        self.feedbackScreen.verify_feedback_screen_displayed()
         
-        # Step 5: Verify edit feedback screen is displayed
-        self.feedback.verify_edit_feedback()
+        # Input tell your experience text
+        self.feedbackScreen.input_experience_text()
         
-        # Step 6: Input tell your experience text
-        self.feedback.input_tell_your_experience()
+        # Get tell your experience text value
+        self.feedbackScreen.get_experience_text_value()
         
-        # Step 7: Get entered tell your experience value
-        self.feedback.get_entered_text()
+        # Assert tell your experience text is truncated to maximum characters
+        self.feedbackScreen.verify_experience_text_max_length()
         
-        # Step 8: Assert tell your experience text is truncated to 2000 characters
-        self.feedback.assert_tell_your_experience_truncated_to_max_characters()
+        # Verify profile icon is visible
+        self.devicesMFE.verify_profile_icon_show_up()
