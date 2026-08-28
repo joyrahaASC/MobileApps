@@ -1,0 +1,12 @@
+{
+  "profile_button": {
+    "locator": {
+      "id": "TBD_profile_button"
+    }
+  },
+  "feedback_button": {
+    "locator": {
+      "id": "TBD_feedback_button"
+    }
+  }
+}
