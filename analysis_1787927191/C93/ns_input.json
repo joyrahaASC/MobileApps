@@ -1,0 +1,47 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/scripts/feedback/test_suite_01_feedback.py",
+  "top_5_reference_file": "analysis_1787927191/C93/ns_top_5_matcher_scripts.json",
+  "chronological_steps": [
+    {
+      "intent": "Verify profile icon is visible",
+      "mapped_function": "verify_profile_icon_show_up",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click profile button",
+      "mapped_function": "click_devicepage_avatar_btn",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "mapped_function": "verify_feedback_btn",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Click feedback button",
+      "mapped_function": "click_feedback_btn",
+      "page_object_name": "profile"
+    },
+    {
+      "intent": "Verify edit feedback screen is displayed",
+      "mapped_function": "verify_edit_feedback",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Input tell your experience text",
+      "mapped_function": "input_tell_your_experience",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Get entered tell your experience value",
+      "mapped_function": "get_entered_text",
+      "page_object_name": "feedback"
+    },
+    {
+      "intent": "Assert tell your experience text is truncated to 2000 characters",
+      "label": "",
+      "mapped_function": "assert_tell_your_experience_truncated_to_max_characters",
+      "page_object_name": "feedback"
+    }
+  ]
+}
