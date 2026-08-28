@@ -350,3 +350,52 @@ class Feedback(HPXRebrandingFlow):
         
         # Return True if all assertions pass successfully
         return True
+
+    def verify_feedback_button_present(self):
+        """
+        Wait for and verify that the feedback button is present and visible in the UI.
+        
+        :return: Element object if present, raises exception otherwise
+        """
+        element = self.driver.wait_for_object('menu_btn_from_feedback')
+        if element is None or element is False:
+            raise AssertionError("Feedback button 'menu_btn_from_feedback' is not present")
+        return element
+
+    def click_feedback_button(self):
+        """
+        Wait for the feedback button to be clickable and click it to open the feedback form or dialog.
+        
+        :return: None
+        """
+        self.driver.wait_for_object('menu_btn_from_feedback', timeout=10)
+        self.driver.click('menu_btn_from_feedback', timeout=10)
+
+    def verify_feedback_title_displayed(self, expected_title='Why did you open the app today?'):
+        """
+        Wait for and verify that the feedback form title matches the expected text.
+        
+        :param expected_title: The expected title text (default: 'Why did you open the app today?')
+        :return: True if title matches expected text
+        :raises AssertionError: If title does not match expected text
+        """
+        self.driver.wait_for_object('why_did_you_open_app_today_title')
+        actual_title = self.driver.get_attribute('why_did_you_open_app_today_title', 'Name')
+        
+        if actual_title != expected_title:
+            raise AssertionError(
+                f"Feedback title mismatch. Expected: '{expected_title}', but got: '{actual_title}'"
+            )
+        
+        return True
+
+    def verify_options_list_visible(self):
+        """
+        Wait for and verify that the options list is visible below the feedback title.
+        
+        :return: Element object if visible, raises exception otherwise
+        """
+        element = self.driver.wait_for_object('why_did_you_open_today_options', timeout=20)
+        if element is None or element is False:
+            raise AssertionError("Options list 'why_did_you_open_today_options' is not visible")
+        return element
