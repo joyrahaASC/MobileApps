@@ -1,0 +1,23 @@
+{
+  "test_case_id": "C93",
+  "status": "COMPLETED",
+  "manifest": {
+    "locators_updated": [],
+    "pages_updated": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "pages_created": [],
+    "flow_container_updated": [],
+    "test_script_created": [
+      {
+        "path": "tests/windows/hpx_rebranding/scripts/feedback/test_suite_01_feedback.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ]
+  }
+}
