@@ -1,0 +1,58 @@
+{
+  "test_case_id": "C94",
+  "files": [
+    {
+      "file": "flow_container.py",
+      "class_name": "FlowContainer",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Click profile button",
+          "mapped_function": "click_profile_button"
+        }
+      ],
+      "missing_methods": []
+    },
+    {
+      "file": "profile_panel.py",
+      "class_name": "ProfilePanel",
+      "situation": "Situation-2",
+      "resolved_intents": [],
+      "missing_methods": [
+        {
+          "intent": "Verify profile icon is visible",
+          "proposed_signature": "verify_profile_icon_visible()",
+          "detailed_requirements": "Wait for the profile icon element to be visible on the devices MFE interface and verify its display state. Should return True if visible, False otherwise."
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "proposed_signature": "verify_feedback_button_present()",
+          "detailed_requirements": "Wait for the feedback button element to be present in the profile panel and verify its existence. Should return True if present, False otherwise."
+        },
+        {
+          "intent": "Click feedback button",
+          "proposed_signature": "click_feedback_button()",
+          "detailed_requirements": "Wait for the feedback button element to be clickable in the profile panel and click it to navigate to the feedback page."
+        }
+      ]
+    },
+    {
+      "file": "feedback.py",
+      "class_name": "Feedback",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify why did you open the app today options list is present",
+          "mapped_function": "verify_why_did_you_open_app_today_list"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Assert title is 'Why did you open the app today?'",
+          "proposed_signature": "assert_why_did_you_open_app_today_title(expected_title='Why did you open the app today?')",
+          "detailed_requirements": "Wait for the 'Why did you open the app today' title element to be visible, retrieve its text content, and assert that it matches the expected title string. Should raise an assertion error if the title does not match."
+        }
+      ]
+    }
+  ]
+}
