@@ -1,0 +1,41 @@
+{
+  "test_case_id": "C94",
+  "status": "COMPLETED",
+  "manifest": {
+    "locators_updated": [
+      {
+        "path": "resources/ui_map/windows/hpx_rebranding/devices_mfe.json",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "pages_updated": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "pages_created": [
+      {
+        "path": "devices_mfe.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "flow_container_updated": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/flow_container.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "test_script_created": [
+      {
+        "path": "tests/windows/hpx_rebranding/scripts/feedback/test_suite_02_feedback.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ]
+  }
+}
