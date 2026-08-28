@@ -1,0 +1,29 @@
+{
+  "test_case_id": "C92",
+  "status": "COMPLETED",
+  "manifest": {
+    "locators_updated": [],
+    "pages_updated": [],
+    "pages_created": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/profile_panel.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "flow_container_updated": [
+      {
+        "path": "libs/flows/windows/hpx_rebranding/flow_container.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ],
+    "test_script_created": [
+      {
+        "path": "tests/windows/hpx_rebranding/scripts/feedback/test_suite_01_feedback.py",
+        "score": 100,
+        "exit_reason": "SUCCESS"
+      }
+    ]
+  }
+}
