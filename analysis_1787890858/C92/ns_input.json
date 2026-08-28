@@ -1,0 +1,35 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/scripts/feedback/test_suite_01_feedback.py",
+  "top_5_reference_file": "analysis_1787890858/C92/ns_top_5_matcher_scripts.json",
+  "chronological_steps": [
+    {
+      "intent": "Verify profile icon is visible",
+      "mapped_function": "verify_profile_icon_show_up",
+      "page_object_name": "devicesMFE"
+    },
+    {
+      "intent": "Click profile button",
+      "label": "",
+      "mapped_function": "click_profile_button",
+      "page_object_name": "profilePanel"
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "label": "",
+      "mapped_function": "verify_feedback_button_present",
+      "page_object_name": "profilePanel"
+    },
+    {
+      "intent": "Click feedback button",
+      "label": "",
+      "mapped_function": "click_feedback_button",
+      "page_object_name": "profilePanel"
+    },
+    {
+      "intent": "Assert feedback button should be present",
+      "label": "",
+      "mapped_function": "assert_feedback_button_present",
+      "page_object_name": "profilePanel"
+    }
+  ]
+}
