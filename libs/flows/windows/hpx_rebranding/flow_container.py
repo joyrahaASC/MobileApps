@@ -80,6 +80,8 @@ from MobileApps.libs.flows.windows.hpx_rebranding.profile_panel import ProfilePa
 
 from MobileApps.libs.flows.windows.hpx_rebranding.feedback_screen import FeedbackScreen
 
+from MobileApps.devices_mfe import DevicesMFE
+
 class FlowContainer(object):
     def __init__(self, driver):
         self.driver = driver
