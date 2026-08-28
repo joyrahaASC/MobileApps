@@ -16848,5 +16848,12 @@
         ]
       }
     ]
+  },
+  {
+    "file_path": "libs/flows/windows/hpx_rebranding/profile_panel.py",
+    "component": "profile_panel",
+    "dependencies": [],
+    "locator_keys": [],
+    "exposed_functions": []
   }
 ]
