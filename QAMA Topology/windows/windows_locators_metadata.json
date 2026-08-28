@@ -6667,5 +6667,50 @@
         }
       }
     }
+  },
+  {
+    "file_path": "resources/ui_map/windows/hpx_rebranding/profile_panel.json",
+    "locators": {
+      "profile_button": {
+        "locator": {
+          "id": "TBD_profile_button"
+        }
+      },
+      "feedback_button": {
+        "locator": {
+          "id": "TBD_feedback_button"
+        }
+      }
+    }
+  },
+  {
+    "file_path": "resources/ui_map/windows/hpx_rebranding/feedback_screen.json",
+    "locators": {
+      "feedback_screen_title": {
+        "locator": {
+          "id": "TBD_feedback_screen_title"
+        }
+      },
+      "tell_your_experience_textbox": {
+        "locator": {
+          "id": "TBD_tell_your_experience_textbox"
+        }
+      },
+      "submit_feedback_btn": {
+        "locator": {
+          "id": "TBD_submit_feedback_btn"
+        }
+      },
+      "cancel_feedback_btn": {
+        "locator": {
+          "id": "TBD_cancel_feedback_btn"
+        }
+      },
+      "edit_feedback_char_count": {
+        "locator": {
+          "id": "TBD_edit_feedback_char_count"
+        }
+      }
+    }
   }
 ]
