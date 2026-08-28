@@ -15,7 +15,7 @@
     },
     "windows": {
       "page_class_metadata_path": "QAMA Topology/windows/windows_page_class_metadata.json",
-      "locators_metadata_path": "",
+      "locators_metadata_path": "QAMA Topology/windows/windows_locators_metadata.json",
       "page_class_path": "libs/flows/windows/pages",
       "locators_path": "resources/ui_map/windows/locs"
     },
