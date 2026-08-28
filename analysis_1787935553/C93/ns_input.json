@@ -1,0 +1,53 @@
+{
+  "test_script_path": "tests/windows/hpx_rebranding/scripts/feedback/test_suite_01_feedback.py",
+  "top_5_reference_file": "analysis_1787935553/C93/ns_top_5_matcher_scripts.json",
+  "chronological_steps": [
+    {
+      "intent": "Click profile button",
+      "label": "",
+      "mapped_function": "click_profile_button",
+      "page_object_name": "profilePanel"
+    },
+    {
+      "intent": "Verify feedback button is present",
+      "label": "",
+      "mapped_function": "verify_feedback_button_present",
+      "page_object_name": "profilePanel"
+    },
+    {
+      "intent": "Click feedback button",
+      "label": "",
+      "mapped_function": "click_feedback_button",
+      "page_object_name": "profilePanel"
+    },
+    {
+      "intent": "Verify edit feedback screen is displayed",
+      "label": "",
+      "mapped_function": "verify_feedback_screen_displayed",
+      "page_object_name": "feedbackScreen"
+    },
+    {
+      "intent": "Input tell your experience text",
+      "label": "",
+      "mapped_function": "input_experience_text",
+      "page_object_name": "feedbackScreen"
+    },
+    {
+      "intent": "Get tell your experience text value",
+      "label": "",
+      "mapped_function": "get_experience_text_value",
+      "page_object_name": "feedbackScreen"
+    },
+    {
+      "intent": "Assert tell your experience text is truncated to maximum characters",
+      "label": "",
+      "mapped_function": "verify_experience_text_max_length",
+      "page_object_name": "feedbackScreen"
+    },
+    {
+      "intent": "Verify profile icon is visible",
+      "mapped_function": "verify_profile_icon_show_up",
+      "page_object_name": "devicesMFE"
+    }
+  ]
+}
