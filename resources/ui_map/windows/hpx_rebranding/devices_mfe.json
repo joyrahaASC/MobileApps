@@ -1,0 +1,7 @@
+{
+  "profile_button": {
+    "locator": {
+      "id": "TBD_profile_button"
+    }
+  }
+}
