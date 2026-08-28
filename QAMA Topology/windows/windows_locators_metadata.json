@@ -6712,5 +6712,15 @@
         }
       }
     }
+  },
+  {
+    "file_path": "resources/ui_map/windows/hpx_rebranding/devices_mfe.json",
+    "locators": {
+      "profile_button": {
+        "locator": {
+          "id": "TBD_profile_button"
+        }
+      }
+    }
   }
 ]
