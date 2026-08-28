@@ -1,0 +1,8 @@
+{
+  "ui_map_file_path": "resources/ui_map/windows/hpx_rebranding/profile_panel.json",
+  "missing_locators": [
+    "profile_button",
+    "feedback_button"
+  ],
+  "existing_json_content": ""
+}
