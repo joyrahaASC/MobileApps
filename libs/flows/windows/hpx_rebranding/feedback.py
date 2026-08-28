@@ -295,3 +295,58 @@ class Feedback(HPXRebrandingFlow):
     def get_feedback_text_char_count(self, timeout=10):
         char_count_text = self.driver.get_attribute("edit_feedback_char_count", "Name", timeout=timeout)
         return char_count_text
+
+    def assert_tell_your_experience_truncated_to_max_characters(self, expected_max_length=2000):
+        """
+        Assert that the tell your experience text is truncated to the maximum character limit.
+        
+        :param expected_max_length: The expected maximum character length (default 2000)
+        :return: True if all assertions pass successfully
+        :raises AssertionError: If text length exceeds maximum or truncation did not occur as expected
+        """
+        # Wait for edit_feedback element to be present
+        self.driver.wait_for_object('edit_feedback')
+        
+        # Call existing method to retrieve the current text value from the feedback text field
+        entered_text = self.get_entered_text()
+        
+        # Calculate the actual character length
+        actual_length = len(entered_text)
+        
+        # Wait for edit_feedback_char_count element to be present
+        self.driver.wait_for_object('edit_feedback_char_count')
+        
+        # Get the character count display text
+        char_count_display = self.driver.get_attribute('edit_feedback_char_count', 'Name')
+        
+        # Parse the character count display to extract current count (e.g., from '2000/2000' format)
+        if '/' in char_count_display:
+            current_count_str = char_count_display.split('/')[0].strip()
+            try:
+                current_count = int(current_count_str)
+            except ValueError:
+                raise AssertionError(f"Unable to parse character count from display: {char_count_display}")
+        else:
+            raise AssertionError(f"Character count display format is unexpected: {char_count_display}")
+        
+        # Assert that actual length does not exceed expected_max_length
+        if actual_length > expected_max_length:
+            raise AssertionError(
+                f"Text length {actual_length} exceeds the maximum allowed length of {expected_max_length}"
+            )
+        
+        # Assert that actual length equals expected_max_length when truncation should have occurred
+        if actual_length != expected_max_length:
+            raise AssertionError(
+                f"Text length {actual_length} does not equal expected maximum length {expected_max_length}. "
+                f"Truncation may not have occurred as expected."
+            )
+        
+        # Assert that the character count display shows the correct format indicating truncation occurred
+        if current_count != expected_max_length:
+            raise AssertionError(
+                f"Character count display shows {current_count} but expected {expected_max_length}"
+            )
+        
+        # Return True if all assertions pass successfully
+        return True
