@@ -8970,11 +8970,11 @@
       "MobileApps.libs.flows.web.hpx.printer_status"
     ],
     "locator_keys": [
-      "search_bar_on_windows",
       "hdr_option_in_settings",
+      "system_locale",
+      "search_bar_on_windows",
       "battery_option_in_setting_under_hdr_option_in_setting",
-      "search_box_in_windows_setting",
-      "system_locale"
+      "search_box_in_windows_setting"
     ],
     "exposed_functions": [
       {
@@ -16848,5 +16848,19 @@
         ]
       }
     ]
+  },
+  {
+    "file_path": "libs/flows/windows/hpx_rebranding/profile_panel.py",
+    "component": "profile_panel",
+    "dependencies": [],
+    "locator_keys": [],
+    "exposed_functions": []
+  },
+  {
+    "file_path": "libs/flows/windows/hpx_rebranding/feedback_screen.py",
+    "component": "feedback_screen",
+    "dependencies": [],
+    "locator_keys": [],
+    "exposed_functions": []
   }
 ]
