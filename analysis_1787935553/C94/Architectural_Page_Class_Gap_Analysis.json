@@ -1,0 +1,51 @@
+{
+  "test_case_id": "C94",
+  "files": [
+    {
+      "file": "devices_mfe.py",
+      "class_name": "DevicesMFE",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Click the profile button",
+          "proposed_signature": "click_profile_button()",
+          "detailed_requirements": "Wait for the profile button/icon to be clickable and click it to open the profile panel or menu."
+        }
+      ]
+    },
+    {
+      "file": "feedback.py",
+      "class_name": "Feedback",
+      "situation": "Situation-3",
+      "resolved_intents": [],
+      "missing_methods": [
+        {
+          "intent": "Verify feedback button is present",
+          "proposed_signature": "verify_feedback_button_present()",
+          "detailed_requirements": "Wait for and verify that the feedback button is present and visible in the UI."
+        },
+        {
+          "intent": "Click the feedback button",
+          "proposed_signature": "click_feedback_button()",
+          "detailed_requirements": "Wait for the feedback button to be clickable and click it to open the feedback form or dialog."
+        },
+        {
+          "intent": "Verify title 'Why did you open the app today?' is displayed",
+          "proposed_signature": "verify_feedback_title_displayed(expected_title='Why did you open the app today?')",
+          "detailed_requirements": "Wait for and verify that the feedback form title matches the expected text 'Why did you open the app today?'."
+        },
+        {
+          "intent": "Verify options list is visible under the title",
+          "proposed_signature": "verify_options_list_visible()",
+          "detailed_requirements": "Wait for and verify that the options list (likely radio buttons or checkboxes) is visible below the feedback title."
+        }
+      ]
+    }
+  ]
+}
