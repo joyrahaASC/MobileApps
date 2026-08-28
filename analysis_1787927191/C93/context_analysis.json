@@ -1,0 +1,84 @@
+{
+  "test_case_id": "C93",
+  "files": [
+    {
+      "file": "profile.py",
+      "class_name": "Profile",
+      "situation": "Situation-1",
+      "resolved_intents": [
+        {
+          "intent": "Verify profile icon is visible",
+          "mapped_function": "verify_profile_icon_show_up"
+        },
+        {
+          "intent": "Click profile button",
+          "mapped_function": "click_devicepage_avatar_btn"
+        },
+        {
+          "intent": "Verify feedback button is present",
+          "mapped_function": "verify_feedback_btn"
+        },
+        {
+          "intent": "Click feedback button",
+          "mapped_function": "click_feedback_btn"
+        }
+      ],
+      "missing_methods": [],
+      "path": "libs/flows/windows/hpx_rebranding/profile.py"
+    },
+    {
+      "file": "feedback.py",
+      "class_name": "Feedback",
+      "situation": "Situation-2",
+      "resolved_intents": [
+        {
+          "intent": "Verify edit feedback screen is displayed",
+          "mapped_function": "verify_edit_feedback"
+        },
+        {
+          "intent": "Input tell your experience text",
+          "mapped_function": "input_tell_your_experience"
+        },
+        {
+          "intent": "Get entered tell your experience value",
+          "mapped_function": "get_entered_text"
+        }
+      ],
+      "missing_methods": [
+        {
+          "intent": "Assert tell your experience text is truncated to 2000 characters",
+          "proposed_signature": "assert_tell_your_experience_truncated_to_max_characters(expected_max_length=2000)",
+          "detailed_requirements": "This method should retrieve the entered text from the feedback text field using get_entered_text(), verify that the length of the text does not exceed the expected maximum character limit (default 2000), and assert that if more characters were input, the text was properly truncated to exactly the maximum allowed length. The method should raise an assertion error if the text length exceeds the maximum or if truncation did not occur as expected.",
+          "implementation_checklist": [
+            "Wait for 'edit_feedback' element to be present using self.driver.wait_for_object('edit_feedback')",
+            "Call existing method self.get_entered_text() to retrieve the current text value from the feedback text field",
+            "Store the retrieved text in a variable (e.g., entered_text)",
+            "Calculate the actual character length using len(entered_text)",
+            "Wait for 'edit_feedback_char_count' element to be present using self.driver.wait_for_object('edit_feedback_char_count')",
+            "Get the character count display text using self.driver.get_attribute('edit_feedback_char_count', 'Name')",
+            "Parse the character count display to extract current count (e.g., from '2000/2000' format)",
+            "Assert that len(entered_text) equals expected_max_length (2000)",
+            "Assert that len(entered_text) does not exceed expected_max_length",
+            "Assert that the character count display shows the correct format indicating truncation occurred",
+            "Raise AssertionError with descriptive message if actual length exceeds expected_max_length",
+            "Raise AssertionError with descriptive message if actual length does not equal expected_max_length when truncation should have occurred",
+            "Return True if all assertions pass successfully"
+          ],
+          "required_locator_keys": [
+            "edit_feedback",
+            "edit_feedback_char_count"
+          ]
+        }
+      ],
+      "path": "libs/flows/windows/hpx_rebranding/feedback.py",
+      "locator_gaps": {
+        "ui_map_file": "feedback.json",
+        "present_locators": [
+          "edit_feedback",
+          "edit_feedback_char_count"
+        ],
+        "missing_locators": []
+      }
+    }
+  ]
+}
