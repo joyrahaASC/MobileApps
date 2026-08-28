@@ -11,7 +11,9 @@
       "page_class_metadata_path": "",
       "locators_metadata_path": "",
       "page_class_path": "",
-      "locators_path": ""
+      "locators_path": "",
+      "test_cases_steps_scripts_map_path": "",
+      "script_path": ""
     },
     "windows": {
       "page_class_metadata_path": "QAMA Topology/windows/windows_page_class_metadata.json",
@@ -25,19 +27,25 @@
       "page_class_metadata_path": "",
       "locators_metadata_path": "",
       "page_class_path": "",
-      "locators_path": ""
+      "locators_path": "",
+      "test_cases_steps_scripts_map_path": "",
+      "script_path": ""
     },
     "ios": {
       "page_class_metadata_path": "",
       "locators_metadata_path": "",
       "page_class_path": "",
-      "locators_path": ""
+      "locators_path": "",
+      "test_cases_steps_scripts_map_path": "",
+      "script_path": ""
     },
     "mac": {
       "page_class_metadata_path": "",
       "locators_metadata_path": "",
       "page_class_path": "",
-      "locators_path": ""
+      "locators_path": "",
+      "test_cases_steps_scripts_map_path": "",
+      "script_path": ""
     }
   }
 }
