@@ -1,0 +1,27 @@
+{
+  "feedback_screen_title": {
+    "locator": {
+      "id": "TBD_feedback_screen_title"
+    }
+  },
+  "tell_your_experience_textbox": {
+    "locator": {
+      "id": "TBD_tell_your_experience_textbox"
+    }
+  },
+  "submit_feedback_btn": {
+    "locator": {
+      "id": "TBD_submit_feedback_btn"
+    }
+  },
+  "cancel_feedback_btn": {
+    "locator": {
+      "id": "TBD_cancel_feedback_btn"
+    }
+  },
+  "edit_feedback_char_count": {
+    "locator": {
+      "id": "TBD_edit_feedback_char_count"
+    }
+  }
+}
